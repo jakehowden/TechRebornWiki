@@ -1,3 +1,5 @@
+@import './minecraft.css';
+
 /**
  * TR-orange palette derived from #E87B22 (HSL 28°, 82%, 52%)
  * Infima shifts: darkest -30%, darker -15%, dark -10%,
@@ -24,4 +26,8 @@
   --ifm-color-primary-lighter: #f0a666;
   --ifm-color-primary-lightest: #f7cfac;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.dev-only-hidden {
+  display: none !important;
 }

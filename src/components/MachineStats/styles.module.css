@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.statBox {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  padding: 8px 16px;
+  background-color: var(--ifm-background-surface-color);
+  min-width: 100px;
+  text-align: center;
+}
+
+.label {
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.value {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--ifm-color-content);
+}

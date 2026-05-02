@@ -1,0 +1,73 @@
+---
+sidebar_class_name: dev-only-hidden
+---
+
+# Component Gallery
+
+This is a developer-only page to verify that all MDX components render correctly.
+
+## 1. ItemIcon
+
+<ItemIcon id="techreborn:copper_ingot" size={32} />
+<ItemIcon id="minecraft:redstone" size={32} />
+
+## 2. CraftingGrid
+
+<CraftingGrid
+  pattern={["RRR", "III", "RRR"]}
+  legend={{ R: "techreborn:rubber", I: "minecraft:copper_ingot" }}
+  output={{ id: "techreborn:insulated_copper_cable", count: 6 }}
+/>
+
+## 3. ShapelessRecipe
+
+<ShapelessRecipe
+  inputs={["techreborn:carbon_fiber", "techreborn:carbon_fiber"]}
+  output={{ id: "techreborn:carbon_mesh", count: 1 }}
+/>
+
+## 4. MachineRecipe
+
+<MachineRecipe
+  machine="compressor"
+  inputs={[{ id: "minecraft:copper_ingot", count: 1 }]}
+  outputs={[{ id: "techreborn:copper_plate", count: 1 }]}
+  power={10}
+  time={300}
+  heat={null}
+/>
+
+## 5. RecipeFromData
+
+<RecipeFromData id="techreborn:compressor/copper_plate" />
+
+## 6. MachineRecipeList
+
+<MachineRecipeList machine="compressor" />
+
+## 7. MultiblockShape
+
+<MultiblockShape 
+  data={{
+    layers: [
+      [
+        ["air", "air", "techreborn:basic_machine_casing"],
+        ["techreborn:basic_machine_casing", "minecraft:lava_bucket", "techreborn:basic_machine_casing"]
+      ],
+      [
+        ["techreborn:basic_machine_casing", "techreborn:basic_machine_casing", "techreborn:basic_machine_casing"],
+        ["techreborn:basic_machine_casing", "techreborn:basic_machine_casing", "techreborn:basic_machine_casing"]
+      ]
+    ]
+  }} 
+/>
+
+## 8. MachineStats
+
+<MachineStats power={32} buffer={1000} tier="LV" inputSlots={1} outputSlots={1} />
+
+## 9. VersionContent
+
+<VersionContent version="1.20.1">
+  This block only renders when MC version 1.20.1 is selected.
+</VersionContent>

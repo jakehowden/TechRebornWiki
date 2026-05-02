@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 1.5rem;
+  max-width: fit-content;
+}
+
+.controls {
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+.slider {
+  margin-left: 12px;
+  vertical-align: middle;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background-color: #333;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.row {
+  display: flex;
+  gap: 2px;
+}
+
+.cell {
+  width: 36px;
+  height: 36px;
+  background-color: #c6c6c6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.note {
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
+  font-style: italic;
+}

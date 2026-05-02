@@ -1,0 +1,65 @@
+.container {
+  display: inline-flex;
+  flex-direction: column;
+  background-color: #c6c6c6;
+  border: 2px solid #555;
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 1rem;
+  font-family: sans-serif;
+}
+
+.recipeBody {
+  display: flex;
+  align-items: center;
+}
+
+.machineCol {
+  padding-right: 16px;
+  border-right: 2px dashed #999;
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.slot {
+  width: 36px;
+  height: 36px;
+  padding: 2px;
+  position: relative;
+}
+
+.outputSlot {
+  width: 54px;
+  height: 54px;
+  padding: 2px;
+  position: relative;
+}
+
+.countBadge {
+  position: absolute;
+  bottom: 0px;
+  right: 2px;
+  color: white;
+  text-shadow: 1px 1px 0 #000;
+  font-weight: bold;
+  font-size: 1rem;
+  font-family: monospace;
+}
+
+.footer {
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px solid #999;
+  display: flex;
+  gap: 16px;
+  font-size: 0.9rem;
+  color: #333;
+}

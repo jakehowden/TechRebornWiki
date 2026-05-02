@@ -1,0 +1,40 @@
+.mc-pixelated {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
+
+.mc-slot {
+  background-color: #8b8b8b;
+  border: 2px solid #373737;
+  box-shadow: inset 2px 2px 0px 0px #373737, inset -2px -2px 0px 0px #ffffff;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.mc-arrow {
+  width: 0; 
+  height: 0; 
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 20px solid #8b8b8b;
+  display: inline-block;
+  margin: 0 16px;
+  position: relative;
+}
+/* Beveled look for arrow */
+.mc-arrow::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -20px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 16px solid #d4d4d4;
+  z-index: -1;
+}
