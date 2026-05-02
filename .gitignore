@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Docusaurus build outputs
+.docusaurus/
+build/
+.cache-loader/
+
+# Generated files
+.docusaurus/
+
+# Environment
+.env*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db

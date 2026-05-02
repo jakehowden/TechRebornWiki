@@ -1,0 +1,182 @@
+import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
+
+const sidebars: SidebarsConfig = {
+  wikiSidebar: [
+    "intro",
+    {
+      type: "category",
+      label: "Power",
+      link: { type: "generated-index" },
+      collapsible: true,
+      collapsed: true,
+      items: [
+        {
+          type: "category",
+          label: "Generators",
+          link: { type: "generated-index" },
+          items: [],
+        },
+        {
+          type: "category",
+          label: "Energy Storage",
+          link: { type: "generated-index" },
+          items: [],
+        },
+        {
+          type: "category",
+          label: "Cables & Transformers",
+          link: { type: "generated-index" },
+          items: [],
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Processing",
+      link: { type: "generated-index" },
+      collapsible: true,
+      collapsed: true,
+      items: [
+        {
+          type: "category",
+          label: "LV Machines",
+          link: { type: "generated-index" },
+          items: [],
+        },
+        {
+          type: "category",
+          label: "MV Machines",
+          link: { type: "generated-index" },
+          items: [],
+        },
+        {
+          type: "category",
+          label: "HV+ Machines",
+          link: { type: "generated-index" },
+          items: [],
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Tools & Armor",
+      link: { type: "generated-index" },
+      collapsible: true,
+      collapsed: true,
+      items: [
+        {
+          type: "category",
+          label: "Tools",
+          link: { type: "generated-index" },
+          items: [],
+        },
+        {
+          type: "category",
+          label: "Armor",
+          link: { type: "generated-index" },
+          items: [],
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Materials",
+      link: { type: "generated-index" },
+      collapsible: true,
+      collapsed: true,
+      items: [
+        {
+          type: "category",
+          label: "Ingots",
+          link: { type: "generated-index" },
+          items: [],
+        },
+        {
+          type: "category",
+          label: "Plates",
+          link: { type: "generated-index" },
+          items: [],
+        },
+        {
+          type: "category",
+          label: "Dusts",
+          link: { type: "generated-index" },
+          items: [],
+        },
+        {
+          type: "category",
+          label: "Cells",
+          link: { type: "generated-index" },
+          items: [],
+        },
+        {
+          type: "category",
+          label: "Misc",
+          link: { type: "generated-index" },
+          items: [],
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Storage Units & Tanks",
+      link: { type: "generated-index" },
+      collapsible: true,
+      collapsed: true,
+      items: [],
+    },
+    {
+      type: "category",
+      label: "Multiblocks",
+      link: { type: "generated-index" },
+      collapsible: true,
+      collapsed: true,
+      items: [],
+    },
+    {
+      type: "category",
+      label: "World",
+      link: { type: "generated-index" },
+      collapsible: true,
+      collapsed: true,
+      items: [
+        {
+          type: "category",
+          label: "Ores",
+          link: { type: "generated-index" },
+          items: [],
+        },
+        {
+          type: "category",
+          label: "Rubber",
+          link: { type: "generated-index" },
+          items: [],
+        },
+        {
+          type: "category",
+          label: "Fluids",
+          link: { type: "generated-index" },
+          items: [],
+        },
+      ],
+    },
+    {
+      type: "category",
+      label: "Mechanics",
+      link: { type: "generated-index" },
+      collapsible: true,
+      collapsed: true,
+      items: [],
+    },
+    {
+      type: "category",
+      label: "Guides",
+      link: { type: "generated-index" },
+      collapsible: true,
+      collapsed: true,
+      items: [],
+    },
+  ],
+};
+
+export default sidebars;
