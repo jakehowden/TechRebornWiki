@@ -1,0 +1,1712 @@
+{
+  "techreborn:almandine_dust": {
+    "displayName": "Almandine Dust",
+    "texture": "/img/items/almandine_dust.png",
+    "category": "dust"
+  },
+  "techreborn:aluminum_dust": {
+    "displayName": "Aluminium Dust",
+    "texture": "/img/items/aluminum_dust.png",
+    "category": "dust"
+  },
+  "techreborn:amethyst_dust": {
+    "displayName": "Amethyst Dust",
+    "texture": "/img/items/amethyst_dust.png",
+    "category": "dust"
+  },
+  "techreborn:andesite_dust": {
+    "displayName": "Andesite Dust",
+    "texture": "/img/items/andesite_dust.png",
+    "category": "dust"
+  },
+  "techreborn:andradite_dust": {
+    "displayName": "Andradite Dust",
+    "texture": "/img/items/andradite_dust.png",
+    "category": "dust"
+  },
+  "techreborn:ashes_dust": {
+    "displayName": "Ashes",
+    "texture": "/img/items/ashes_dust.png",
+    "category": "dust"
+  },
+  "techreborn:basalt_dust": {
+    "displayName": "Basalt Dust",
+    "texture": "/img/items/basalt_dust.png",
+    "category": "dust"
+  },
+  "techreborn:bauxite_dust": {
+    "displayName": "Bauxite Dust",
+    "texture": "/img/items/bauxite_dust.png",
+    "category": "dust"
+  },
+  "techreborn:brass_dust": {
+    "displayName": "Brass Dust",
+    "texture": "/img/items/brass_dust.png",
+    "category": "dust"
+  },
+  "techreborn:bronze_dust": {
+    "displayName": "Bronze Dust",
+    "texture": "/img/items/bronze_dust.png",
+    "category": "dust"
+  },
+  "techreborn:calcite_dust": {
+    "displayName": "Calcite Dust",
+    "texture": "/img/items/calcite_dust.png",
+    "category": "dust"
+  },
+  "techreborn:charcoal_dust": {
+    "displayName": "Charcoal Dust",
+    "texture": "/img/items/charcoal_dust.png",
+    "category": "dust"
+  },
+  "techreborn:chrome_dust": {
+    "displayName": "Chromium Dust",
+    "texture": "/img/items/chrome_dust.png",
+    "category": "dust"
+  },
+  "techreborn:cinnabar_dust": {
+    "displayName": "Cinnabar Dust",
+    "texture": "/img/items/cinnabar_dust.png",
+    "category": "dust"
+  },
+  "techreborn:clay_dust": {
+    "displayName": "Clay Dust",
+    "texture": "/img/items/clay_dust.png",
+    "category": "dust"
+  },
+  "techreborn:coal_dust": {
+    "displayName": "Coal Dust",
+    "texture": "/img/items/coal_dust.png",
+    "category": "dust"
+  },
+  "techreborn:dark_ashes_dust": {
+    "displayName": "Dark Ashes",
+    "texture": "/img/items/dark_ashes_dust.png",
+    "category": "dust"
+  },
+  "techreborn:diamond_dust": {
+    "displayName": "Diamond Dust",
+    "texture": "/img/items/diamond_dust.png",
+    "category": "dust"
+  },
+  "techreborn:diorite_dust": {
+    "displayName": "Diorite Dust",
+    "texture": "/img/items/diorite_dust.png",
+    "category": "dust"
+  },
+  "techreborn:electrum_dust": {
+    "displayName": "Electrum Dust",
+    "texture": "/img/items/electrum_dust.png",
+    "category": "dust"
+  },
+  "techreborn:emerald_dust": {
+    "displayName": "Emerald Dust",
+    "texture": "/img/items/emerald_dust.png",
+    "category": "dust"
+  },
+  "techreborn:ender_eye_dust": {
+    "displayName": "Ender Eye Dust",
+    "texture": "/img/items/ender_eye_dust.png",
+    "category": "dust"
+  },
+  "techreborn:ender_pearl_dust": {
+    "displayName": "Ender Pearl Dust",
+    "texture": "/img/items/ender_pearl_dust.png",
+    "category": "dust"
+  },
+  "techreborn:endstone_dust": {
+    "displayName": "Endstone Dust",
+    "texture": "/img/items/endstone_dust.png",
+    "category": "dust"
+  },
+  "techreborn:flint_dust": {
+    "displayName": "Flint Dust",
+    "texture": "/img/items/flint_dust.png",
+    "category": "dust"
+  },
+  "techreborn:galena_dust": {
+    "displayName": "Galena Dust",
+    "texture": "/img/items/galena_dust.png",
+    "category": "dust"
+  },
+  "techreborn:granite_dust": {
+    "displayName": "Granite Dust",
+    "texture": "/img/items/granite_dust.png",
+    "category": "dust"
+  },
+  "techreborn:grossular_dust": {
+    "displayName": "Grossular Dust",
+    "texture": "/img/items/grossular_dust.png",
+    "category": "dust"
+  },
+  "techreborn:invar_dust": {
+    "displayName": "Invar Dust",
+    "texture": "/img/items/invar_dust.png",
+    "category": "dust"
+  },
+  "techreborn:lazurite_dust": {
+    "displayName": "Lazurite Dust",
+    "texture": "/img/items/lazurite_dust.png",
+    "category": "dust"
+  },
+  "techreborn:magnesium_dust": {
+    "displayName": "Magnesium Dust",
+    "texture": "/img/items/magnesium_dust.png",
+    "category": "dust"
+  },
+  "techreborn:manganese_dust": {
+    "displayName": "Manganese Dust",
+    "texture": "/img/items/manganese_dust.png",
+    "category": "dust"
+  },
+  "techreborn:marble_dust": {
+    "displayName": "Marble Dust",
+    "texture": "/img/items/marble_dust.png",
+    "category": "dust"
+  },
+  "techreborn:netherrack_dust": {
+    "displayName": "Netherrack Dust",
+    "texture": "/img/items/netherrack_dust.png",
+    "category": "dust"
+  },
+  "techreborn:nickel_dust": {
+    "displayName": "Nickel Dust",
+    "texture": "/img/items/nickel_dust.png",
+    "category": "dust"
+  },
+  "techreborn:obsidian_dust": {
+    "displayName": "Obsidian Dust",
+    "texture": "/img/items/obsidian_dust.png",
+    "category": "dust"
+  },
+  "techreborn:olivine_dust": {
+    "displayName": "Olivine Dust",
+    "texture": "/img/items/olivine_dust.png",
+    "category": "dust"
+  },
+  "techreborn:peridot_dust": {
+    "displayName": "Peridot Dust",
+    "texture": "/img/items/peridot_dust.png",
+    "category": "dust"
+  },
+  "techreborn:phosphorous_dust": {
+    "displayName": "Phosphorous Dust",
+    "texture": "/img/items/phosphorous_dust.png",
+    "category": "dust"
+  },
+  "techreborn:platinum_dust": {
+    "displayName": "Platinum Dust",
+    "texture": "/img/items/platinum_dust.png",
+    "category": "dust"
+  },
+  "techreborn:pyrite_dust": {
+    "displayName": "Pyrite Dust",
+    "texture": "/img/items/pyrite_dust.png",
+    "category": "dust"
+  },
+  "techreborn:pyrope_dust": {
+    "displayName": "Pyrope Dust",
+    "texture": "/img/items/pyrope_dust.png",
+    "category": "dust"
+  },
+  "techreborn:quartz_dust": {
+    "displayName": "Quartz Dust",
+    "texture": "/img/items/quartz_dust.png",
+    "category": "dust"
+  },
+  "techreborn:red_garnet_dust": {
+    "displayName": "Red Garnet Dust",
+    "texture": "/img/items/red_garnet_dust.png",
+    "category": "dust"
+  },
+  "techreborn:ruby_dust": {
+    "displayName": "Ruby Dust",
+    "texture": "/img/items/ruby_dust.png",
+    "category": "dust"
+  },
+  "techreborn:saltpeter_dust": {
+    "displayName": "Saltpeter Dust",
+    "texture": "/img/items/saltpeter_dust.png",
+    "category": "dust"
+  },
+  "techreborn:sapphire_dust": {
+    "displayName": "Sapphire Dust",
+    "texture": "/img/items/sapphire_dust.png",
+    "category": "dust"
+  },
+  "techreborn:saw_dust": {
+    "displayName": "Saw Dust",
+    "texture": "/img/items/saw_dust.png",
+    "category": "dust"
+  },
+  "techreborn:sodalite_dust": {
+    "displayName": "Sodalite Dust",
+    "texture": "/img/items/sodalite_dust.png",
+    "category": "dust"
+  },
+  "techreborn:spessartine_dust": {
+    "displayName": "Spessartine Dust",
+    "texture": "/img/items/spessartine_dust.png",
+    "category": "dust"
+  },
+  "techreborn:sphalerite_dust": {
+    "displayName": "Sphalerite Dust",
+    "texture": "/img/items/sphalerite_dust.png",
+    "category": "dust"
+  },
+  "techreborn:steel_dust": {
+    "displayName": "Steel Dust",
+    "texture": "/img/items/steel_dust.png",
+    "category": "dust"
+  },
+  "techreborn:sulfur_dust": {
+    "displayName": "Sulfur Dust",
+    "texture": "/img/items/sulfur_dust.png",
+    "category": "dust"
+  },
+  "techreborn:titanium_dust": {
+    "displayName": "Titanium Dust",
+    "texture": "/img/items/titanium_dust.png",
+    "category": "dust"
+  },
+  "techreborn:uvarovite_dust": {
+    "displayName": "Uvarovite Dust",
+    "texture": "/img/items/uvarovite_dust.png",
+    "category": "dust"
+  },
+  "techreborn:yellow_garnet_dust": {
+    "displayName": "Yellow Garnet Dust",
+    "texture": "/img/items/yellow_garnet_dust.png",
+    "category": "dust"
+  },
+  "techreborn:zinc_dust": {
+    "displayName": "Zinc Dust",
+    "texture": "/img/items/zinc_dust.png",
+    "category": "dust"
+  },
+  "techreborn:almandine_small_dust": {
+    "displayName": "Small Pile of Almandine Dust",
+    "texture": "/img/items/almandine_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:andesite_small_dust": {
+    "displayName": "Small Pile of Andesite Dust",
+    "texture": "/img/items/andesite_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:andradite_small_dust": {
+    "displayName": "Small Pile of Andradite Dust",
+    "texture": "/img/items/andradite_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:ashes_small_dust": {
+    "displayName": "Small Pile of Ashes",
+    "texture": "/img/items/ashes_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:basalt_small_dust": {
+    "displayName": "Small Pile of Basalt Dust",
+    "texture": "/img/items/basalt_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:bauxite_small_dust": {
+    "displayName": "Small Pile of Bauxite Dust",
+    "texture": "/img/items/bauxite_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:calcite_small_dust": {
+    "displayName": "Small Pile of Calcite Dust",
+    "texture": "/img/items/calcite_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:charcoal_small_dust": {
+    "displayName": "Small Pile of Charcoal Dust",
+    "texture": "/img/items/charcoal_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:chrome_small_dust": {
+    "displayName": "Small Pile of Chromium Dust",
+    "texture": "/img/items/chrome_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:cinnabar_small_dust": {
+    "displayName": "Small Pile of Cinnabar Dust",
+    "texture": "/img/items/cinnabar_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:clay_small_dust": {
+    "displayName": "Small Pile of Clay Dust",
+    "texture": "/img/items/clay_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:coal_small_dust": {
+    "displayName": "Small Pile of Coal Dust",
+    "texture": "/img/items/coal_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:dark_ashes_small_dust": {
+    "displayName": "Small Pile of Dark Ashes",
+    "texture": "/img/items/dark_ashes_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:diamond_small_dust": {
+    "displayName": "Small Pile of Diamond Dust",
+    "texture": "/img/items/diamond_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:diorite_small_dust": {
+    "displayName": "Small Pile of Diorite Dust",
+    "texture": "/img/items/diorite_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:electrum_small_dust": {
+    "displayName": "Small Pile of Electrum Dust",
+    "texture": "/img/items/electrum_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:emerald_small_dust": {
+    "displayName": "Small Pile of Emerald Dust",
+    "texture": "/img/items/emerald_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:ender_eye_small_dust": {
+    "displayName": "Small Pile of Ender Eye Dust",
+    "texture": "/img/items/ender_eye_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:ender_pearl_small_dust": {
+    "displayName": "Small Pile of Ender Pearl Dust",
+    "texture": "/img/items/ender_pearl_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:endstone_small_dust": {
+    "displayName": "Small Pile of Endstone Dust",
+    "texture": "/img/items/endstone_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:flint_small_dust": {
+    "displayName": "Small Pile of Flint Dust",
+    "texture": "/img/items/flint_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:galena_small_dust": {
+    "displayName": "Small Pile of Galena Dust",
+    "texture": "/img/items/galena_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:glowstone_small_dust": {
+    "displayName": "Small Pile of Glowstone Dust",
+    "texture": "/img/items/glowstone_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:granite_small_dust": {
+    "displayName": "Small Pile of Granite Dust",
+    "texture": "/img/items/granite_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:grossular_small_dust": {
+    "displayName": "Small Pile of Grossular Dust",
+    "texture": "/img/items/grossular_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:invar_small_dust": {
+    "displayName": "Small Pile of Invar Dust",
+    "texture": "/img/items/invar_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:lazurite_small_dust": {
+    "displayName": "Small Pile of Lazurite Dust",
+    "texture": "/img/items/lazurite_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:magnesium_small_dust": {
+    "displayName": "Small Pile of Magnesium Dust",
+    "texture": "/img/items/magnesium_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:manganese_small_dust": {
+    "displayName": "Small Pile of Manganese Dust",
+    "texture": "/img/items/manganese_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:marble_small_dust": {
+    "displayName": "Small Pile of Marble Dust",
+    "texture": "/img/items/marble_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:netherrack_small_dust": {
+    "displayName": "Small Pile of Netherrack Dust",
+    "texture": "/img/items/netherrack_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:nickel_small_dust": {
+    "displayName": "Small Pile of Nickel Dust",
+    "texture": "/img/items/nickel_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:obsidian_small_dust": {
+    "displayName": "Small Pile of Obsidian Dust",
+    "texture": "/img/items/obsidian_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:olivine_small_dust": {
+    "displayName": "Small Pile of Olivine Dust",
+    "texture": "/img/items/olivine_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:peridot_small_dust": {
+    "displayName": "Small Pile of Peridot",
+    "texture": "/img/items/peridot_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:phosphorous_small_dust": {
+    "displayName": "Small Pile of Phosphorous Dust",
+    "texture": "/img/items/phosphorous_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:platinum_small_dust": {
+    "displayName": "Small Pile of Platinum Dust",
+    "texture": "/img/items/platinum_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:pyrite_small_dust": {
+    "displayName": "Small Pile of Pyrite Dust",
+    "texture": "/img/items/pyrite_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:pyrope_small_dust": {
+    "displayName": "Small Pile of Pyrope Dust",
+    "texture": "/img/items/pyrope_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:quartz_small_dust": {
+    "displayName": "Small Pile of Quartz Dust",
+    "texture": "/img/items/quartz_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:redstone_small_dust": {
+    "displayName": "Small Pile of Redstone",
+    "texture": "/img/items/redstone_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:red_garnet_small_dust": {
+    "displayName": "Small Pile of Red Garnet Dust",
+    "texture": "/img/items/red_garnet_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:ruby_small_dust": {
+    "displayName": "Small Pile of Ruby Dust",
+    "texture": "/img/items/ruby_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:saltpeter_small_dust": {
+    "displayName": "Small Pile of Saltpeter Dust",
+    "texture": "/img/items/saltpeter_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:sapphire_small_dust": {
+    "displayName": "Small Pile of Sapphire Dust",
+    "texture": "/img/items/sapphire_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:saw_small_dust": {
+    "displayName": "Small Pile of Saw Dust",
+    "texture": "/img/items/saw_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:sodalite_small_dust": {
+    "displayName": "Small Pile of Sodalite Dust",
+    "texture": "/img/items/sodalite_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:spessartine_small_dust": {
+    "displayName": "Small Pile of Spessartine Dust",
+    "texture": "/img/items/spessartine_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:sphalerite_small_dust": {
+    "displayName": "Small Pile of Sphalerite Dust",
+    "texture": "/img/items/sphalerite_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:steel_small_dust": {
+    "displayName": "Small Pile of Steel Dust",
+    "texture": "/img/items/steel_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:sulfur_small_dust": {
+    "displayName": "Small Pile of Sulfur Dust",
+    "texture": "/img/items/sulfur_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:titanium_small_dust": {
+    "displayName": "Small Pile of Titanium Dust",
+    "texture": "/img/items/titanium_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:tungsten_small_dust": {
+    "displayName": "Small Pile of Tungsten Dust",
+    "texture": "/img/items/tungsten_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:uvarovite_small_dust": {
+    "displayName": "Small Pile of Uvarovite Dust",
+    "texture": "/img/items/uvarovite_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:yellow_garnet_small_dust": {
+    "displayName": "Small Pile of Yellow Garnet Dust",
+    "texture": "/img/items/yellow_garnet_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:zinc_small_dust": {
+    "displayName": "Small Pile of Zinc Dust",
+    "texture": "/img/items/zinc_small_dust.png",
+    "category": "small_dust"
+  },
+  "techreborn:advanced_alloy_ingot": {
+    "displayName": "Advanced Alloy Ingot",
+    "texture": "/img/items/advanced_alloy_ingot.png",
+    "category": "ingot"
+  },
+  "techreborn:aluminum_ingot": {
+    "displayName": "Aluminium Ingot",
+    "texture": "/img/items/aluminum_ingot.png",
+    "category": "ingot"
+  },
+  "techreborn:brass_ingot": {
+    "displayName": "Brass Ingot",
+    "texture": "/img/items/brass_ingot.png",
+    "category": "ingot"
+  },
+  "techreborn:bronze_ingot": {
+    "displayName": "Bronze Ingot",
+    "texture": "/img/items/bronze_ingot.png",
+    "category": "ingot"
+  },
+  "techreborn:chrome_ingot": {
+    "displayName": "Chromium Ingot",
+    "texture": "/img/items/chrome_ingot.png",
+    "category": "ingot"
+  },
+  "techreborn:electrum_ingot": {
+    "displayName": "Electrum Ingot",
+    "texture": "/img/items/electrum_ingot.png",
+    "category": "ingot"
+  },
+  "techreborn:hot_tungstensteel_ingot": {
+    "displayName": "Hot Tungstensteel Ingot",
+    "texture": "/img/items/hot_tungstensteel_ingot.png",
+    "category": "ingot"
+  },
+  "techreborn:invar_ingot": {
+    "displayName": "Invar Ingot",
+    "texture": "/img/items/invar_ingot.png",
+    "category": "ingot"
+  },
+  "techreborn:iridium_alloy_ingot": {
+    "displayName": "Iridium Alloy Ingot",
+    "texture": "/img/items/iridium_alloy_ingot.png",
+    "category": "ingot"
+  },
+  "techreborn:iridium_ingot": {
+    "displayName": "Iridium Ingot",
+    "texture": "/img/items/iridium_ingot.png",
+    "category": "ingot"
+  },
+  "techreborn:lead_ingot": {
+    "displayName": "Lead Ingot",
+    "texture": "/img/items/lead_ingot.png",
+    "category": "ingot"
+  },
+  "techreborn:mixed_metal_ingot": {
+    "displayName": "Mixed Metal Ingot",
+    "texture": "/img/items/mixed_metal_ingot.png",
+    "category": "ingot"
+  },
+  "techreborn:nickel_ingot": {
+    "displayName": "Nickel Ingot",
+    "texture": "/img/items/nickel_ingot.png",
+    "category": "ingot"
+  },
+  "techreborn:platinum_ingot": {
+    "displayName": "Platinum Ingot",
+    "texture": "/img/items/platinum_ingot.png",
+    "category": "ingot"
+  },
+  "techreborn:refined_iron_ingot": {
+    "displayName": "Refined Iron Ingot",
+    "texture": "/img/items/refined_iron_ingot.png",
+    "category": "ingot"
+  },
+  "techreborn:silver_ingot": {
+    "displayName": "Silver Ingot",
+    "texture": "/img/items/silver_ingot.png",
+    "category": "ingot"
+  },
+  "techreborn:steel_ingot": {
+    "displayName": "Steel Ingot",
+    "texture": "/img/items/steel_ingot.png",
+    "category": "ingot"
+  },
+  "techreborn:tin_ingot": {
+    "displayName": "Tin Ingot",
+    "texture": "/img/items/tin_ingot.png",
+    "category": "ingot"
+  },
+  "techreborn:titanium_ingot": {
+    "displayName": "Titanium Ingot",
+    "texture": "/img/items/titanium_ingot.png",
+    "category": "ingot"
+  },
+  "techreborn:tungsten_ingot": {
+    "displayName": "Tungsten Ingot",
+    "texture": "/img/items/tungsten_ingot.png",
+    "category": "ingot"
+  },
+  "techreborn:tungstensteel_ingot": {
+    "displayName": "Tungstensteel Ingot",
+    "texture": "/img/items/tungstensteel_ingot.png",
+    "category": "ingot"
+  },
+  "techreborn:zinc_ingot": {
+    "displayName": "Zinc Ingot",
+    "texture": "/img/items/zinc_ingot.png",
+    "category": "ingot"
+  },
+  "techreborn:aluminum_nugget": {
+    "displayName": "Aluminium Nugget",
+    "texture": "/img/items/aluminum_nugget.png",
+    "category": "nugget"
+  },
+  "techreborn:brass_nugget": {
+    "displayName": "Brass Nugget",
+    "texture": "/img/items/brass_nugget.png",
+    "category": "nugget"
+  },
+  "techreborn:bronze_nugget": {
+    "displayName": "Bronze Nugget",
+    "texture": "/img/items/bronze_nugget.png",
+    "category": "nugget"
+  },
+  "techreborn:chrome_nugget": {
+    "displayName": "Chromium Nugget",
+    "texture": "/img/items/chrome_nugget.png",
+    "category": "nugget"
+  },
+  "techreborn:copper_nugget": {
+    "displayName": "Copper Nugget",
+    "texture": "/img/items/copper_nugget.png",
+    "category": "nugget"
+  },
+  "techreborn:diamond_nugget": {
+    "displayName": "Diamond Nugget",
+    "texture": "/img/items/diamond_nugget.png",
+    "category": "nugget"
+  },
+  "techreborn:electrum_nugget": {
+    "displayName": "Electrum Nugget",
+    "texture": "/img/items/electrum_nugget.png",
+    "category": "nugget"
+  },
+  "techreborn:emerald_nugget": {
+    "displayName": "Emerald Nugget",
+    "texture": "/img/items/emerald_nugget.png",
+    "category": "nugget"
+  },
+  "techreborn:hot_tungstensteel_nugget": {
+    "displayName": "Hot Tungstensteel Nugget",
+    "texture": "/img/items/hot_tungstensteel_nugget.png",
+    "category": "nugget"
+  },
+  "techreborn:invar_nugget": {
+    "displayName": "Invar Nugget",
+    "texture": "/img/items/invar_nugget.png",
+    "category": "nugget"
+  },
+  "techreborn:iridium_nugget": {
+    "displayName": "Iridium Nugget",
+    "texture": "/img/items/iridium_nugget.png",
+    "category": "nugget"
+  },
+  "techreborn:lead_nugget": {
+    "displayName": "Lead Nugget",
+    "texture": "/img/items/lead_nugget.png",
+    "category": "nugget"
+  },
+  "techreborn:netherite_nugget": {
+    "displayName": "Netherite Nugget",
+    "texture": "/img/items/netherite_nugget.png",
+    "category": "nugget"
+  },
+  "techreborn:not_nugget": {
+    "displayName": "Not Nugget",
+    "texture": "/img/items/not_nugget.png",
+    "category": "nugget"
+  },
+  "techreborn:nickel_nugget": {
+    "displayName": "Nickel Nugget",
+    "texture": "/img/items/nickel_nugget.png",
+    "category": "nugget"
+  },
+  "techreborn:platinum_nugget": {
+    "displayName": "Platinum Nugget",
+    "texture": "/img/items/platinum_nugget.png",
+    "category": "nugget"
+  },
+  "techreborn:refined_iron_nugget": {
+    "displayName": "Refined Iron Nugget",
+    "texture": "/img/items/refined_iron_nugget.png",
+    "category": "nugget"
+  },
+  "techreborn:silver_nugget": {
+    "displayName": "Silver Nugget",
+    "texture": "/img/items/silver_nugget.png",
+    "category": "nugget"
+  },
+  "techreborn:steel_nugget": {
+    "displayName": "Steel Nugget",
+    "texture": "/img/items/steel_nugget.png",
+    "category": "nugget"
+  },
+  "techreborn:tin_nugget": {
+    "displayName": "Tin Nugget",
+    "texture": "/img/items/tin_nugget.png",
+    "category": "nugget"
+  },
+  "techreborn:titanium_nugget": {
+    "displayName": "Titanium Nugget",
+    "texture": "/img/items/titanium_nugget.png",
+    "category": "nugget"
+  },
+  "techreborn:tungsten_nugget": {
+    "displayName": "Tungsten Nugget",
+    "texture": "/img/items/tungsten_nugget.png",
+    "category": "nugget"
+  },
+  "techreborn:tungstensteel_nugget": {
+    "displayName": "Tungstensteel Nugget",
+    "texture": "/img/items/tungstensteel_nugget.png",
+    "category": "nugget"
+  },
+  "techreborn:zinc_nugget": {
+    "displayName": "Zinc Nugget",
+    "texture": "/img/items/zinc_nugget.png",
+    "category": "nugget"
+  },
+  "techreborn:advanced_alloy_plate": {
+    "displayName": "Advanced Alloy Plate",
+    "texture": "/img/items/advanced_alloy_plate.png",
+    "category": "plate"
+  },
+  "techreborn:aluminum_plate": {
+    "displayName": "Aluminium Plate",
+    "texture": "/img/items/aluminum_plate.png",
+    "category": "plate"
+  },
+  "techreborn:brass_plate": {
+    "displayName": "Brass Plate",
+    "texture": "/img/items/brass_plate.png",
+    "category": "plate"
+  },
+  "techreborn:bronze_plate": {
+    "displayName": "Bronze Plate",
+    "texture": "/img/items/bronze_plate.png",
+    "category": "plate"
+  },
+  "techreborn:carbon_plate": {
+    "displayName": "Carbon Plate",
+    "texture": "/img/items/carbon_plate.png",
+    "category": "plate"
+  },
+  "techreborn:chrome_plate": {
+    "displayName": "Chromium Plate",
+    "texture": "/img/items/chrome_plate.png",
+    "category": "plate"
+  },
+  "techreborn:coal_plate": {
+    "displayName": "Coal Plate",
+    "texture": "/img/items/coal_plate.png",
+    "category": "plate"
+  },
+  "techreborn:copper_plate": {
+    "displayName": "Copper Plate",
+    "texture": "/img/items/copper_plate.png",
+    "category": "plate"
+  },
+  "techreborn:diamond_plate": {
+    "displayName": "Diamond Plate",
+    "texture": "/img/items/diamond_plate.png",
+    "category": "plate"
+  },
+  "techreborn:electrum_plate": {
+    "displayName": "Electrum Plate",
+    "texture": "/img/items/electrum_plate.png",
+    "category": "plate"
+  },
+  "techreborn:emerald_plate": {
+    "displayName": "Emerald Plate",
+    "texture": "/img/items/emerald_plate.png",
+    "category": "plate"
+  },
+  "techreborn:gold_plate": {
+    "displayName": "Gold Plate",
+    "texture": "/img/items/gold_plate.png",
+    "category": "plate"
+  },
+  "techreborn:invar_plate": {
+    "displayName": "Invar Plate",
+    "texture": "/img/items/invar_plate.png",
+    "category": "plate"
+  },
+  "techreborn:iridium_alloy_plate": {
+    "displayName": "Iridium Alloy Plate",
+    "texture": "/img/items/iridium_alloy_plate.png",
+    "category": "plate"
+  },
+  "techreborn:iridium_plate": {
+    "displayName": "Iridium Plate",
+    "texture": "/img/items/iridium_plate.png",
+    "category": "plate"
+  },
+  "techreborn:iron_plate": {
+    "displayName": "Iron Plate",
+    "texture": "/img/items/iron_plate.png",
+    "category": "plate"
+  },
+  "techreborn:lapis_plate": {
+    "displayName": "Lapis Lazuli Plate",
+    "texture": "/img/items/lapis_plate.png",
+    "category": "plate"
+  },
+  "techreborn:lazurite_plate": {
+    "displayName": "Lazurite Plate",
+    "texture": "/img/items/lazurite_plate.png",
+    "category": "plate"
+  },
+  "techreborn:lead_plate": {
+    "displayName": "Lead Plate",
+    "texture": "/img/items/lead_plate.png",
+    "category": "plate"
+  },
+  "techreborn:magnalium_plate": {
+    "displayName": "Magnalium Plate",
+    "texture": "/img/items/magnalium_plate.png",
+    "category": "plate"
+  },
+  "techreborn:nickel_plate": {
+    "displayName": "Nickel Plate",
+    "texture": "/img/items/nickel_plate.png",
+    "category": "plate"
+  },
+  "techreborn:obsidian_plate": {
+    "displayName": "Obsidian Plate",
+    "texture": "/img/items/obsidian_plate.png",
+    "category": "plate"
+  },
+  "techreborn:peridot_plate": {
+    "displayName": "Peridot Plate",
+    "texture": "/img/items/peridot_plate.png",
+    "category": "plate"
+  },
+  "techreborn:platinum_plate": {
+    "displayName": "Platinum Plate",
+    "texture": "/img/items/platinum_plate.png",
+    "category": "plate"
+  },
+  "techreborn:quartz_plate": {
+    "displayName": "Quartz Plate",
+    "texture": "/img/items/quartz_plate.png",
+    "category": "plate"
+  },
+  "techreborn:red_garnet_plate": {
+    "displayName": "Red Garnet Plate",
+    "texture": "/img/items/red_garnet_plate.png",
+    "category": "plate"
+  },
+  "techreborn:redstone_plate": {
+    "displayName": "Redstone Plate",
+    "texture": "/img/items/redstone_plate.png",
+    "category": "plate"
+  },
+  "techreborn:refined_iron_plate": {
+    "displayName": "Refined Iron Plate",
+    "texture": "/img/items/refined_iron_plate.png",
+    "category": "plate"
+  },
+  "techreborn:ruby_plate": {
+    "displayName": "Ruby Plate",
+    "texture": "/img/items/ruby_plate.png",
+    "category": "plate"
+  },
+  "techreborn:sapphire_plate": {
+    "displayName": "Sapphire Plate",
+    "texture": "/img/items/sapphire_plate.png",
+    "category": "plate"
+  },
+  "techreborn:silicon_plate": {
+    "displayName": "Silicon Plate",
+    "texture": "/img/items/silicon_plate.png",
+    "category": "plate"
+  },
+  "techreborn:silver_plate": {
+    "displayName": "Silver Plate",
+    "texture": "/img/items/silver_plate.png",
+    "category": "plate"
+  },
+  "techreborn:steel_plate": {
+    "displayName": "Steel Plate",
+    "texture": "/img/items/steel_plate.png",
+    "category": "plate"
+  },
+  "techreborn:tin_plate": {
+    "displayName": "Tin Plate",
+    "texture": "/img/items/tin_plate.png",
+    "category": "plate"
+  },
+  "techreborn:titanium_plate": {
+    "displayName": "Titanium Plate",
+    "texture": "/img/items/titanium_plate.png",
+    "category": "plate"
+  },
+  "techreborn:tungsten_plate": {
+    "displayName": "Tungsten Plate",
+    "texture": "/img/items/tungsten_plate.png",
+    "category": "plate"
+  },
+  "techreborn:tungstensteel_plate": {
+    "displayName": "Tungstensteel Plate",
+    "texture": "/img/items/tungstensteel_plate.png",
+    "category": "plate"
+  },
+  "techreborn:wood_plate": {
+    "displayName": "Wooden Plate",
+    "texture": "/img/items/wood_plate.png",
+    "category": "plate"
+  },
+  "techreborn:yellow_garnet_plate": {
+    "displayName": "Yellow Garnet Plate",
+    "texture": "/img/items/yellow_garnet_plate.png",
+    "category": "plate"
+  },
+  "techreborn:zinc_plate": {
+    "displayName": "Zinc Plate",
+    "texture": "/img/items/zinc_plate.png",
+    "category": "plate"
+  },
+  "techreborn:peridot": {
+    "displayName": "Peridot",
+    "texture": "/img/items/peridot.png",
+    "category": "gem"
+  },
+  "techreborn:red_garnet": {
+    "displayName": "Red Garnet",
+    "texture": "/img/items/red_garnet.png",
+    "category": "gem"
+  },
+  "techreborn:ruby": {
+    "displayName": "Ruby",
+    "texture": "/img/items/ruby.png",
+    "category": "gem"
+  },
+  "techreborn:sapphire": {
+    "displayName": "Sapphire",
+    "texture": "/img/items/sapphire.png",
+    "category": "gem"
+  },
+  "techreborn:yellow_garnet": {
+    "displayName": "Yellow Garnet",
+    "texture": "/img/items/yellow_garnet.png",
+    "category": "gem"
+  },
+  "techreborn:carbon_fiber": {
+    "displayName": "Carbon Fiber",
+    "texture": "/img/items/carbon_fiber.png",
+    "category": "part"
+  },
+  "techreborn:carbon_mesh": {
+    "displayName": "Carbon Mesh",
+    "texture": "/img/items/carbon_mesh.png",
+    "category": "part"
+  },
+  "techreborn:electronic_circuit": {
+    "displayName": "Electronic Circuit",
+    "texture": "/img/items/electronic_circuit.png",
+    "category": "part"
+  },
+  "techreborn:advanced_circuit": {
+    "displayName": "Advanced Circuit",
+    "texture": "/img/items/advanced_circuit.png",
+    "category": "part"
+  },
+  "techreborn:industrial_circuit": {
+    "displayName": "Industrial Circuit",
+    "texture": "/img/items/industrial_circuit.png",
+    "category": "part"
+  },
+  "techreborn:machine_parts": {
+    "displayName": "Machine Parts",
+    "texture": "/img/items/machine_parts.png",
+    "category": "part"
+  },
+  "techreborn:basic_display": {
+    "displayName": "Basic Display",
+    "texture": "/img/items/basic_display.png",
+    "category": "part"
+  },
+  "techreborn:digital_display": {
+    "displayName": "Digital Display",
+    "texture": "/img/items/digital_display.png",
+    "category": "part"
+  },
+  "techreborn:data_storage_core": {
+    "displayName": "Data Storage Core",
+    "texture": "/img/items/data_storage_core.png",
+    "category": "part"
+  },
+  "techreborn:data_storage_chip": {
+    "displayName": "Data Storage Chip",
+    "texture": "/img/items/data_storage_chip.png",
+    "category": "part"
+  },
+  "techreborn:energy_flow_chip": {
+    "displayName": "Energy Flow Chip",
+    "texture": "/img/items/energy_flow_chip.png",
+    "category": "part"
+  },
+  "techreborn:superconductor": {
+    "displayName": "Superconductor",
+    "texture": "/img/items/superconductor.png",
+    "category": "part"
+  },
+  "techreborn:diamond_saw_blade": {
+    "displayName": "Diamond Saw Blade",
+    "texture": "/img/items/diamond_saw_blade.png",
+    "category": "part"
+  },
+  "techreborn:diamond_grinding_head": {
+    "displayName": "Diamond Grinding Head",
+    "texture": "/img/items/diamond_grinding_head.png",
+    "category": "part"
+  },
+  "techreborn:tungsten_grinding_head": {
+    "displayName": "Tungsten Grinding Head",
+    "texture": "/img/items/tungsten_grinding_head.png",
+    "category": "part"
+  },
+  "techreborn:cupronickel_heating_coil": {
+    "displayName": "Cupronickel Heating Coil",
+    "texture": "/img/items/cupronickel_heating_coil.png",
+    "category": "part"
+  },
+  "techreborn:kanthal_heating_coil": {
+    "displayName": "Kanthal Heating Coil",
+    "texture": "/img/items/kanthal_heating_coil.png",
+    "category": "part"
+  },
+  "techreborn:nichrome_heating_coil": {
+    "displayName": "Nichrome Heating Coil",
+    "texture": "/img/items/nichrome_heating_coil.png",
+    "category": "part"
+  },
+  "techreborn:neutron_reflector": {
+    "displayName": "Neutron Reflector",
+    "texture": "/img/items/neutron_reflector.png",
+    "category": "part"
+  },
+  "techreborn:thick_neutron_reflector": {
+    "displayName": "Thick Neutron Reflector",
+    "texture": "/img/items/thick_neutron_reflector.png",
+    "category": "part"
+  },
+  "techreborn:iridium_neutron_reflector": {
+    "displayName": "Iridium Neutron Reflector",
+    "texture": "/img/items/iridium_neutron_reflector.png",
+    "category": "part"
+  },
+  "techreborn:water_coolant_cell_10k": {
+    "displayName": "10k Water Coolant Cell",
+    "texture": "/img/items/water_coolant_cell_10k.png",
+    "category": "part"
+  },
+  "techreborn:water_coolant_cell_30k": {
+    "displayName": "30k Water Coolant Cell",
+    "texture": "/img/items/water_coolant_cell_30k.png",
+    "category": "part"
+  },
+  "techreborn:water_coolant_cell_60k": {
+    "displayName": "60k Water Coolant Cell",
+    "texture": "/img/items/water_coolant_cell_60k.png",
+    "category": "part"
+  },
+  "techreborn:helium_coolant_cell_60k": {
+    "displayName": "60k Helium Coolant Cell",
+    "texture": "/img/items/helium_coolant_cell_60k.png",
+    "category": "part"
+  },
+  "techreborn:helium_coolant_cell_180k": {
+    "displayName": "180k Helium Coolant Cell",
+    "texture": "/img/items/helium_coolant_cell_180k.png",
+    "category": "part"
+  },
+  "techreborn:helium_coolant_cell_360k": {
+    "displayName": "360k Helium Coolant Cell",
+    "texture": "/img/items/helium_coolant_cell_360k.png",
+    "category": "part"
+  },
+  "techreborn:nak_coolant_cell_60k": {
+    "displayName": "60k NaK Coolant Cell",
+    "texture": "/img/items/nak_coolant_cell_60k.png",
+    "category": "part"
+  },
+  "techreborn:nak_coolant_cell_180k": {
+    "displayName": "180k NaK Coolant Cell",
+    "texture": "/img/items/nak_coolant_cell_180k.png",
+    "category": "part"
+  },
+  "techreborn:nak_coolant_cell_360k": {
+    "displayName": "360k NaK Coolant Cell",
+    "texture": "/img/items/nak_coolant_cell_360k.png",
+    "category": "part"
+  },
+  "techreborn:rubber": {
+    "displayName": "Rubber",
+    "texture": "/img/items/rubber.png",
+    "category": "part"
+  },
+  "techreborn:sap": {
+    "displayName": "Sap",
+    "texture": "/img/items/sap.png",
+    "category": "part"
+  },
+  "techreborn:scrap": {
+    "displayName": "Scrap",
+    "texture": "/img/items/scrap.png",
+    "category": "part"
+  },
+  "techreborn:uu_matter": {
+    "displayName": "UU-Matter",
+    "texture": "/img/items/uu_matter.png",
+    "category": "part"
+  },
+  "techreborn:plantball": {
+    "displayName": "Plantball",
+    "texture": "/img/items/plantball.png",
+    "category": "part"
+  },
+  "techreborn:compressed_plantball": {
+    "displayName": "Compressed Plantball",
+    "texture": "/img/items/compressed_plantball.png",
+    "category": "part"
+  },
+  "techreborn:sponge_piece": {
+    "displayName": "Piece of Sponge",
+    "texture": "/img/items/sponge_piece.png",
+    "category": "part"
+  },
+  "techreborn:template_template": {
+    "displayName": "Template Template",
+    "texture": "/img/items/template_template.png",
+    "category": "part"
+  },
+  "techreborn:synthetic_redstone_crystal": {
+    "displayName": "Synthetic Redstone Crystal",
+    "texture": "/img/items/synthetic_redstone_crystal.png",
+    "category": "part"
+  },
+  "techreborn:bauxite_ore": {
+    "displayName": "Bauxite Ore",
+    "texture": "/img/blocks/bauxite_ore.png",
+    "category": "ore"
+  },
+  "techreborn:cinnabar_ore": {
+    "displayName": "Cinnabar Ore",
+    "texture": "/img/blocks/cinnabar_ore.png",
+    "category": "ore"
+  },
+  "techreborn:galena_ore": {
+    "displayName": "Galena Ore",
+    "texture": "/img/blocks/galena_ore.png",
+    "category": "ore"
+  },
+  "techreborn:iridium_ore": {
+    "displayName": "Iridium Ore",
+    "texture": "/img/blocks/iridium_ore.png",
+    "category": "ore"
+  },
+  "techreborn:lead_ore": {
+    "displayName": "Lead Ore",
+    "texture": "/img/blocks/lead_ore.png",
+    "category": "ore"
+  },
+  "techreborn:peridot_ore": {
+    "displayName": "Peridot Ore",
+    "texture": "/img/blocks/peridot_ore.png",
+    "category": "ore"
+  },
+  "techreborn:pyrite_ore": {
+    "displayName": "Pyrite Ore",
+    "texture": "/img/blocks/pyrite_ore.png",
+    "category": "ore"
+  },
+  "techreborn:ruby_ore": {
+    "displayName": "Ruby Ore",
+    "texture": "/img/blocks/ruby_ore.png",
+    "category": "ore"
+  },
+  "techreborn:sapphire_ore": {
+    "displayName": "Sapphire Ore",
+    "texture": "/img/blocks/sapphire_ore.png",
+    "category": "ore"
+  },
+  "techreborn:sheldonite_ore": {
+    "displayName": "Sheldonite Ore",
+    "texture": "/img/blocks/sheldonite_ore.png",
+    "category": "ore"
+  },
+  "techreborn:silver_ore": {
+    "displayName": "Silver Ore",
+    "texture": "/img/blocks/silver_ore.png",
+    "category": "ore"
+  },
+  "techreborn:sodalite_ore": {
+    "displayName": "Sodalite Ore",
+    "texture": "/img/blocks/sodalite_ore.png",
+    "category": "ore"
+  },
+  "techreborn:sphalerite_ore": {
+    "displayName": "Sphalerite Ore",
+    "texture": "/img/blocks/sphalerite_ore.png",
+    "category": "ore"
+  },
+  "techreborn:tin_ore": {
+    "displayName": "Tin Ore",
+    "texture": "/img/blocks/tin_ore.png",
+    "category": "ore"
+  },
+  "techreborn:tungsten_ore": {
+    "displayName": "Tungsten Ore",
+    "texture": "/img/blocks/tungsten_ore.png",
+    "category": "ore"
+  },
+  "techreborn:deepslate_bauxite_ore": {
+    "displayName": "Deepslate Bauxite Ore",
+    "texture": "/img/blocks/deepslate_bauxite_ore.png",
+    "category": "ore"
+  },
+  "techreborn:deepslate_galena_ore": {
+    "displayName": "Deepslate Galena Ore",
+    "texture": "/img/blocks/deepslate_galena_ore.png",
+    "category": "ore"
+  },
+  "techreborn:deepslate_iridium_ore": {
+    "displayName": "Deepslate Iridium Ore",
+    "texture": "/img/blocks/deepslate_iridium_ore.png",
+    "category": "ore"
+  },
+  "techreborn:deepslate_lead_ore": {
+    "displayName": "Deepslate Lead Ore",
+    "texture": "/img/blocks/deepslate_lead_ore.png",
+    "category": "ore"
+  },
+  "techreborn:deepslate_peridot_ore": {
+    "displayName": "Deepslate Peridot Ore",
+    "texture": "/img/blocks/deepslate_peridot_ore.png",
+    "category": "ore"
+  },
+  "techreborn:deepslate_ruby_ore": {
+    "displayName": "Deepslate Ruby Ore",
+    "texture": "/img/blocks/deepslate_ruby_ore.png",
+    "category": "ore"
+  },
+  "techreborn:deepslate_sapphire_ore": {
+    "displayName": "Deepslate Sapphire Ore",
+    "texture": "/img/blocks/deepslate_sapphire_ore.png",
+    "category": "ore"
+  },
+  "techreborn:deepslate_sheldonite_ore": {
+    "displayName": "Deepslate Sheldonite Ore",
+    "texture": "/img/blocks/deepslate_sheldonite_ore.png",
+    "category": "ore"
+  },
+  "techreborn:deepslate_silver_ore": {
+    "displayName": "Deepslate Silver Ore",
+    "texture": "/img/blocks/deepslate_silver_ore.png",
+    "category": "ore"
+  },
+  "techreborn:deepslate_sodalite_ore": {
+    "displayName": "Deepslate Sodalite Ore",
+    "texture": "/img/blocks/deepslate_sodalite_ore.png",
+    "category": "ore"
+  },
+  "techreborn:deepslate_tin_ore": {
+    "displayName": "Deepslate Tin Ore",
+    "texture": "/img/blocks/deepslate_tin_ore.png",
+    "category": "ore"
+  },
+  "techreborn:deepslate_tungsten_ore": {
+    "displayName": "Deepslate Tungsten Ore",
+    "texture": "/img/blocks/deepslate_tungsten_ore.png",
+    "category": "ore"
+  },
+  "techreborn:raw_iridium": {
+    "displayName": "Raw Iridium",
+    "texture": "/img/items/raw_iridium.png",
+    "category": "raw_metal"
+  },
+  "techreborn:raw_lead": {
+    "displayName": "Raw Lead",
+    "texture": "/img/items/raw_lead.png",
+    "category": "raw_metal"
+  },
+  "techreborn:raw_silver": {
+    "displayName": "Raw Silver",
+    "texture": "/img/items/raw_silver.png",
+    "category": "raw_metal"
+  },
+  "techreborn:raw_tin": {
+    "displayName": "Raw Tin",
+    "texture": "/img/items/raw_tin.png",
+    "category": "raw_metal"
+  },
+  "techreborn:raw_tungsten": {
+    "displayName": "Raw Tungsten",
+    "texture": "/img/items/raw_tungsten.png",
+    "category": "raw_metal"
+  },
+  "techreborn:advanced_alloy_storage_block": {
+    "displayName": "Block of Advanced Alloy",
+    "texture": "/img/blocks/advanced_alloy_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:aluminum_storage_block": {
+    "displayName": "Block of Aluminium",
+    "texture": "/img/blocks/aluminum_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:brass_storage_block": {
+    "displayName": "Block of Brass",
+    "texture": "/img/blocks/brass_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:bronze_storage_block": {
+    "displayName": "Block of Bronze",
+    "texture": "/img/blocks/bronze_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:chrome_storage_block": {
+    "displayName": "Block of Chromium",
+    "texture": "/img/blocks/chrome_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:electrum_storage_block": {
+    "displayName": "Block of Electrum",
+    "texture": "/img/blocks/electrum_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:hot_tungstensteel_storage_block": {
+    "displayName": "Block of Hot Tungstensteel",
+    "texture": "/img/blocks/hot_tungstensteel_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:invar_storage_block": {
+    "displayName": "Block of Invar",
+    "texture": "/img/blocks/invar_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:iridium_storage_block": {
+    "displayName": "Block of Iridium",
+    "texture": "/img/blocks/iridium_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:iridium_reinforced_stone_storage_block": {
+    "displayName": "Iridium Reinforced Stone",
+    "texture": "/img/blocks/iridium_reinforced_stone_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:iridium_reinforced_tungstensteel_storage_block": {
+    "displayName": "Iridium Reinforced Tungstensteel Block",
+    "texture": "/img/blocks/iridium_reinforced_tungstensteel_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:lead_storage_block": {
+    "displayName": "Block of Lead",
+    "texture": "/img/blocks/lead_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:nickel_storage_block": {
+    "displayName": "Block of Nickel",
+    "texture": "/img/blocks/nickel_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:peridot_storage_block": {
+    "displayName": "Block of Peridot",
+    "texture": "/img/blocks/peridot_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:platinum_storage_block": {
+    "displayName": "Block of Platinum",
+    "texture": "/img/blocks/platinum_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:raw_iridium_storage_block": {
+    "displayName": "Block of Raw Iridium",
+    "texture": "/img/blocks/raw_iridium_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:raw_lead_storage_block": {
+    "displayName": "Block of Raw Lead",
+    "texture": "/img/blocks/raw_lead_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:raw_silver_storage_block": {
+    "displayName": "Block of Raw Silver",
+    "texture": "/img/blocks/raw_silver_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:raw_tin_storage_block": {
+    "displayName": "Block of Raw Tin",
+    "texture": "/img/blocks/raw_tin_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:raw_tungsten_storage_block": {
+    "displayName": "Block of Raw Tungsten",
+    "texture": "/img/blocks/raw_tungsten_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:red_garnet_storage_block": {
+    "displayName": "Block of Red Garnet",
+    "texture": "/img/blocks/red_garnet_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:refined_iron_storage_block": {
+    "displayName": "Block of Refined Iron",
+    "texture": "/img/blocks/refined_iron_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:ruby_storage_block": {
+    "displayName": "Block of Ruby",
+    "texture": "/img/blocks/ruby_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:sapphire_storage_block": {
+    "displayName": "Block of Sapphire",
+    "texture": "/img/blocks/sapphire_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:silver_storage_block": {
+    "displayName": "Block of Silver",
+    "texture": "/img/blocks/silver_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:steel_storage_block": {
+    "displayName": "Block of Steel",
+    "texture": "/img/blocks/steel_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:tin_storage_block": {
+    "displayName": "Block of Tin",
+    "texture": "/img/blocks/tin_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:titanium_storage_block": {
+    "displayName": "Block of Titanium",
+    "texture": "/img/blocks/titanium_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:tungsten_storage_block": {
+    "displayName": "Block of Tungsten",
+    "texture": "/img/blocks/tungsten_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:tungstensteel_storage_block": {
+    "displayName": "Block of Tungstensteel",
+    "texture": "/img/blocks/tungstensteel_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:yellow_garnet_storage_block": {
+    "displayName": "Block of Yellow Garnet",
+    "texture": "/img/blocks/yellow_garnet_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:zinc_storage_block": {
+    "displayName": "Block of Zinc",
+    "texture": "/img/blocks/zinc_storage_block.png",
+    "category": "storage_block"
+  },
+  "techreborn:copper_cable": {
+    "displayName": "Copper Cable",
+    "texture": "/img/blocks/copper_cable.png",
+    "category": "cable"
+  },
+  "techreborn:tin_cable": {
+    "displayName": "Tin Cable",
+    "texture": "/img/blocks/tin_cable.png",
+    "category": "cable"
+  },
+  "techreborn:gold_cable": {
+    "displayName": "Gold Cable",
+    "texture": "/img/blocks/gold_cable.png",
+    "category": "cable"
+  },
+  "techreborn:hv_cable": {
+    "displayName": "HV Cable",
+    "texture": "/img/blocks/hv_cable.png",
+    "category": "cable"
+  },
+  "techreborn:glassfiber_cable": {
+    "displayName": "Glass Fiber Cable",
+    "texture": "/img/blocks/glassfiber_cable.png",
+    "category": "cable"
+  },
+  "techreborn:insulated_copper_cable": {
+    "displayName": "Insulated Copper Cable",
+    "texture": "/img/items/insulated_copper_cable.png",
+    "category": "cable"
+  },
+  "techreborn:insulated_gold_cable": {
+    "displayName": "Insulated Gold Cable",
+    "texture": "/img/items/insulated_gold_cable.png",
+    "category": "cable"
+  },
+  "techreborn:insulated_hv_cable": {
+    "displayName": "Insulated HV Cable",
+    "texture": "/img/items/insulated_hv_cable.png",
+    "category": "cable"
+  },
+  "techreborn:superconductor_cable": {
+    "displayName": "Superconductor Cable",
+    "texture": "/img/blocks/superconductor_cable.png",
+    "category": "cable"
+  },
+  "techreborn:buffer_storage_unit": {
+    "displayName": "Buffer Storage Unit",
+    "texture": "/img/items/buffer_storage_unit.png",
+    "category": "storage_unit"
+  },
+  "techreborn:crude_storage_unit": {
+    "displayName": "Crude Storage Unit",
+    "texture": "/img/items/crude_storage_unit.png",
+    "category": "storage_unit"
+  },
+  "techreborn:basic_storage_unit": {
+    "displayName": "Basic Storage Unit",
+    "texture": "/img/items/basic_storage_unit.png",
+    "category": "storage_unit"
+  },
+  "techreborn:advanced_storage_unit": {
+    "displayName": "Advanced Storage Unit",
+    "texture": "/img/items/advanced_storage_unit.png",
+    "category": "storage_unit"
+  },
+  "techreborn:industrial_storage_unit": {
+    "displayName": "Industrial Storage Unit",
+    "texture": "/img/items/industrial_storage_unit.png",
+    "category": "storage_unit"
+  },
+  "techreborn:quantum_storage_unit": {
+    "displayName": "Quantum Storage Unit",
+    "texture": "/img/items/quantum_storage_unit.png",
+    "category": "storage_unit"
+  },
+  "techreborn:creative_storage_unit": {
+    "displayName": "Creative Storage Unit",
+    "texture": "/img/items/creative_storage_unit.png",
+    "category": "storage_unit"
+  },
+  "techreborn:basic_tank": {
+    "displayName": "Basic Tank",
+    "texture": "/img/items/basic_tank.png",
+    "category": "tank_unit"
+  },
+  "techreborn:advanced_tank": {
+    "displayName": "Advanced Tank",
+    "texture": "/img/items/advanced_tank.png",
+    "category": "tank_unit"
+  },
+  "techreborn:industrial_tank": {
+    "displayName": "Industrial Tank",
+    "texture": "/img/items/industrial_tank.png",
+    "category": "tank_unit"
+  },
+  "techreborn:quantum_tank": {
+    "displayName": "Quantum Tank",
+    "texture": "/img/items/quantum_tank.png",
+    "category": "tank_unit"
+  },
+  "techreborn:creative_tank": {
+    "displayName": "Creative Tank",
+    "texture": "/img/items/creative_tank.png",
+    "category": "tank_unit"
+  },
+  "techreborn:basic_solar_panel": {
+    "displayName": "Basic Solar Panel",
+    "texture": "/img/items/basic_solar_panel.png",
+    "category": "solar_panel"
+  },
+  "techreborn:advanced_solar_panel": {
+    "displayName": "Advanced Solar Panel",
+    "texture": "/img/items/advanced_solar_panel.png",
+    "category": "solar_panel"
+  },
+  "techreborn:industrial_solar_panel": {
+    "displayName": "Industrial Solar Panel",
+    "texture": "/img/items/industrial_solar_panel.png",
+    "category": "solar_panel"
+  },
+  "techreborn:ultimate_solar_panel": {
+    "displayName": "Ultimate Solar Panel",
+    "texture": "/img/items/ultimate_solar_panel.png",
+    "category": "solar_panel"
+  },
+  "techreborn:quantum_solar_panel": {
+    "displayName": "Quantum Solar Panel",
+    "texture": "/img/items/quantum_solar_panel.png",
+    "category": "solar_panel"
+  },
+  "techreborn:creative_solar_panel": {
+    "displayName": "Creative Solar Panel",
+    "texture": "/img/items/creative_solar_panel.png",
+    "category": "solar_panel"
+  },
+  "techreborn:basic": {
+    "displayName": "Basic",
+    "texture": "/img/items/basic.png",
+    "category": "machine"
+  },
+  "techreborn:advanced": {
+    "displayName": "Advanced",
+    "texture": "/img/items/advanced.png",
+    "category": "machine"
+  },
+  "techreborn:industrial": {
+    "displayName": "Industrial",
+    "texture": "/img/items/industrial.png",
+    "category": "machine"
+  },
+  "techreborn:overclocker_upgrade": {
+    "displayName": "Overclocker Upgrade",
+    "texture": "/img/items/overclocker_upgrade.png",
+    "category": "upgrade"
+  },
+  "techreborn:transformer_upgrade": {
+    "displayName": "Transformer Upgrade",
+    "texture": "/img/items/transformer_upgrade.png",
+    "category": "upgrade"
+  },
+  "techreborn:energy_storage_upgrade": {
+    "displayName": "Energy Storage Upgrade",
+    "texture": "/img/items/energy_storage_upgrade.png",
+    "category": "upgrade"
+  },
+  "techreborn:superconductor_upgrade": {
+    "displayName": "Superconductor Upgrade",
+    "texture": "/img/items/superconductor_upgrade.png",
+    "category": "upgrade"
+  },
+  "techreborn:muffler_upgrade": {
+    "displayName": "Muffler Upgrade",
+    "texture": "/img/items/muffler_upgrade.png",
+    "category": "upgrade"
+  }
+}
