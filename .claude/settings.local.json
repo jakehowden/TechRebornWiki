@@ -22,7 +22,24 @@
       "Bash(gh api *)",
       "Bash(gh run *)",
       "Bash(gh workflow *)",
-      "Bash(git mv *)"
+      "Bash(git mv *)",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\jakeh\\\\Documents\\\\GitHub\" -Directory 2>&1 | ForEach-Object { $_.Name })",
+      "PowerShell(git *)",
+      "Bash(git *)",
+      "Bash(java --version)",
+      "Bash(./gradlew runDatagen)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); items={k:v for k,v in d.items\\(\\) if k.startswith\\('item.techreborn'\\) or k.startswith\\('block.techreborn'\\)}; print\\(len\\(items\\)\\); print\\(list\\(items.items\\(\\)\\)[:5]\\)\")",
+      "Bash(node *)",
+      "Bash(xargs -I{} sh -c 'echo \"=== {} ===\" && cat \"{}\"')",
+      "Bash(xargs -I{} cat \"C:/Users/jakeh/Documents/GitHub/TechReborn/src/main/resources/data/techreborn/recipes/crafting_table/{}\")",
+      "Read(//c/Program Files/**)",
+      "Read(//c/Program Files/Eclipse Adoptium//**)",
+      "Read(//c/Program Files/Microsoft//**)",
+      "Bash(reg query *)",
+      "Bash(JAVA_HOME=\"C:/Program Files/Eclipse Adoptium/jdk-17.0.18.8-hotspot\" PATH=\"C:/Program Files/Eclipse Adoptium/jdk-17.0.18.8-hotspot/bin:$PATH\" java *)",
+      "Bash(/c/Program Files/Eclipse Adoptium/jdk-17.0.18.8-hotspot/bin/java *)",
+      "Bash(JAVA_HOME=\"C:\\\\\\\\Program Files\\\\\\\\Eclipse Adoptium\\\\\\\\jdk-17.0.18.8-hotspot\" \"/c/Program Files/Eclipse Adoptium/jdk-17.0.18.8-hotspot/bin/java\" -jar \"C:/Users/jakeh/Documents/GitHub/TechReborn/gradle/wrapper/gradle-wrapper.jar\" runDatagen)",
+      "Bash(JAVA_HOME=\"C:\\\\\\\\Program Files\\\\\\\\Eclipse Adoptium\\\\\\\\jdk-17.0.18.8-hotspot\" ./gradlew runDatagen)"
     ]
   }
 }

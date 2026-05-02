@@ -8,6 +8,8 @@ import RecipeFromData from '@site/src/components/RecipeFromData';
 import MachineStats from '@site/src/components/MachineStats';
 import ItemIcon from '@site/src/components/ItemIcon';
 import MachineRecipeList from '@site/src/components/MachineRecipeList';
+import MultiblockShape from '@site/src/components/MultiblockShape';
+import multiblocksJson from '@site/src/data/multiblocks.json';
 
 <MachineStats power={128} buffer={10000} tier="Medium" inputSlots={1} outputSlots={4} />
 
@@ -15,6 +17,9 @@ import MachineRecipeList from '@site/src/components/MachineRecipeList';
 
 ## Overview
 The Distillation Tower processes raw fluids into advanced fuels and chemicals. For instance, pumping Oil into the tower yields Diesel, Sulfuric Acid, and other byproducts.
+
+## Multiblock Structure
+<MultiblockShape data={multiblocksJson["distillation_tower"]} />
 
 ## Recipe
 <RecipeFromData id="techreborn:crafting/distillation_tower" />

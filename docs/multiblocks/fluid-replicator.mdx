@@ -7,6 +7,8 @@ sidebar_position: 3
 import RecipeFromData from '@site/src/components/RecipeFromData';
 import MachineStats from '@site/src/components/MachineStats';
 import ItemIcon from '@site/src/components/ItemIcon';
+import MultiblockShape from '@site/src/components/MultiblockShape';
+import multiblocksJson from '@site/src/data/multiblocks.json';
 
 <MachineStats power={256} buffer={400000} tier="High" />
 
@@ -14,6 +16,9 @@ import ItemIcon from '@site/src/components/ItemIcon';
 
 ## Overview
 The Fluid Replicator is a late-game machine that consumes UU-Matter and massive amounts of energy to artificially create fluids.
+
+## Multiblock Structure
+<MultiblockShape data={multiblocksJson["fluid_replicator"]} />
 
 ## Recipe
 <RecipeFromData id="techreborn:crafting/fluid_replicator" />

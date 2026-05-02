@@ -8,6 +8,8 @@ import RecipeFromData from '@site/src/components/RecipeFromData';
 import MachineStats from '@site/src/components/MachineStats';
 import ItemIcon from '@site/src/components/ItemIcon';
 import MachineRecipeList from '@site/src/components/MachineRecipeList';
+import MultiblockShape from '@site/src/components/MultiblockShape';
+import multiblocksJson from '@site/src/data/multiblocks.json';
 
 <MachineStats power={128} buffer={10000} tier="Medium" inputSlots={2} outputSlots={4} />
 
@@ -15,6 +17,9 @@ import MachineRecipeList from '@site/src/components/MachineRecipeList';
 
 ## Overview
 The Industrial Grinder is a significant upgrade over the basic Grinder. By introducing a fluid (like Water or Sodium Persulfate) during the grinding process, it massively increases your ore yields and can produce secondary byproduct dusts.
+
+## Multiblock Structure
+<MultiblockShape data={multiblocksJson["industrial_grinder"]} />
 
 ## Recipe
 <RecipeFromData id="techreborn:crafting/industrial_grinder" />

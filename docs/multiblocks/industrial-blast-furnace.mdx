@@ -1,0 +1,34 @@
+---
+title: Industrial Blast Furnace
+description: A high-heat multiblock furnace required to smelt advanced materials.
+sidebar_position: 1
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+import MachineRecipeList from '@site/src/components/MachineRecipeList';
+import MultiblockShape from '@site/src/components/MultiblockShape';
+import multiblocksJson from '@site/src/data/multiblocks.json';
+
+<MachineStats power={128} buffer={10000} tier="Medium" inputSlots={2} outputSlots={2} />
+
+<ItemIcon id="techreborn:industrial_blast_furnace" size={64} />
+
+## Overview
+The Industrial Blast Furnace (IBF) is a critical mid-to-late game multiblock. It is used to smelt advanced materials like Steel, Titanium, and Tungstensteel. The recipes it accepts depend on its maximum heat, which is determined by the tier of machine casings and the presence of lava used in its structure.
+
+## Multiblock Structure
+<MultiblockShape data={multiblocksJson["industrial_blast_furnace"]} />
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/industrial_blast_furnace" />
+
+## Behavior
+- **Input:** 2 Item Slots
+- **Output:** 2 Item Slots
+- **Power:** 128 E/t (Medium Voltage)
+
+## Recipes accepted
+
+<MachineRecipeList machine="blast_furnace" />
