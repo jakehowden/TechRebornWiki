@@ -1,0 +1,48 @@
+---
+title: Cables & Transformers
+sidebar_position: 2
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+
+# Cables & Transformers
+
+## Cables
+
+Cables transport energy between machines and generators. Each type of cable has a maximum transfer rate (E/t) and a corresponding tier. 
+
+### Bare vs Insulated
+Some cables come in two variants: bare and insulated. 
+* **Bare Cables:** Can shock you if touched, and lose energy when placed in the rain.
+* **Insulated Cables:** Safe to touch and do not lose energy in the rain.
+
+### Cable Stats
+
+| Cable | Insulated? | Transfer Rate (E/t) | Tier |
+| --- | --- | --- | --- |
+| Tin | No | 32 | Low |
+| Copper | No | 128 | Medium |
+| Insulated Copper | Yes | 128 | Medium |
+| Gold | No | 512 | High |
+| Insulated Gold | Yes | 512 | High |
+| HV | No | 2,048 | Extreme |
+| Insulated HV | Yes | 2,048 | Extreme |
+| Glassfiber | Yes | 8,192 | Insane |
+| Superconductor | Yes | Infinite | Infinite |
+
+### Crafting Insulated Cable
+
+Insulated cables require Rubber. The basic rubber chain involves:
+1. Finding a Rubber Tree and using a Treetap to harvest Sap.
+2. Processing the Sap in an Extractor to get Rubber.
+3. Combining Rubber with bare cable.
+
+<RecipeFromData id="techreborn:crafting/insulated_copper_cable" />
+
+*(See the <!-- TODO link: world/rubber-tree -->Rubber Tree<!-- /TODO --> and <!-- TODO link: tools-armor/tools/treetap -->Treetap<!-- /TODO --> pages for more info).*
+
+## Transformers
+
+To connect machines of different tiers safely (e.g. hooking a Low Voltage machine up to a Medium Voltage generator), you must use a Transformer. 
+
+Transformers can **step down** voltage (take high voltage in and send low voltage out) or **step up** voltage (take low voltage in and send high voltage out). By default, they step down.

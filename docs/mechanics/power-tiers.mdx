@@ -1,0 +1,27 @@
+---
+title: Power Tiers
+sidebar_position: 1
+---
+
+# Power Tiers
+
+Tech Reborn uses a tiered energy system. Machines, generators, and cables all operate within specific energy tiers, measured in Energy per tick (E/t). 
+
+If you send too much power into a machine that isn't rated for it, **it will explode**. This behavior is configurable in `techreborn.cfg`, but explosions are enabled by default.
+
+## The Tiers
+
+| Tier | Name | Max Transfer (E/t) |
+| --- | --- | --- |
+| 0 | Micro | 8 |
+| 1 | Low (LV) | 32 |
+| 2 | Medium (MV) | 128 |
+| 3 | High (HV) | 512 |
+| 4 | Extreme (EV) | 2,048 |
+| 5 | Insane (IV) | 8,192 |
+
+To move power between tiers safely, you must use Transformers.
+
+## Cables
+
+Cables are also restricted by these tiers. If a cable attempts to transfer more E/t than its tier supports, it will vaporize or melt. See the [Cables & Transformers](./cables-and-transformers) page for details on which cables correspond to which tiers.
