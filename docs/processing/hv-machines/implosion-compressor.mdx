@@ -1,0 +1,29 @@
+---
+title: Implosion Compressor
+description: Uses explosives to compress dusts into gems.
+sidebar_position: 1
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+import MachineRecipeList from '@site/src/components/MachineRecipeList';
+
+<MachineStats power={64} buffer={64000} tier="Medium" inputSlots={2} outputSlots={2} />
+
+<ItemIcon id="techreborn:implosion_compressor" size={64} />
+
+## Overview
+The Implosion Compressor is an advanced machine used to forcefully compress dusts into high-density materials, such as turning Iridium Alloy or Diamond Dust into their solid forms using TNT or Dynamite.
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/implosion_compressor" />
+
+## Behavior
+- **Input:** 2 Item Slots (Material + Explosive)
+- **Output:** Up to 2 Item Slots (Primary Product + Byproduct)
+- **Power:** 64 E/t 
+
+## Recipes accepted
+
+<MachineRecipeList machine="implosion_compressor" />

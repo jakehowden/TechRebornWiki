@@ -1,0 +1,29 @@
+---
+title: Industrial Electrolyzer
+description: Separates compounds and fluids into their base elements.
+sidebar_position: 1
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+import MachineRecipeList from '@site/src/components/MachineRecipeList';
+
+<MachineStats power={128} buffer={10000} tier="Medium" inputSlots={2} outputSlots={4} />
+
+<ItemIcon id="techreborn:industrial_electrolyzer" size={64} />
+
+## Overview
+The Industrial Electrolyzer is a core Medium Voltage (MV) machine that breaks materials down into their constituent elements. For instance, it can process Water into Hydrogen and Oxygen cells.
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/industrial_electrolyzer" />
+
+## Behavior
+- **Input:** Up to 2 Item Slots, capable of taking fluids from cells.
+- **Output:** Up to 4 Item Slots for various byproducts.
+- **Power:** 128 E/t (from Medium Voltage)
+
+## Recipes accepted
+
+<MachineRecipeList machine="industrial_electrolyzer" />

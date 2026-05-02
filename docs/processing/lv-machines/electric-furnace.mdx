@@ -1,0 +1,27 @@
+---
+title: Electric Furnace
+description: A fast furnace powered by electricity.
+sidebar_position: 4
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+
+<MachineStats power={32} buffer={1000} tier="Low" inputSlots={1} outputSlots={1} />
+
+<ItemIcon id="techreborn:electric_furnace" size={64} />
+
+## Overview
+The Electric Furnace functions exactly like a vanilla furnace but operates faster and uses LV power instead of solid fuel.
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/electric_furnace" />
+
+## Behavior
+- **Input:** 1 Item Slot
+- **Output:** 1 Item Slot
+- **Power:** 32 E/t (from Low Voltage)
+
+## Recipes accepted
+*The Electric Furnace accepts all standard Minecraft smelting recipes.*

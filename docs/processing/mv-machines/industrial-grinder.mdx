@@ -1,0 +1,32 @@
+---
+title: Industrial Grinder
+description: An upgraded grinder that processes ores with fluid to maximize yield.
+sidebar_position: 5
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+import MachineRecipeList from '@site/src/components/MachineRecipeList';
+
+<MachineStats power={128} buffer={10000} tier="Medium" inputSlots={2} outputSlots={4} />
+
+<ItemIcon id="techreborn:industrial_grinder" size={64} />
+
+## Overview
+The Industrial Grinder is a significant upgrade over the basic Grinder. By introducing a fluid (like Water or Sodium Persulfate) during the grinding process, it massively increases your ore yields and can produce secondary byproduct dusts.
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/industrial_grinder" />
+
+## Behavior
+- **Input:** 1 Item Slot, 1 Fluid Input
+- **Output:** Up to 4 Item Slots for primary dusts and secondary byproducts.
+- **Power:** 128 E/t (from Medium Voltage)
+
+## Recipes accepted
+
+<MachineRecipeList machine="industrial_grinder" />
+
+## See also
+- [Grinder](../lv-machines/grinder)

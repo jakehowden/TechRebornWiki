@@ -1,0 +1,30 @@
+---
+title: Solid Canning Machine
+description: Cans food and fuels into cells or containers.
+sidebar_position: 10
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+import MachineRecipeList from '@site/src/components/MachineRecipeList';
+
+<MachineStats power={32} buffer={1000} tier="Low" inputSlots={2} outputSlots={1} />
+
+<ItemIcon id="techreborn:solid_canning_machine" size={64} />
+
+## Overview
+The Solid Canning Machine is used to place items like food or specific resources into tin cans or empty cells. It is essential for packaging certain advanced materials.
+
+## Recipe
+<!-- VERIFY: Recipe might not be present in recipes.json -->
+*Recipe may be unavailable or uncraftable in standard 1.20.1 distributions.*
+
+## Behavior
+- **Input:** 2 Item Slots (Container + Contents)
+- **Output:** 1 Item Slot (Packaged item)
+- **Power:** 32 E/t (from Low Voltage)
+
+## Recipes accepted
+
+<MachineRecipeList machine="solid_canning_machine" />
