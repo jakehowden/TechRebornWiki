@@ -1,0 +1,28 @@
+---
+title: Solid Fuel Generator
+description: A basic generator that burns solid fuels to produce energy.
+sidebar_position: 1
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+
+<MachineStats power={32} buffer={10000} tier="Low" />
+
+<ItemIcon id="techreborn:solid_fuel_generator" size={64} />
+
+## Overview
+The Solid Fuel Generator is typically the first power source you build. It burns solid items like Coal, Wood, and Charcoal to generate Low Voltage (LV) energy.
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/solid_fuel_generator" />
+
+## Behavior
+- Input: Solid fuels (Coal, Wood, Charcoal, etc.).
+- Output: Energy (E).
+- Configurable values: `solidFuelGeneratorMaxOutput`, `solidFuelGeneratorMaxEnergy`, `solidFuelGeneratorOutputAmount`
+
+## See also
+- [Electric Furnace](../../processing/lv-machines/electric-furnace)
+- [Cables & Transformers](../../mechanics/cables-and-transformers)

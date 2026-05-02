@@ -1,0 +1,20 @@
+---
+title: LV Transformer
+description: Steps down Medium Voltage (MV) to Low Voltage (LV).
+sidebar_position: 1
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import ItemIcon from '@site/src/components/ItemIcon';
+
+<ItemIcon id="techreborn:lv_transformer" size={64} />
+
+## Overview
+The LV Transformer is used to safely transfer energy between a Medium Voltage (MV) network and a Low Voltage (LV) network. 
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/lv_transformer" />
+
+## Behavior
+- **Default Mode (Step Down):** Accepts up to 128 E/t (MV) into the dotted face, and outputs up to 32 E/t (LV) from all other faces.
+- **Inverted Mode (Step Up):** When inverted with a Wrench or Redstone signal, it accepts LV into any face and outputs MV out of the dotted face.

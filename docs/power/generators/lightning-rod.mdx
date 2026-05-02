@@ -1,0 +1,24 @@
+---
+title: Lightning Rod
+description: Generates huge bursts of energy when struck by lightning.
+sidebar_position: 15
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+
+<MachineStats power={8192} buffer={100000000} tier="Insane" />
+
+<ItemIcon id="techreborn:lightning_rod" size={64} />
+
+## Overview
+The Lightning Rod does not generate energy passively. Instead, it acts as a target for lightning strikes during thunderstorms. When struck, it instantly generates a massive burst of Insane Voltage (IV) energy.
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/lightning_rod" />
+
+## Behavior
+- Input: Lightning strikes.
+- Output: Burst Energy (E).
+- Special: Requires robust storage capable of accepting a sudden, massive influx of power without exploding.

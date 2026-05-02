@@ -1,0 +1,25 @@
+---
+title: Ultimate Solar Panel
+description: An exceptionally powerful High Voltage (HV) solar panel.
+sidebar_position: 7
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+
+<MachineStats power={512} buffer={640000} tier="High" />
+
+<ItemIcon id="techreborn:ultimate_solar_panel" size={64} />
+
+## Overview
+The Ultimate Solar Panel is a top-tier energy generator that provides a massive amount of High Voltage (HV) energy passively. 
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/ultimate_solar_panel" />
+<RecipeFromData id="techreborn:crafting/ultimate_solar_panel_alt" />
+
+## Behavior
+- Input: Daylight/Nighttime (must have clear view of the sky).
+- Output: Energy (E).
+- Configurable values: `ultimateGenerationRateD`, `ultimateGenerationRateN`

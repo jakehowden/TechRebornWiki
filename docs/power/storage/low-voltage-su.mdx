@@ -1,0 +1,24 @@
+---
+title: Low Voltage SU
+description: Basic Low Voltage (LV) energy storage.
+sidebar_position: 1
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+
+<MachineStats power={32} buffer={40000} tier="Low" />
+
+<ItemIcon id="techreborn:low_voltage_su" size={64} />
+
+## Overview
+The Low Voltage SU (Storage Unit), formerly known as the BatBox, is your first tier of energy storage. It can store up to 40,000 E and output at a rate of 32 E/t.
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/low_voltage_su" />
+
+## Behavior
+- Input: Receives energy up to 32 E/t.
+- Output: Emits energy up to 32 E/t.
+- Special: Wrenching it allows you to rotate the output face.

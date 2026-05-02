@@ -1,0 +1,20 @@
+---
+title: HV Transformer
+description: Steps down Extreme Voltage (EV) to High Voltage (HV).
+sidebar_position: 3
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import ItemIcon from '@site/src/components/ItemIcon';
+
+<ItemIcon id="techreborn:hv_transformer" size={64} />
+
+## Overview
+The HV Transformer is used to safely transfer energy between an Extreme Voltage (EV) network and a High Voltage (HV) network.
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/hv_transformer" />
+
+## Behavior
+- **Default Mode (Step Down):** Accepts up to 2048 E/t (EV) into the dotted face, and outputs up to 512 E/t (HV) from all other faces.
+- **Inverted Mode (Step Up):** When inverted with a Wrench or Redstone signal, it accepts HV into any face and outputs EV out of the dotted face.

@@ -1,0 +1,23 @@
+---
+title: Dragon Egg Syphon
+description: Syphons energy from a Dragon Egg.
+sidebar_position: 16
+---
+
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+
+<MachineStats power={128} buffer={1000} tier="Medium" />
+
+<ItemIcon id="techreborn:dragon_egg_syphon" size={64} />
+
+## Overview
+The Dragon Egg Syphon passively generates Medium Voltage (MV) energy when a Dragon Egg is placed on top of it. It requires no fuel, making it a very valuable mid-game passive generator.
+
+## Recipe
+*Check JEI for the exact recipe if enabled in your modpack.*
+
+## Behavior
+- Input: Adjacent Dragon Egg.
+- Output: Energy (E).
+- Configurable values: `dragonEggSyphonMaxOutput`, `dragonEggSyphonMaxEnergy`, `dragonEggSyphonEnergyPerTick`

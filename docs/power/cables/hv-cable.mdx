@@ -1,0 +1,38 @@
+---
+title: HV Cable
+description: An Extreme Voltage (EV) cable, available in uninsulated and insulated variants.
+sidebar_position: 8
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import ItemIcon from '@site/src/components/ItemIcon';
+
+## Overview
+Despite its name ("HV" Cable), the HV Cable is actually used for Extreme Voltage (EV) networks. It is crafted from Refined Iron.
+
+<Tabs>
+  <TabItem value="insulated" label="Insulated HV Cable" default>
+    <ItemIcon id="techreborn:insulated_hv_cable" size={64} />
+
+    ## Recipe
+    <RecipeFromData id="techreborn:crafting/insulated_hv_cable" />
+
+    ## Behavior
+    - **Tier:** Extreme (EV)
+    - **Transfer Rate:** up to 2048 E/t
+    - **Electrocution Hazard:** No
+  </TabItem>
+  <TabItem value="bare" label="Uninsulated HV Cable">
+    <ItemIcon id="techreborn:hv_cable" size={64} />
+
+    ## Recipe
+    <RecipeFromData id="techreborn:crafting/hv_cable" />
+
+    ## Behavior
+    - **Tier:** Extreme (EV)
+    - **Transfer Rate:** up to 2048 E/t
+    - **Electrocution Hazard:** Yes
+  </TabItem>
+</Tabs>

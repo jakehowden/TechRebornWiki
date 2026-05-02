@@ -1,0 +1,38 @@
+---
+title: Copper Cable
+description: A Medium Voltage (MV) cable, available in uninsulated and insulated variants.
+sidebar_position: 6
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import ItemIcon from '@site/src/components/ItemIcon';
+
+## Overview
+The Copper Cable is the standard cable for Medium Voltage (MV) networks. You should insulate it with Rubber to prevent electrocution and energy loss in the rain.
+
+<Tabs>
+  <TabItem value="insulated" label="Insulated Copper Cable" default>
+    <ItemIcon id="techreborn:insulated_copper_cable" size={64} />
+
+    ## Recipe
+    <RecipeFromData id="techreborn:crafting/insulated_copper_cable" />
+
+    ## Behavior
+    - **Tier:** Medium (MV)
+    - **Transfer Rate:** up to 128 E/t
+    - **Electrocution Hazard:** No
+  </TabItem>
+  <TabItem value="bare" label="Uninsulated Copper Cable">
+    <ItemIcon id="techreborn:copper_cable" size={64} />
+
+    ## Recipe
+    <RecipeFromData id="techreborn:crafting/copper_cable" />
+
+    ## Behavior
+    - **Tier:** Medium (MV)
+    - **Transfer Rate:** up to 128 E/t
+    - **Electrocution Hazard:** Yes
+  </TabItem>
+</Tabs>

@@ -1,0 +1,25 @@
+---
+title: Wind Mill
+description: Generates energy passively based on height and weather conditions.
+sidebar_position: 3
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+
+<MachineStats power={32} buffer={1000} tier="Low" />
+
+<ItemIcon id="techreborn:wind_mill" size={64} />
+
+## Overview
+The Wind Mill generates power depending on its height in the world and the current weather. Thunderstorms increase generation significantly.
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/wind_mill" />
+<RecipeFromData id="techreborn:crafting/wind_mill_alt" />
+
+## Behavior
+- Input: None (passive).
+- Output: Energy (E). Scales with Y-level up to Y=255.
+- Configurable values: `windMillMaxOutput`, `windMillMaxEnergy`, `windMillBaseEnergy`, `windMillThunderMultiplier`

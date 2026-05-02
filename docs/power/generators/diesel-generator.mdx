@@ -1,0 +1,25 @@
+---
+title: Diesel Generator
+description: Burns combustible liquid fuels like Diesel and Fuel to generate energy.
+sidebar_position: 11
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+
+<MachineStats power={32} buffer={10000} tier="Low" />
+
+<ItemIcon id="techreborn:diesel_generator" size={64} />
+
+## Overview
+The Diesel Generator burns advanced fluid fuels like Diesel, Nitro Diesel, or standard Fuel to produce Energy. It is an excellent upgrade for your base once you have set up a distillation tower.
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/diesel_generator" />
+<RecipeFromData id="techreborn:crafting/diesel_generator_alt" />
+
+## Behavior
+- Input: Fluid fuels (Diesel, Nitro Diesel, Fuel).
+- Output: Energy (E).
+- Configurable values: `dieselGeneratorMaxOutput`, `dieselGeneratorMaxEnergy`, `dieselGeneratorEnergyPerTick`

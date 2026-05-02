@@ -1,0 +1,24 @@
+---
+title: High Voltage SU
+description: High Voltage (HV) energy storage.
+sidebar_position: 3
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+
+<MachineStats power={512} buffer={40000000} tier="High" />
+
+<ItemIcon id="techreborn:high_voltage_su" size={64} />
+
+## Overview
+The High Voltage SU (Storage Unit), formerly known as the MFSU, is the third tier of energy storage. It holds an immense 40,000,000 E and supports a transfer rate of 512 E/t.
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/high_voltage_su" />
+
+## Behavior
+- Input: Receives energy up to 512 E/t.
+- Output: Emits energy up to 512 E/t.
+- Special: Capable of charging HV items like the Lapotron Crystal.
