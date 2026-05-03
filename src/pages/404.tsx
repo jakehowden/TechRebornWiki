@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Layout from '@theme/Layout';
 
-export default function NotFound(): JSX.Element {
+export default function NotFound(): ReactNode {
   return (
     <Layout
       title="Page Not Found"
