@@ -1,0 +1,267 @@
+{
+  "techreborn:electric_furnace": {
+    "top": "/img/blocks/tier1_machines_machine_top.png",
+    "front": "/img/blocks/electric_furnace_front_off.png",
+    "side": "/img/blocks/tier1_machines_machine_side.png"
+  },
+  "techreborn:grinder": {
+    "top": "/img/blocks/grinder_top_off.png",
+    "front": "/img/blocks/grinder_front_off.png",
+    "side": "/img/blocks/tier1_machines_machine_side.png"
+  },
+  "techreborn:compressor": {
+    "top": "/img/blocks/tier1_machines_machine_top.png",
+    "front": "/img/blocks/compressor_front_off.png",
+    "side": "/img/blocks/tier1_machines_machine_side.png"
+  },
+  "techreborn:extractor": {
+    "top": "/img/blocks/tier1_machines_machine_top.png",
+    "front": "/img/blocks/extractor_front_off.png",
+    "side": "/img/blocks/tier1_machines_machine_side.png"
+  },
+  "techreborn:recycler": {
+    "top": "/img/blocks/tier1_machines_machine_top.png",
+    "front": "/img/blocks/recycler_front_off.png",
+    "side": "/img/blocks/tier1_machines_machine_side.png"
+  },
+  "techreborn:alloy_smelter": {
+    "top": "/img/blocks/tier1_machines_machine_top.png",
+    "front": "/img/blocks/electric_alloy_smelter_front_off.png",
+    "side": "/img/blocks/tier1_machines_machine_side.png"
+  },
+  "techreborn:wire_mill": {
+    "top": "/img/blocks/tier1_machines_machine_top.png",
+    "front": "/img/blocks/wiremill_front_off.png",
+    "side": "/img/blocks/tier1_machines_machine_side.png"
+  },
+  "techreborn:scrapboxinator": {
+    "top": "/img/blocks/tier1_machines_machine_top.png",
+    "front": "/img/blocks/scrapboxinator_front_off.png",
+    "side": "/img/blocks/tier1_machines_machine_side.png"
+  },
+  "techreborn:iron_furnace": {
+    "top": "/img/blocks/tier0_machines_machine_top.png",
+    "front": "/img/blocks/iron_alloy_furnace_front_off.png",
+    "side": "/img/blocks/tier0_machines_machine_side.png"
+  },
+  "techreborn:iron_alloy_furnace": {
+    "top": "/img/blocks/tier0_machines_machine_top.png",
+    "front": "/img/blocks/iron_alloy_furnace_front_off.png",
+    "side": "/img/blocks/tier0_machines_machine_side.png"
+  },
+  "techreborn:rolling_machine": {
+    "top": "/img/blocks/tier1_machines_machine_top.png",
+    "front": "/img/blocks/rolling_machine_front_off.png",
+    "side": "/img/blocks/tier1_machines_machine_side.png"
+  },
+  "techreborn:assembly_machine": {
+    "top": "/img/blocks/tier2_machines_machine_top.png",
+    "front": "/img/blocks/assembling_machine_front_off.png",
+    "side": "/img/blocks/advanced_machine_casing.png"
+  },
+  "techreborn:chemical_reactor": {
+    "top": "/img/blocks/tier2_machines_machine_top.png",
+    "front": "/img/blocks/chemical_reactor_front_off.png",
+    "side": "/img/blocks/advanced_machine_casing.png"
+  },
+  "techreborn:industrial_electrolyzer": {
+    "top": "/img/blocks/tier2_machines_machine_top.png",
+    "front": "/img/blocks/industrial_electrolyzer_front_off.png",
+    "side": "/img/blocks/advanced_machine_casing.png"
+  },
+  "techreborn:industrial_sawmill": {
+    "top": "/img/blocks/tier2_machines_machine_top.png",
+    "front": "/img/blocks/industrial_sawmill_front_off.png",
+    "side": "/img/blocks/advanced_machine_casing.png"
+  },
+  "techreborn:industrial_grinder": {
+    "top": "/img/blocks/industrial_grinder_top_off.png",
+    "front": "/img/blocks/industrial_grinder_front_off.png",
+    "side": "/img/blocks/industrial_machine_casing.png"
+  },
+  "techreborn:industrial_centrifuge": {
+    "top": "/img/blocks/industrial_centrifuge_top_off.png",
+    "front": "/img/blocks/industrial_centrifuge_front_off.png",
+    "side": "/img/blocks/industrial_machine_casing.png"
+  },
+  "techreborn:industrial_blast_furnace": {
+    "top": "/img/blocks/tier3_machines_machine_top.png",
+    "front": "/img/blocks/industrial_blast_furnace_front_off.png",
+    "side": "/img/blocks/industrial_machine_casing.png"
+  },
+  "techreborn:implosion_compressor": {
+    "top": "/img/blocks/tier3_machines_machine_top.png",
+    "front": "/img/blocks/implosion_compressor_front_off.png",
+    "side": "/img/blocks/industrial_machine_casing.png"
+  },
+  "techreborn:vacuum_freezer": {
+    "top": "/img/blocks/vacuum_freezer_top_off.png",
+    "front": "/img/blocks/vacuum_freezer_front_off.png",
+    "side": "/img/blocks/industrial_machine_casing.png"
+  },
+  "techreborn:distillation_tower": {
+    "top": "/img/blocks/tier3_machines_machine_top.png",
+    "front": "/img/blocks/distillation_tower_front_off.png",
+    "side": "/img/blocks/industrial_machine_casing.png"
+  },
+  "techreborn:fluid_replicator": {
+    "top": "/img/blocks/tier3_machines_machine_top.png",
+    "front": "/img/blocks/fluid_replicator_front_off.png",
+    "side": "/img/blocks/industrial_machine_casing.png"
+  },
+  "techreborn:matter_fabricator": {
+    "top": "/img/blocks/matter_fabricator_top_off.png",
+    "front": "/img/blocks/industrial_machine_casing.png",
+    "side": "/img/blocks/matter_fabricator_side_off.png"
+  },
+  "techreborn:fusion_control_computer": {
+    "top": "/img/blocks/tier3_machines_machine_top.png",
+    "front": "/img/blocks/fusion_control_computer_front_off.png",
+    "side": "/img/blocks/fusion_control_computer_east.png"
+  },
+  "techreborn:solid_fuel_generator": {
+    "top": "/img/blocks/generator_top.png",
+    "front": "/img/blocks/furnace_front_off.png",
+    "side": "/img/blocks/generator_side.png"
+  },
+  "techreborn:water_mill": {
+    "top": "/img/blocks/watermill_top_off.png",
+    "front": "/img/blocks/generator_top.png",
+    "side": "/img/blocks/watermill_side_off.png"
+  },
+  "techreborn:wind_mill": {
+    "top": "/img/blocks/wind_mill_top.png",
+    "front": "/img/blocks/wind_mill_front.png",
+    "side": "/img/blocks/wind_mill_left.png"
+  },
+  "techreborn:thermal_generator": {
+    "top": "/img/blocks/thermal_generator_top_off.png",
+    "front": "/img/blocks/thermal_generator_top_off.png",
+    "side": "/img/blocks/thermal_generator_side_off.png"
+  },
+  "techreborn:diesel_generator": {
+    "top": "/img/blocks/diesel_generator_top_off.png",
+    "front": "/img/blocks/diesel_generator_top_off.png",
+    "side": "/img/blocks/diesel_generator_side_off.png"
+  },
+  "techreborn:semi_fluid_generator": {
+    "top": "/img/blocks/semi_fluid_generator_top_off.png",
+    "front": "/img/blocks/semi_fluid_generator_top_off.png",
+    "side": "/img/blocks/semi_fluid_generator_side_off.png"
+  },
+  "techreborn:plasma_generator": {
+    "top": "/img/blocks/plasma_generator_top_off.png",
+    "front": "/img/blocks/plasma_generator_top_off.png",
+    "side": "/img/blocks/plasma_generator_side_off.png"
+  },
+  "techreborn:gas_turbine": {
+    "top": "/img/blocks/gas_turbine_top_off.png",
+    "front": "/img/blocks/gas_turbine_top_off.png",
+    "side": "/img/blocks/advanced_machine_casing.png"
+  },
+  "techreborn:lightning_rod": {
+    "top": "/img/blocks/lightning_rod_top.png",
+    "front": "/img/blocks/lightning_rod_top.png",
+    "side": "/img/blocks/lightning_rod_side.png"
+  },
+  "techreborn:dragon_egg_syphon": {
+    "top": "/img/blocks/dragon_egg_syphon_top.png",
+    "front": "/img/blocks/dragon_egg_syphon_top.png",
+    "side": "/img/blocks/dragon_egg_syphon_side_off.png"
+  },
+  "techreborn:basic_solar_panel": {
+    "top": "/img/blocks/basic_solar_panel_top.png",
+    "front": "/img/blocks/solar_panel_side_off.png",
+    "side": "/img/blocks/solar_panel_side_off.png"
+  },
+  "techreborn:advanced_solar_panel": {
+    "top": "/img/blocks/advanced_solar_panel_top.png",
+    "front": "/img/blocks/solar_panel_side_off.png",
+    "side": "/img/blocks/solar_panel_side_off.png"
+  },
+  "techreborn:industrial_solar_panel": {
+    "top": "/img/blocks/industrial_solar_panel_top.png",
+    "front": "/img/blocks/solar_panel_side_off.png",
+    "side": "/img/blocks/solar_panel_side_off.png"
+  },
+  "techreborn:ultimate_solar_panel": {
+    "top": "/img/blocks/ultimate_solar_panel_top.png",
+    "front": "/img/blocks/solar_panel_side_off.png",
+    "side": "/img/blocks/solar_panel_side_off.png"
+  },
+  "techreborn:quantum_solar_panel": {
+    "top": "/img/blocks/quantum_solar_panel_top.png",
+    "front": "/img/blocks/quantum_solar_panel_side_off.png",
+    "side": "/img/blocks/quantum_solar_panel_side_off.png"
+  },
+  "techreborn:lv_transformer": {
+    "top": "/img/blocks/tier0_machines_machine_top.png",
+    "front": "/img/blocks/lv_transformer_front.png",
+    "side": "/img/blocks/lv_transformer_side.png"
+  },
+  "techreborn:mv_transformer": {
+    "top": "/img/blocks/tier1_machines_machine_top.png",
+    "front": "/img/blocks/mv_transformer_front.png",
+    "side": "/img/blocks/mv_transformer_side.png"
+  },
+  "techreborn:hv_transformer": {
+    "top": "/img/blocks/tier2_machines_machine_top.png",
+    "front": "/img/blocks/hv_transformer_front.png",
+    "side": "/img/blocks/hv_transformer_side.png"
+  },
+  "techreborn:ev_transformer": {
+    "top": "/img/blocks/tier3_machines_machine_top.png",
+    "front": "/img/blocks/ev_transformer_front.png",
+    "side": "/img/blocks/ev_transformer_side.png"
+  },
+  "techreborn:low_voltage_su": {
+    "top": "/img/blocks/basic_storage_unit_top.png",
+    "front": "/img/blocks/low_voltage_su_front.png",
+    "side": "/img/blocks/basic_storage_unit_side.png"
+  },
+  "techreborn:medium_voltage_su": {
+    "top": "/img/blocks/advanced_storage_unit_top.png",
+    "front": "/img/blocks/medium_voltage_su_front.png",
+    "side": "/img/blocks/advanced_storage_unit_side.png"
+  },
+  "techreborn:high_voltage_su": {
+    "top": "/img/blocks/industrial_storage_unit_top.png",
+    "front": "/img/blocks/high_voltage_su_front.png",
+    "side": "/img/blocks/industrial_storage_unit_side.png"
+  },
+  "techreborn:lapotronic_su": {
+    "top": "/img/blocks/industrial_storage_unit_top.png",
+    "front": "/img/blocks/lapotronic_su_front.png",
+    "side": "/img/blocks/lapotronic_su_side.png"
+  },
+  "techreborn:adjustable_su": {
+    "top": "/img/blocks/industrial_storage_unit_top.png",
+    "front": "/img/blocks/adjustable_su_front.png",
+    "side": "/img/blocks/adjustable_su_side.png"
+  },
+  "techreborn:interdimensional_su": {
+    "top": "/img/blocks/industrial_storage_unit_top.png",
+    "front": "/img/blocks/interdimensional_su_front.png",
+    "side": "/img/blocks/interdimensional_su_side.png"
+  },
+  "techreborn:chunk_loader": {
+    "top": "/img/blocks/chunk_loader_top.png",
+    "front": "/img/blocks/chunk_loader_top.png",
+    "side": "/img/blocks/chunk_loader_side.png"
+  },
+  "techreborn:fishing_station": {
+    "top": "/img/blocks/fishing_station.png",
+    "front": "/img/blocks/fishing_station.png",
+    "side": "/img/blocks/fishing_station.png"
+  },
+  "techreborn:player_detector": {
+    "top": "/img/blocks/player_detector_all.png",
+    "front": "/img/blocks/player_detector_all.png",
+    "side": "/img/blocks/player_detector_all.png"
+  },
+  "techreborn:auto_crafting_table": {
+    "top": "/img/blocks/auto_crafting_table_top.png",
+    "front": "/img/blocks/tier1_machines_machine_top.png",
+    "side": "/img/blocks/tier1_machines_machine_side.png"
+  }
+}

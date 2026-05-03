@@ -40,7 +40,12 @@
       "Bash(/c/Program Files/Eclipse Adoptium/jdk-17.0.18.8-hotspot/bin/java *)",
       "Bash(JAVA_HOME=\"C:\\\\\\\\Program Files\\\\\\\\Eclipse Adoptium\\\\\\\\jdk-17.0.18.8-hotspot\" \"/c/Program Files/Eclipse Adoptium/jdk-17.0.18.8-hotspot/bin/java\" -jar \"C:/Users/jakeh/Documents/GitHub/TechReborn/gradle/wrapper/gradle-wrapper.jar\" runDatagen)",
       "Bash(JAVA_HOME=\"C:\\\\\\\\Program Files\\\\\\\\Eclipse Adoptium\\\\\\\\jdk-17.0.18.8-hotspot\" ./gradlew runDatagen)",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "PowerShell(head *)",
+      "Bash(Get-ChildItem *)",
+      "Bash(xargs grep *)",
+      "Bash(Select-String \"_front\")",
+      "Bash(python3 *)"
     ]
   }
 }

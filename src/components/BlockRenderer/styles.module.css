@@ -1,0 +1,38 @@
+.scene {
+  display: inline-block;
+  position: relative;
+}
+
+.cube {
+  position: relative;
+  transform-style: preserve-3d;
+  /* 35.264deg = arctan(1/√2): true isometric X-rotation */
+  transform: rotateX(35.264deg) rotateY(-45deg);
+}
+
+.face {
+  position: absolute;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  backface-visibility: hidden;
+}
+
+/* Top face: fully lit */
+.faceTop {
+  transform: rotateX(90deg);
+  transform-origin: bottom center;
+}
+
+/* Front face: medium shadow */
+.faceFront {
+  filter: brightness(0.8);
+}
+
+/* Right (side) face: deepest shadow */
+.faceRight {
+  transform: rotateY(-90deg);
+  transform-origin: right center;
+  filter: brightness(0.6);
+}
