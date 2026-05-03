@@ -32,6 +32,102 @@
   display: none !important;
 }
 
+/* —————————————————————————————
+   Machine recipe rendering (ported from upstream wiki)
+   ————————————————————————————— */
+:root {
+  --slot-size: 48px;
+  --slot-gap: 4px;
+  --arrow-size: 24px;
+}
+
+.machine-span {
+  display: block;
+  margin: 0.75rem 0 1.25rem;
+}
+
+.machine-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.crafting {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.crafting-board {
+  display: grid;
+  gap: var(--slot-gap);
+  grid-template-columns: repeat(var(--cols), var(--slot-size));
+  grid-template-rows: repeat(var(--rows), var(--slot-size));
+}
+
+.slot {
+  position: relative;
+  width: var(--slot-size);
+  height: var(--slot-size);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-color-emphasis-100);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slot[data-quantity]:not([data-quantity="1"])::after {
+  content: attr(data-quantity);
+  position: absolute;
+  bottom: 2px;
+  right: 4px;
+  font-size: .75em;
+  line-height: 1;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 0 3px;
+  border-radius: 2px;
+}
+
+.arrow {
+  width: var(--arrow-size);
+  height: var(--arrow-size);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M5 12h14M13 5l7 7-7 7' fill='none' stroke='%23888' stroke-width='2'/></svg>");
+  transform: rotate(0deg);
+}
+
+.crafting-info {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  gap: 0.75rem;
+  margin-top: var(--slot-gap);
+  font-size: .875rem;
+  color: var(--ifm-color-emphasis-700);
+  align-items: center;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@media (max-width: 600px) {
+  .crafting {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .arrow {
+    transform: rotate(90deg);
+  }
+}
+
 /* Mobile responsive styles */
 @media screen and (max-width: 480px) {
   .crafting-container {
@@ -39,13 +135,13 @@
     align-items: center;
     gap: 1rem;
   }
-  
+
   details > summary {
     padding: 0.5rem;
     cursor: pointer;
     touch-action: manipulation;
   }
-  
+
   .multiblock-layer-selector {
     padding: 10px;
   }

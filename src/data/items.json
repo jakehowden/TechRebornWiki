@@ -3041,7 +3041,7 @@
   },
   "minecraft:furnace": {
     "displayName": "Furnace",
-    "texture": "/img/blocks/basic_machine_casing.png",
+    "texture": "/img/blocks/furnace_front_off.png",
     "category": "block"
   },
   "minecraft:glass": {

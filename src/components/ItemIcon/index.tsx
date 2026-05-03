@@ -6,46 +6,54 @@ import { useActiveVersion } from '@docusaurus/plugin-content-docs/client';
 import styles from './styles.module.css';
 import itemsData from '@site/src/data/items.json';
 import tagsData from '@site/src/data/tags.json';
-import blocksData from '@site/src/data/blocks.json';
-import BlockRenderer from '../BlockRenderer';
 
 type ItemsWithPages = Record<string, Record<string, string>>;
 let itemsWithPages: ItemsWithPages = {};
 try {
   itemsWithPages = require('@site/docs/items-with-pages.json');
 } catch (e) {
-  // ignore — generated at build time
+  // generated at build time
 }
 
 export interface ItemIconProps {
   id: string;
   size?: number;
   className?: string;
-  force3D?: boolean;
-  disable3D?: boolean;
 }
 
-const BLOCK_3D_THRESHOLD = 32;
+function shortId(id: string): string {
+  const idx = id.indexOf(':');
+  return idx === -1 ? id : id.slice(idx + 1);
+}
 
-type BlockFaces = Record<string, { top: string; front: string; side: string }>;
+function titleCase(slug: string): string {
+  return slug
+    .replace(/^[-_]*(.)/, (_, c) => c.toUpperCase())
+    .replace(/[-_]+(.)/g, (_, c) => ' ' + c.toUpperCase());
+}
 
-export default function ItemIcon({ id, size = 32, className = '', force3D = false, disable3D = false }: ItemIconProps) {
+export default function ItemIcon({ id, size = 32, className = '' }: ItemIconProps) {
   const [imgError, setImgError] = useState(false);
   const location = useLocation();
-
   const activeVersion = useActiveVersion('default') as { name: string; path: string } | undefined;
 
   // 1. Resolve tags (e.g. "c:diamond_dusts" → "techreborn:diamond_dust")
-  const resolvedId = (id in tagsData) ? tagsData[id as keyof typeof tagsData] : id;
+  const resolvedId = (id in tagsData) ? (tagsData as Record<string, string>)[id] : id;
 
-  // 2. Compute flat-icon data unconditionally — hooks must not follow early returns
-  const itemInfo = itemsData[resolvedId as keyof typeof itemsData];
-  let texturePath = itemInfo?.texture;
-  let displayName = itemInfo?.displayName || resolvedId;
+  // 2. Pick a texture path
+  const itemInfo = (itemsData as Record<string, { displayName?: string; texture?: string; category?: string }>)[resolvedId];
+  let texturePath: string | undefined;
+  let displayName = itemInfo?.displayName;
 
-  if (resolvedId.startsWith('minecraft:') && !texturePath) {
-    texturePath = `/img/vanilla/${resolvedId.replace('minecraft:', '')}.png`;
-    displayName = resolvedId.replace('minecraft:', '').split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+  if (resolvedId.startsWith('techreborn:')) {
+    texturePath = `/img/techreborn/${shortId(resolvedId)}.png`;
+    if (!displayName) displayName = titleCase(shortId(resolvedId));
+  } else if (resolvedId.startsWith('minecraft:')) {
+    texturePath = `/img/vanilla/${shortId(resolvedId)}.png`;
+    if (!displayName) displayName = titleCase(shortId(resolvedId));
+  } else {
+    texturePath = itemInfo?.texture;
+    if (!displayName) displayName = titleCase(shortId(resolvedId));
   }
 
   const src = useBaseUrl(texturePath || '/img/unknown.png');
@@ -56,59 +64,38 @@ export default function ItemIcon({ id, size = 32, className = '', force3D = fals
   if (versionMap) {
     const versionKey = activeVersion?.name ?? 'current';
     const route = versionMap[versionKey] ?? versionMap['1.20.1'] ?? versionMap['current'];
-    if (route) {
-      pageUrl = `${activeVersion?.path ?? ''}${route}`;
-    }
+    if (route) pageUrl = `${activeVersion?.path ?? ''}${route}`;
   }
   const hasPage = Boolean(pageUrl) && pageUrl !== location.pathname;
 
-  // 4. Decide on 3D vs 2D
-  const blockFaces = (blocksData as BlockFaces)[resolvedId];
-  const use3D = blockFaces && !disable3D && (force3D || size >= BLOCK_3D_THRESHOLD);
+  const wrapperStyle = { width: size, height: size };
 
-  // 5. Build content (either 3D or 2D)
-  let content: React.ReactElement;
-  if (use3D) {
-    content = (
-      <BlockRenderer
-        top={blockFaces.top}
-        front={blockFaces.front}
-        side={blockFaces.side}
-        displayName={displayName}
-        size={size}
-      />
-    );
-  } else {
-    const imgStyle = { width: size, height: size };
-    content = (
-      <div
-        className={`${styles.iconWrapper} ${className}`}
-        style={imgStyle}
-        title={displayName}
-      >
-        {!imgError && texturePath ? (
-          <img
-            src={src}
-            alt={displayName}
-            className={`mc-pixelated ${styles.iconImg}`}
-            onError={() => {
-              console.warn(`Missing texture for ${resolvedId} at ${src}`);
-              setImgError(true);
-            }}
-          />
-        ) : (
-          <div className={styles.missingTexture} title={displayName}>
-            {displayName.substring(0, 2).toUpperCase()}
-          </div>
-        )}
-      </div>
-    );
-  }
+  const content = (
+    <div
+      className={`${styles.iconWrapper} ${className}`}
+      style={wrapperStyle}
+      title={displayName}
+    >
+      {!imgError && texturePath ? (
+        <img
+          src={src}
+          alt={displayName}
+          className={`mc-pixelated ${styles.iconImg}`}
+          onError={() => {
+            console.warn(`Missing texture for ${resolvedId} at ${src}`);
+            setImgError(true);
+          }}
+        />
+      ) : (
+        <div className={styles.missingTexture} title={displayName}>
+          {(displayName || '??').substring(0, 2).toUpperCase()}
+        </div>
+      )}
+    </div>
+  );
 
-  // 6. Wrap in Link if a page exists and it's not the current page
   if (hasPage) {
     return <Link to={pageUrl!} className={styles.iconLink}>{content}</Link>;
   }
-
   return content;
 }

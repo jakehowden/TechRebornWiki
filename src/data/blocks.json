@@ -263,5 +263,25 @@
     "top": "/img/blocks/auto_crafting_table_top.png",
     "front": "/img/blocks/tier1_machines_machine_top.png",
     "side": "/img/blocks/tier1_machines_machine_side.png"
+  },
+  "techreborn:basic_machine_frame": {
+    "top": "/img/blocks/basic_machine_casing.png",
+    "front": "/img/blocks/basic_machine_casing.png",
+    "side": "/img/blocks/basic_machine_casing.png"
+  },
+  "techreborn:advanced_machine_frame": {
+    "top": "/img/blocks/advanced_machine_casing.png",
+    "front": "/img/blocks/advanced_machine_casing.png",
+    "side": "/img/blocks/advanced_machine_casing.png"
+  },
+  "techreborn:industrial_machine_frame": {
+    "top": "/img/blocks/industrial_machine_casing.png",
+    "front": "/img/blocks/industrial_machine_casing.png",
+    "side": "/img/blocks/industrial_machine_casing.png"
+  },
+  "minecraft:furnace": {
+    "top": "/img/blocks/tier0_machines_machine_top.png",
+    "front": "/img/blocks/furnace_front_off.png",
+    "side": "/img/blocks/tier0_machines_machine_side.png"
   }
 }

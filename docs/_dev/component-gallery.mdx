@@ -11,33 +11,26 @@ This is a developer-only page to verify that all MDX components render correctly
 <ItemIcon id="techreborn:copper_ingot" size={32} />
 <ItemIcon id="minecraft:redstone" size={32} />
 
-## 2. CraftingGrid
+## 2. Machine (3x3 crafting)
 
-<CraftingGrid
-  pattern={["RRR", "III", "RRR"]}
-  legend={{ R: "techreborn:rubber", I: "minecraft:copper_ingot" }}
-  output={{ id: "techreborn:insulated_copper_cable", count: 6 }}
-/>
+<Machine config={{
+  tool: "minecraft:crafting_table",
+  input: [
+    { id: "techreborn:rubber" }, { id: "techreborn:rubber" }, { id: "techreborn:rubber" },
+    { id: "minecraft:copper_ingot" }, { id: "minecraft:copper_ingot" }, { id: "minecraft:copper_ingot" },
+    { id: "techreborn:rubber" }, { id: "techreborn:rubber" }, { id: "techreborn:rubber" },
+  ],
+  output: [{ id: "techreborn:insulated_copper_cable", qty: 6 }],
+}} />
 
-## 3. CraftingGrid (Shapeless)
+## 3. Machine (compressor)
 
-<CraftingGrid
-  pattern={["AB ", "   ", "   "]}
-  legend={{ A: "techreborn:carbon_fiber", B: "techreborn:carbon_fiber" }}
-  output={{ id: "techreborn:carbon_mesh", count: 1 }}
-  shapeless
-/>
-
-## 4. MachineRecipe
-
-<MachineRecipe
-  machine="compressor"
-  inputs={[{ id: "minecraft:copper_ingot", count: 1 }]}
-  outputs={[{ id: "techreborn:copper_plate", count: 1 }]}
-  power={10}
-  time={300}
-  heat={null}
-/>
+<Machine config={{
+  tool: "techreborn:compressor",
+  input: [{ id: "minecraft:copper_ingot" }],
+  output: [{ id: "techreborn:copper_plate" }],
+  meta: { power: 10, time: 300 },
+}} />
 
 ## 5. RecipeFromData
 

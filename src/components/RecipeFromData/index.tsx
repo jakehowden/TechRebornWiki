@@ -1,15 +1,68 @@
 import React from 'react';
 import recipesData from '@site/src/data/recipes.json';
-import CraftingGrid from '../CraftingGrid';
-import MachineRecipe from '../MachineRecipe';
+import Machine, { MachineConfig, MachineSlot } from '../Machine';
 import styles from './styles.module.css';
 
 export interface RecipeFromDataProps {
   id: string;
 }
 
+type Ingredient =
+  | string
+  | { id?: string; tag?: string; count?: number };
+
+function ingredientToSlot(ing: Ingredient | undefined): MachineSlot {
+  if (!ing) return { id: 'minecraft:air', qty: 1 };
+  if (typeof ing === 'string') return { id: ing, qty: 1 };
+  const id = ing.id ?? ing.tag ?? 'minecraft:air';
+  return { id, qty: ing.count ?? 1 };
+}
+
+function outputToSlot(out: Ingredient | undefined): MachineSlot {
+  if (!out) return { id: 'minecraft:air', qty: 1 };
+  if (typeof out === 'string') return { id: out, qty: 1 };
+  return { id: out.id ?? out.tag ?? 'minecraft:air', qty: out.count ?? 1 };
+}
+
+function shapedToInput(
+  pattern: string[],
+  key: Record<string, Ingredient>,
+): MachineSlot[] {
+  // Build a 3x3 grid; pad rows to 3 chars and pad to 3 rows total
+  const rows: string[] = [];
+  for (let r = 0; r < 3; r++) {
+    const row = pattern[r] ?? '';
+    rows.push((row + '   ').slice(0, 3));
+  }
+  const slots: MachineSlot[] = [];
+  for (const row of rows) {
+    for (const ch of row) {
+      if (ch === ' ') {
+        slots.push({ id: 'minecraft:air', qty: 1 });
+      } else {
+        slots.push(ingredientToSlot(key[ch]));
+      }
+    }
+  }
+  return slots;
+}
+
+function shapelessToInput(ingredients: Ingredient[]): MachineSlot[] {
+  // Pad to 9 slots so the 3x3 grid stays intact
+  const slots = ingredients.map(ingredientToSlot);
+  while (slots.length < 9) slots.push({ id: 'minecraft:air', qty: 1 });
+  return slots.slice(0, 9);
+}
+
+const VANILLA_COOK_TOOL: Record<string, string> = {
+  'minecraft:smelting': 'minecraft:furnace',
+  'minecraft:blasting': 'minecraft:blast_furnace',
+  'minecraft:smoking': 'minecraft:smoker',
+  'minecraft:campfire_cooking': 'minecraft:campfire',
+};
+
 export default function RecipeFromData({ id }: RecipeFromDataProps) {
-  const recipe = (recipesData as any)[id];
+  const recipe = (recipesData as Record<string, any>)[id];
 
   if (!recipe) {
     console.warn(`Recipe not found: ${id}`);
@@ -20,62 +73,54 @@ export default function RecipeFromData({ id }: RecipeFromDataProps) {
     );
   }
 
+  let config: MachineConfig | null = null;
+
   if (recipe.type === 'minecraft:crafting_shaped') {
+    config = {
+      id,
+      tool: 'minecraft:crafting_table',
+      input: shapedToInput(recipe.pattern || [], recipe.key || {}),
+      output: [outputToSlot(recipe.output)],
+    };
+  } else if (recipe.type === 'minecraft:crafting_shapeless') {
+    config = {
+      id,
+      tool: 'minecraft:crafting_table',
+      input: shapelessToInput(recipe.ingredients || []),
+      output: [outputToSlot(recipe.output)],
+    };
+  } else if (VANILLA_COOK_TOOL[recipe.type]) {
+    config = {
+      id,
+      tool: VANILLA_COOK_TOOL[recipe.type],
+      input: [ingredientToSlot(recipe.ingredient)],
+      output: [outputToSlot(recipe.output)],
+      meta: { time: recipe.cookingtime },
+    };
+  } else if (typeof recipe.type === 'string' && recipe.type.startsWith('techreborn:')) {
+    const ingredients: Ingredient[] = recipe.ingredients || (recipe.ingredient ? [recipe.ingredient] : []);
+    const outputs: Ingredient[] = recipe.outputs || (recipe.output ? [recipe.output] : []);
+    config = {
+      id,
+      tool: recipe.type,
+      input: ingredients.map(ingredientToSlot),
+      output: outputs.map(outputToSlot),
+      meta: {
+        time: recipe.time,
+        power: recipe.power,
+        heat: recipe.heat ?? null,
+        fluid: recipe.fluid,
+      },
+    };
+  }
+
+  if (!config) {
     return (
-      <CraftingGrid 
-        pattern={recipe.pattern} 
-        legend={recipe.key} 
-        output={recipe.output} 
-      />
+      <div className={styles.errorBox}>
+        Unsupported recipe type <code>{recipe.type}</code> in <code>{id}</code>
+      </div>
     );
   }
 
-  if (recipe.type === 'minecraft:crafting_shapeless') {
-    const ings: any[] = recipe.ingredients;
-    const chars = ['A','B','C','D','E','F','G','H','I'];
-    const legend: Record<string, any> = {};
-    ings.slice(0, 9).forEach((ing, i) => { legend[chars[i]] = ing; });
-    const flat = chars.slice(0, ings.length).join('').padEnd(9, ' ');
-    const pattern = [flat.slice(0, 3), flat.slice(3, 6), flat.slice(6, 9)];
-    return (
-      <CraftingGrid
-        pattern={pattern}
-        legend={legend}
-        output={recipe.output}
-        shapeless
-      />
-    );
-  }
-
-  if (recipe.type.startsWith('techreborn:')) {
-    const machineName = recipe.type.replace('techreborn:', '');
-    return (
-      <MachineRecipe 
-        machine={machineName}
-        inputs={recipe.ingredients || [recipe.ingredient].filter(Boolean)}
-        outputs={recipe.outputs || [recipe.output].filter(Boolean)}
-        power={recipe.power}
-        time={recipe.time}
-        heat={recipe.heat}
-      />
-    );
-  }
-
-  // Fallback for vanilla smelting/blasting/smoking if they are included
-  if (['minecraft:smelting', 'minecraft:blasting', 'minecraft:smoking', 'minecraft:campfire_cooking'].includes(recipe.type)) {
-    return (
-      <MachineRecipe 
-        machine={recipe.type.replace('minecraft:', '')} // Using vanilla ID for the machine icon might need hand-authoring
-        inputs={[recipe.ingredient].filter(Boolean)}
-        outputs={[recipe.output].filter(Boolean)}
-        time={recipe.cookingtime}
-      />
-    );
-  }
-
-  return (
-    <div className={styles.errorBox}>
-      Unsupported recipe type <code>{recipe.type}</code> in <code>{id}</code>
-    </div>
-  );
+  return <Machine config={config} />;
 }

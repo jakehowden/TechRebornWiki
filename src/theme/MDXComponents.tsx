@@ -1,7 +1,6 @@
 import MDXComponents from '@theme-original/MDXComponents';
 import ItemIcon from '@site/src/components/ItemIcon';
-import CraftingGrid from '@site/src/components/CraftingGrid';
-import MachineRecipe from '@site/src/components/MachineRecipe';
+import Machine from '@site/src/components/Machine';
 import RecipeFromData from '@site/src/components/RecipeFromData';
 import MachineRecipeList from '@site/src/components/MachineRecipeList';
 import MultiblockShape from '@site/src/components/MultiblockShape';
@@ -11,8 +10,7 @@ import VersionContent from '@site/src/components/VersionContent';
 export default {
   ...MDXComponents,
   ItemIcon,
-  CraftingGrid,
-  MachineRecipe,
+  Machine,
   RecipeFromData,
   MachineRecipeList,
   MultiblockShape,
