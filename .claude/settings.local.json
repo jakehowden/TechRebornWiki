@@ -39,7 +39,8 @@
       "Bash(JAVA_HOME=\"C:/Program Files/Eclipse Adoptium/jdk-17.0.18.8-hotspot\" PATH=\"C:/Program Files/Eclipse Adoptium/jdk-17.0.18.8-hotspot/bin:$PATH\" java *)",
       "Bash(/c/Program Files/Eclipse Adoptium/jdk-17.0.18.8-hotspot/bin/java *)",
       "Bash(JAVA_HOME=\"C:\\\\\\\\Program Files\\\\\\\\Eclipse Adoptium\\\\\\\\jdk-17.0.18.8-hotspot\" \"/c/Program Files/Eclipse Adoptium/jdk-17.0.18.8-hotspot/bin/java\" -jar \"C:/Users/jakeh/Documents/GitHub/TechReborn/gradle/wrapper/gradle-wrapper.jar\" runDatagen)",
-      "Bash(JAVA_HOME=\"C:\\\\\\\\Program Files\\\\\\\\Eclipse Adoptium\\\\\\\\jdk-17.0.18.8-hotspot\" ./gradlew runDatagen)"
+      "Bash(JAVA_HOME=\"C:\\\\\\\\Program Files\\\\\\\\Eclipse Adoptium\\\\\\\\jdk-17.0.18.8-hotspot\" ./gradlew runDatagen)",
+      "Bash(npx tsc *)"
     ]
   }
 }

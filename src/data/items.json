@@ -739,11 +739,6 @@
     "texture": "/img/items/netherite_nugget.png",
     "category": "nugget"
   },
-  "techreborn:not_nugget": {
-    "displayName": "Not Nugget",
-    "texture": "/img/items/not_nugget.png",
-    "category": "nugget"
-  },
   "techreborn:nickel_nugget": {
     "displayName": "Nickel Nugget",
     "texture": "/img/items/nickel_nugget.png",
@@ -996,27 +991,27 @@
   },
   "techreborn:peridot": {
     "displayName": "Peridot",
-    "texture": "/img/items/peridot.png",
+    "texture": "/img/items/peridot_gem.png",
     "category": "gem"
   },
   "techreborn:red_garnet": {
     "displayName": "Red Garnet",
-    "texture": "/img/items/red_garnet.png",
+    "texture": "/img/items/red_garnet_gem.png",
     "category": "gem"
   },
   "techreborn:ruby": {
     "displayName": "Ruby",
-    "texture": "/img/items/ruby.png",
+    "texture": "/img/items/ruby_gem.png",
     "category": "gem"
   },
   "techreborn:sapphire": {
     "displayName": "Sapphire",
-    "texture": "/img/items/sapphire.png",
+    "texture": "/img/items/sapphire_gem.png",
     "category": "gem"
   },
   "techreborn:yellow_garnet": {
     "displayName": "Yellow Garnet",
-    "texture": "/img/items/yellow_garnet.png",
+    "texture": "/img/items/yellow_garnet_gem.png",
     "category": "gem"
   },
   "techreborn:carbon_fiber": {
@@ -1076,7 +1071,7 @@
   },
   "techreborn:superconductor": {
     "displayName": "Superconductor",
-    "texture": "/img/items/superconductor.png",
+    "texture": "/img/items/part_superconductor.png",
     "category": "part"
   },
   "techreborn:diamond_saw_blade": {
@@ -1561,17 +1556,17 @@
   },
   "techreborn:insulated_copper_cable": {
     "displayName": "Insulated Copper Cable",
-    "texture": "/img/items/insulated_copper_cable.png",
+    "texture": "/img/items/insulatedcopper.png",
     "category": "cable"
   },
   "techreborn:insulated_gold_cable": {
     "displayName": "Insulated Gold Cable",
-    "texture": "/img/items/insulated_gold_cable.png",
+    "texture": "/img/items/insulatedgold.png",
     "category": "cable"
   },
   "techreborn:insulated_hv_cable": {
     "displayName": "Insulated HV Cable",
-    "texture": "/img/items/insulated_hv_cable.png",
+    "texture": "/img/items/insulatedhv.png",
     "category": "cable"
   },
   "techreborn:superconductor_cable": {
@@ -1581,108 +1576,93 @@
   },
   "techreborn:buffer_storage_unit": {
     "displayName": "Buffer Storage Unit",
-    "texture": "/img/items/buffer_storage_unit.png",
+    "texture": "/img/blocks/storage_buffer_top.png",
     "category": "storage_unit"
   },
   "techreborn:crude_storage_unit": {
     "displayName": "Crude Storage Unit",
-    "texture": "/img/items/crude_storage_unit.png",
+    "texture": "/img/blocks/crude_storage_unit_top.png",
     "category": "storage_unit"
   },
   "techreborn:basic_storage_unit": {
     "displayName": "Basic Storage Unit",
-    "texture": "/img/items/basic_storage_unit.png",
+    "texture": "/img/blocks/basic_storage_unit_top.png",
     "category": "storage_unit"
   },
   "techreborn:advanced_storage_unit": {
     "displayName": "Advanced Storage Unit",
-    "texture": "/img/items/advanced_storage_unit.png",
+    "texture": "/img/blocks/advanced_storage_unit_top.png",
     "category": "storage_unit"
   },
   "techreborn:industrial_storage_unit": {
     "displayName": "Industrial Storage Unit",
-    "texture": "/img/items/industrial_storage_unit.png",
+    "texture": "/img/blocks/industrial_storage_unit_top.png",
     "category": "storage_unit"
   },
   "techreborn:quantum_storage_unit": {
     "displayName": "Quantum Storage Unit",
-    "texture": "/img/items/quantum_storage_unit.png",
+    "texture": "/img/blocks/quantum_storage_unit_front.png",
     "category": "storage_unit"
   },
   "techreborn:creative_storage_unit": {
     "displayName": "Creative Storage Unit",
-    "texture": "/img/items/creative_storage_unit.png",
+    "texture": "/img/blocks/creative_storage_unit_front.png",
     "category": "storage_unit"
   },
   "techreborn:basic_tank": {
     "displayName": "Basic Tank",
-    "texture": "/img/items/basic_tank.png",
+    "texture": "/img/blocks/basic_tank_unit_top.png",
     "category": "tank_unit"
   },
   "techreborn:advanced_tank": {
     "displayName": "Advanced Tank",
-    "texture": "/img/items/advanced_tank.png",
+    "texture": "/img/blocks/advanced_tank_unit_top.png",
     "category": "tank_unit"
   },
   "techreborn:industrial_tank": {
     "displayName": "Industrial Tank",
-    "texture": "/img/items/industrial_tank.png",
+    "texture": "/img/blocks/industrial_tank_unit_top.png",
     "category": "tank_unit"
   },
   "techreborn:quantum_tank": {
     "displayName": "Quantum Tank",
-    "texture": "/img/items/quantum_tank.png",
+    "texture": "/img/blocks/quantum_tank_unit_top.png",
     "category": "tank_unit"
   },
   "techreborn:creative_tank": {
     "displayName": "Creative Tank",
-    "texture": "/img/items/creative_tank.png",
+    "texture": "/img/blocks/creative_tank_unit_top.png",
     "category": "tank_unit"
   },
   "techreborn:basic_solar_panel": {
     "displayName": "Basic Solar Panel",
-    "texture": "/img/items/basic_solar_panel.png",
+    "texture": "/img/blocks/basic_solar_panel_top.png",
     "category": "solar_panel"
   },
   "techreborn:advanced_solar_panel": {
     "displayName": "Advanced Solar Panel",
-    "texture": "/img/items/advanced_solar_panel.png",
+    "texture": "/img/blocks/advanced_solar_panel_top.png",
     "category": "solar_panel"
   },
   "techreborn:industrial_solar_panel": {
     "displayName": "Industrial Solar Panel",
-    "texture": "/img/items/industrial_solar_panel.png",
+    "texture": "/img/blocks/industrial_solar_panel_top.png",
     "category": "solar_panel"
   },
   "techreborn:ultimate_solar_panel": {
     "displayName": "Ultimate Solar Panel",
-    "texture": "/img/items/ultimate_solar_panel.png",
+    "texture": "/img/blocks/ultimate_solar_panel_top.png",
     "category": "solar_panel"
   },
   "techreborn:quantum_solar_panel": {
     "displayName": "Quantum Solar Panel",
-    "texture": "/img/items/quantum_solar_panel.png",
+    "texture": "/img/blocks/quantum_solar_panel_top.png",
     "category": "solar_panel"
   },
   "techreborn:creative_solar_panel": {
     "displayName": "Creative Solar Panel",
-    "texture": "/img/items/creative_solar_panel.png",
+    "texture": "/img/blocks/creative_solar_panel_top.png",
     "category": "solar_panel"
-  },
-  "techreborn:basic": {
-    "displayName": "Basic",
-    "texture": "/img/items/basic.png",
-    "category": "machine"
-  },
-  "techreborn:advanced": {
-    "displayName": "Advanced",
-    "texture": "/img/items/advanced.png",
-    "category": "machine"
-  },
-  "techreborn:industrial": {
-    "displayName": "Industrial",
-    "texture": "/img/items/industrial.png",
-    "category": "machine"
   },
   "techreborn:overclocker_upgrade": {
     "displayName": "Overclocker Upgrade",
@@ -1708,5 +1688,1360 @@
     "displayName": "Muffler Upgrade",
     "texture": "/img/items/muffler_upgrade.png",
     "category": "upgrade"
+  },
+  "techreborn:advanced_chainsaw": {
+    "displayName": "Advanced Chainsaw",
+    "texture": "/img/items/advanced_chainsaw.png",
+    "category": "item"
+  },
+  "techreborn:advanced_chainsaw_animated": {
+    "displayName": "Advanced Chainsaw Animated",
+    "texture": "/img/items/advanced_chainsaw_animated.png",
+    "category": "item"
+  },
+  "techreborn:advanced_drill": {
+    "displayName": "Advanced Drill",
+    "texture": "/img/items/advanced_drill.png",
+    "category": "item"
+  },
+  "techreborn:advanced_jackhammer": {
+    "displayName": "Advanced Jackhammer",
+    "texture": "/img/items/advanced_jackhammer.png",
+    "category": "item"
+  },
+  "techreborn:advanced_unit_upgrader": {
+    "displayName": "Advanced Unit Upgrader",
+    "texture": "/img/items/advanced_unit_upgrader.png",
+    "category": "item"
+  },
+  "techreborn:aluminum_small_dust": {
+    "displayName": "Aluminum Small Dust",
+    "texture": "/img/items/aluminum_small_dust.png",
+    "category": "item"
+  },
+  "techreborn:armor_bronze_boots": {
+    "displayName": "Armor Bronze Boots",
+    "texture": "/img/items/armor_bronze_boots.png",
+    "category": "item"
+  },
+  "techreborn:basic_chainsaw": {
+    "displayName": "Basic Chainsaw",
+    "texture": "/img/items/basic_chainsaw.png",
+    "category": "item"
+  },
+  "techreborn:basic_chainsaw_animated": {
+    "displayName": "Basic Chainsaw Animated",
+    "texture": "/img/items/basic_chainsaw_animated.png",
+    "category": "item"
+  },
+  "techreborn:basic_drill": {
+    "displayName": "Basic Drill",
+    "texture": "/img/items/basic_drill.png",
+    "category": "item"
+  },
+  "techreborn:basic_jackhammer": {
+    "displayName": "Basic Jackhammer",
+    "texture": "/img/items/basic_jackhammer.png",
+    "category": "item"
+  },
+  "techreborn:basic_turbine": {
+    "displayName": "Basic Turbine",
+    "texture": "/img/items/basic_turbine.png",
+    "category": "item"
+  },
+  "techreborn:basic_unit_upgrader": {
+    "displayName": "Basic Unit Upgrader",
+    "texture": "/img/items/basic_unit_upgrader.png",
+    "category": "item"
+  },
+  "techreborn:brass_small_dust": {
+    "displayName": "Brass Small Dust",
+    "texture": "/img/items/brass_small_dust.png",
+    "category": "item"
+  },
+  "techreborn:bronze_axe": {
+    "displayName": "Bronze Axe",
+    "texture": "/img/items/bronze_axe.png",
+    "category": "item"
+  },
+  "techreborn:bronze_chestplate": {
+    "displayName": "Bronze Chestplate",
+    "texture": "/img/items/bronze_chestplate.png",
+    "category": "item"
+  },
+  "techreborn:bronze_helmet": {
+    "displayName": "Bronze Helmet",
+    "texture": "/img/items/bronze_helmet.png",
+    "category": "item"
+  },
+  "techreborn:bronze_hoe": {
+    "displayName": "Bronze Hoe",
+    "texture": "/img/items/bronze_hoe.png",
+    "category": "item"
+  },
+  "techreborn:bronze_leggings": {
+    "displayName": "Bronze Leggings",
+    "texture": "/img/items/bronze_leggings.png",
+    "category": "item"
+  },
+  "techreborn:bronze_pickaxe": {
+    "displayName": "Bronze Pickaxe",
+    "texture": "/img/items/bronze_pickaxe.png",
+    "category": "item"
+  },
+  "techreborn:bronze_small_dust": {
+    "displayName": "Bronze Small Dust",
+    "texture": "/img/items/bronze_small_dust.png",
+    "category": "item"
+  },
+  "techreborn:bronze_spade": {
+    "displayName": "Bronze Spade",
+    "texture": "/img/items/bronze_spade.png",
+    "category": "item"
+  },
+  "techreborn:bronze_sword": {
+    "displayName": "Bronze Sword",
+    "texture": "/img/items/bronze_sword.png",
+    "category": "item"
+  },
+  "techreborn:bucket_background": {
+    "displayName": "Bucket Background",
+    "texture": "/img/items/bucket_background.png",
+    "category": "item"
+  },
+  "techreborn:bucket_base": {
+    "displayName": "Bucket Base",
+    "texture": "/img/items/bucket_base.png",
+    "category": "item"
+  },
+  "techreborn:cables_superconductor": {
+    "displayName": "Cables Superconductor",
+    "texture": "/img/items/cables_superconductor.png",
+    "category": "item"
+  },
+  "techreborn:cell_background": {
+    "displayName": "Cell Background",
+    "texture": "/img/items/cell_background.png",
+    "category": "item"
+  },
+  "techreborn:cell_base": {
+    "displayName": "Cell Base",
+    "texture": "/img/items/cell_base.png",
+    "category": "item"
+  },
+  "techreborn:cell_glass": {
+    "displayName": "Cell Glass",
+    "texture": "/img/items/cell_glass.png",
+    "category": "item"
+  },
+  "techreborn:cloaking_device": {
+    "displayName": "Cloaking Device",
+    "texture": "/img/items/cloaking_device.png",
+    "category": "item"
+  },
+  "techreborn:copper": {
+    "displayName": "Copper",
+    "texture": "/img/items/copper.png",
+    "category": "item"
+  },
+  "techreborn:copper_dust": {
+    "displayName": "Copper Dust",
+    "texture": "/img/items/copper_dust.png",
+    "category": "item"
+  },
+  "techreborn:copper_ingot": {
+    "displayName": "Copper Ingot",
+    "texture": "/img/items/copper_ingot.png",
+    "category": "item"
+  },
+  "techreborn:copper_small_dust": {
+    "displayName": "Copper Small Dust",
+    "texture": "/img/items/copper_small_dust.png",
+    "category": "item"
+  },
+  "techreborn:crude_unit_upgrader": {
+    "displayName": "Crude Unit Upgrader",
+    "texture": "/img/items/crude_unit_upgrader.png",
+    "category": "item"
+  },
+  "techreborn:debug_tool": {
+    "displayName": "Debug Tool",
+    "texture": "/img/items/debug_tool.png",
+    "category": "item"
+  },
+  "techreborn:depleted_cell": {
+    "displayName": "Depleted Cell",
+    "texture": "/img/items/depleted_cell.png",
+    "category": "item"
+  },
+  "techreborn:double_depleted_cell": {
+    "displayName": "Double Depleted Cell",
+    "texture": "/img/items/double_depleted_cell.png",
+    "category": "item"
+  },
+  "techreborn:double_plutonium_cell": {
+    "displayName": "Double Plutonium Cell",
+    "texture": "/img/items/double_plutonium_cell.png",
+    "category": "item"
+  },
+  "techreborn:double_thorium_cell": {
+    "displayName": "Double Thorium Cell",
+    "texture": "/img/items/double_thorium_cell.png",
+    "category": "item"
+  },
+  "techreborn:double_uranium_cell": {
+    "displayName": "Double Uranium Cell",
+    "texture": "/img/items/double_uranium_cell.png",
+    "category": "item"
+  },
+  "techreborn:ejection_upgrade": {
+    "displayName": "Ejection Upgrade",
+    "texture": "/img/items/ejection_upgrade.png",
+    "category": "item"
+  },
+  "techreborn:electric_treetap": {
+    "displayName": "Electric Treetap",
+    "texture": "/img/items/electric_treetap.png",
+    "category": "item"
+  },
+  "techreborn:electric_wrench": {
+    "displayName": "Electric Wrench",
+    "texture": "/img/items/electric_wrench.png",
+    "category": "item"
+  },
+  "techreborn:energy_crystal": {
+    "displayName": "Energy Crystal",
+    "texture": "/img/items/energy_crystal.png",
+    "category": "item"
+  },
+  "techreborn:energy_crystal_empty": {
+    "displayName": "Energy Crystal Empty",
+    "texture": "/img/items/energy_crystal_empty.png",
+    "category": "item"
+  },
+  "techreborn:frequency_transmitter": {
+    "displayName": "Frequency Transmitter",
+    "texture": "/img/items/frequency_transmitter.png",
+    "category": "item"
+  },
+  "techreborn:frequency_transmitter_coords": {
+    "displayName": "Frequency Transmitter Coords",
+    "texture": "/img/items/frequency_transmitter_coords.png",
+    "category": "item"
+  },
+  "techreborn:glassfiber": {
+    "displayName": "Glassfiber",
+    "texture": "/img/items/glassfiber.png",
+    "category": "item"
+  },
+  "techreborn:gold": {
+    "displayName": "Gold",
+    "texture": "/img/items/gold.png",
+    "category": "item"
+  },
+  "techreborn:gold_dust": {
+    "displayName": "Gold Dust",
+    "texture": "/img/items/gold_dust.png",
+    "category": "item"
+  },
+  "techreborn:gold_small_dust": {
+    "displayName": "Gold Small Dust",
+    "texture": "/img/items/gold_small_dust.png",
+    "category": "item"
+  },
+  "techreborn:gps": {
+    "displayName": "Gps",
+    "texture": "/img/items/gps.png",
+    "category": "item"
+  },
+  "techreborn:hv": {
+    "displayName": "Hv",
+    "texture": "/img/items/hv.png",
+    "category": "item"
+  },
+  "techreborn:industrial_chainsaw": {
+    "displayName": "Industrial Chainsaw",
+    "texture": "/img/items/industrial_chainsaw.png",
+    "category": "item"
+  },
+  "techreborn:industrial_chainsaw_animated": {
+    "displayName": "Industrial Chainsaw Animated",
+    "texture": "/img/items/industrial_chainsaw_animated.png",
+    "category": "item"
+  },
+  "techreborn:industrial_drill": {
+    "displayName": "Industrial Drill",
+    "texture": "/img/items/industrial_drill.png",
+    "category": "item"
+  },
+  "techreborn:industrial_jackhammer": {
+    "displayName": "Industrial Jackhammer",
+    "texture": "/img/items/industrial_jackhammer.png",
+    "category": "item"
+  },
+  "techreborn:industrial_unit_upgrader": {
+    "displayName": "Industrial Unit Upgrader",
+    "texture": "/img/items/industrial_unit_upgrader.png",
+    "category": "item"
+  },
+  "techreborn:injection_upgrade": {
+    "displayName": "Injection Upgrade",
+    "texture": "/img/items/injection_upgrade.png",
+    "category": "item"
+  },
+  "techreborn:insulatedcopper": {
+    "displayName": "Insulatedcopper",
+    "texture": "/img/items/insulatedcopper.png",
+    "category": "item"
+  },
+  "techreborn:insulatedgold": {
+    "displayName": "Insulatedgold",
+    "texture": "/img/items/insulatedgold.png",
+    "category": "item"
+  },
+  "techreborn:insulatedhv": {
+    "displayName": "Insulatedhv",
+    "texture": "/img/items/insulatedhv.png",
+    "category": "item"
+  },
+  "techreborn:iridium_small_dust": {
+    "displayName": "Iridium Small Dust",
+    "texture": "/img/items/iridium_small_dust.png",
+    "category": "item"
+  },
+  "techreborn:iron_dust": {
+    "displayName": "Iron Dust",
+    "texture": "/img/items/iron_dust.png",
+    "category": "item"
+  },
+  "techreborn:iron_small_dust": {
+    "displayName": "Iron Small Dust",
+    "texture": "/img/items/iron_small_dust.png",
+    "category": "item"
+  },
+  "techreborn:lapotronic_orb": {
+    "displayName": "Lapotronic Orb",
+    "texture": "/img/items/lapotronic_orb.png",
+    "category": "item"
+  },
+  "techreborn:lapotronic_orbpack": {
+    "displayName": "Lapotronic Orbpack",
+    "texture": "/img/items/lapotronic_orbpack.png",
+    "category": "item"
+  },
+  "techreborn:lapotronic_orb_empty": {
+    "displayName": "Lapotronic Orb Empty",
+    "texture": "/img/items/lapotronic_orb_empty.png",
+    "category": "item"
+  },
+  "techreborn:lapotron_crystal": {
+    "displayName": "Lapotron Crystal",
+    "texture": "/img/items/lapotron_crystal.png",
+    "category": "item"
+  },
+  "techreborn:lapotron_crystal_empty": {
+    "displayName": "Lapotron Crystal Empty",
+    "texture": "/img/items/lapotron_crystal_empty.png",
+    "category": "item"
+  },
+  "techreborn:lead_dust": {
+    "displayName": "Lead Dust",
+    "texture": "/img/items/lead_dust.png",
+    "category": "item"
+  },
+  "techreborn:lead_small_dust": {
+    "displayName": "Lead Small Dust",
+    "texture": "/img/items/lead_small_dust.png",
+    "category": "item"
+  },
+  "techreborn:lithium_batpack": {
+    "displayName": "Lithium Batpack",
+    "texture": "/img/items/lithium_batpack.png",
+    "category": "item"
+  },
+  "techreborn:lithium_batpack_empty": {
+    "displayName": "Lithium Batpack Empty",
+    "texture": "/img/items/lithium_batpack_empty.png",
+    "category": "item"
+  },
+  "techreborn:lithium_battery": {
+    "displayName": "Lithium Battery",
+    "texture": "/img/items/lithium_battery.png",
+    "category": "item"
+  },
+  "techreborn:lithium_battery_empty": {
+    "displayName": "Lithium Battery Empty",
+    "texture": "/img/items/lithium_battery_empty.png",
+    "category": "item"
+  },
+  "techreborn:manual": {
+    "displayName": "Manual",
+    "texture": "/img/items/manual.png",
+    "category": "item"
+  },
+  "techreborn:missing_recipe": {
+    "displayName": "Missing Recipe",
+    "texture": "/img/items/missing_recipe.png",
+    "category": "item"
+  },
+  "techreborn:nanosaber_low": {
+    "displayName": "Nanosaber Low",
+    "texture": "/img/items/nanosaber_low.png",
+    "category": "item"
+  },
+  "techreborn:nanosaber_off": {
+    "displayName": "Nanosaber Off",
+    "texture": "/img/items/nanosaber_off.png",
+    "category": "item"
+  },
+  "techreborn:nanosaber_on": {
+    "displayName": "Nanosaber On",
+    "texture": "/img/items/nanosaber_on.png",
+    "category": "item"
+  },
+  "techreborn:nano_boots": {
+    "displayName": "Nano Boots",
+    "texture": "/img/items/nano_boots.png",
+    "category": "item"
+  },
+  "techreborn:nano_chestplate": {
+    "displayName": "Nano Chestplate",
+    "texture": "/img/items/nano_chestplate.png",
+    "category": "item"
+  },
+  "techreborn:nano_helmet": {
+    "displayName": "Nano Helmet",
+    "texture": "/img/items/nano_helmet.png",
+    "category": "item"
+  },
+  "techreborn:nano_leggings": {
+    "displayName": "Nano Leggings",
+    "texture": "/img/items/nano_leggings.png",
+    "category": "item"
+  },
+  "techreborn:omni_tool": {
+    "displayName": "Omni Tool",
+    "texture": "/img/items/omni_tool.png",
+    "category": "item"
+  },
+  "techreborn:painting_tool": {
+    "displayName": "Painting Tool",
+    "texture": "/img/items/painting_tool.png",
+    "category": "item"
+  },
+  "techreborn:part_superconductor": {
+    "displayName": "Part Superconductor",
+    "texture": "/img/items/part_superconductor.png",
+    "category": "item"
+  },
+  "techreborn:peridot_axe": {
+    "displayName": "Peridot Axe",
+    "texture": "/img/items/peridot_axe.png",
+    "category": "item"
+  },
+  "techreborn:peridot_boots": {
+    "displayName": "Peridot Boots",
+    "texture": "/img/items/peridot_boots.png",
+    "category": "item"
+  },
+  "techreborn:peridot_chestplate": {
+    "displayName": "Peridot Chestplate",
+    "texture": "/img/items/peridot_chestplate.png",
+    "category": "item"
+  },
+  "techreborn:peridot_gem": {
+    "displayName": "Peridot Gem",
+    "texture": "/img/items/peridot_gem.png",
+    "category": "item"
+  },
+  "techreborn:peridot_helmet": {
+    "displayName": "Peridot Helmet",
+    "texture": "/img/items/peridot_helmet.png",
+    "category": "item"
+  },
+  "techreborn:peridot_hoe": {
+    "displayName": "Peridot Hoe",
+    "texture": "/img/items/peridot_hoe.png",
+    "category": "item"
+  },
+  "techreborn:peridot_leggings": {
+    "displayName": "Peridot Leggings",
+    "texture": "/img/items/peridot_leggings.png",
+    "category": "item"
+  },
+  "techreborn:peridot_pickaxe": {
+    "displayName": "Peridot Pickaxe",
+    "texture": "/img/items/peridot_pickaxe.png",
+    "category": "item"
+  },
+  "techreborn:peridot_spade": {
+    "displayName": "Peridot Spade",
+    "texture": "/img/items/peridot_spade.png",
+    "category": "item"
+  },
+  "techreborn:peridot_sword": {
+    "displayName": "Peridot Sword",
+    "texture": "/img/items/peridot_sword.png",
+    "category": "item"
+  },
+  "techreborn:plutonium_cell": {
+    "displayName": "Plutonium Cell",
+    "texture": "/img/items/plutonium_cell.png",
+    "category": "item"
+  },
+  "techreborn:quad_depleted_cell": {
+    "displayName": "Quad Depleted Cell",
+    "texture": "/img/items/quad_depleted_cell.png",
+    "category": "item"
+  },
+  "techreborn:quad_plutonium_cell": {
+    "displayName": "Quad Plutonium Cell",
+    "texture": "/img/items/quad_plutonium_cell.png",
+    "category": "item"
+  },
+  "techreborn:quad_thorium_cell": {
+    "displayName": "Quad Thorium Cell",
+    "texture": "/img/items/quad_thorium_cell.png",
+    "category": "item"
+  },
+  "techreborn:quad_uranium_cell": {
+    "displayName": "Quad Uranium Cell",
+    "texture": "/img/items/quad_uranium_cell.png",
+    "category": "item"
+  },
+  "techreborn:quantum_boots": {
+    "displayName": "Quantum Boots",
+    "texture": "/img/items/quantum_boots.png",
+    "category": "item"
+  },
+  "techreborn:quantum_chestplate": {
+    "displayName": "Quantum Chestplate",
+    "texture": "/img/items/quantum_chestplate.png",
+    "category": "item"
+  },
+  "techreborn:quantum_helmet": {
+    "displayName": "Quantum Helmet",
+    "texture": "/img/items/quantum_helmet.png",
+    "category": "item"
+  },
+  "techreborn:quantum_leggings": {
+    "displayName": "Quantum Leggings",
+    "texture": "/img/items/quantum_leggings.png",
+    "category": "item"
+  },
+  "techreborn:range_upgrade": {
+    "displayName": "Range Upgrade",
+    "texture": "/img/items/range_upgrade.png",
+    "category": "item"
+  },
+  "techreborn:red_cell_battery": {
+    "displayName": "Red Cell Battery",
+    "texture": "/img/items/red_cell_battery.png",
+    "category": "item"
+  },
+  "techreborn:red_cell_battery_empty": {
+    "displayName": "Red Cell Battery Empty",
+    "texture": "/img/items/red_cell_battery_empty.png",
+    "category": "item"
+  },
+  "techreborn:red_garnet_gem": {
+    "displayName": "Red Garnet Gem",
+    "texture": "/img/items/red_garnet_gem.png",
+    "category": "item"
+  },
+  "techreborn:rock_cutter": {
+    "displayName": "Rock Cutter",
+    "texture": "/img/items/rock_cutter.png",
+    "category": "item"
+  },
+  "techreborn:rubber_door": {
+    "displayName": "Rubber Door",
+    "texture": "/img/items/rubber_door.png",
+    "category": "item"
+  },
+  "techreborn:rubber_sapling": {
+    "displayName": "Rubber Sapling",
+    "texture": "/img/items/rubber_sapling.png",
+    "category": "item"
+  },
+  "techreborn:ruby_axe": {
+    "displayName": "Ruby Axe",
+    "texture": "/img/items/ruby_axe.png",
+    "category": "item"
+  },
+  "techreborn:ruby_boots": {
+    "displayName": "Ruby Boots",
+    "texture": "/img/items/ruby_boots.png",
+    "category": "item"
+  },
+  "techreborn:ruby_chestplate": {
+    "displayName": "Ruby Chestplate",
+    "texture": "/img/items/ruby_chestplate.png",
+    "category": "item"
+  },
+  "techreborn:ruby_gem": {
+    "displayName": "Ruby Gem",
+    "texture": "/img/items/ruby_gem.png",
+    "category": "item"
+  },
+  "techreborn:ruby_helmet": {
+    "displayName": "Ruby Helmet",
+    "texture": "/img/items/ruby_helmet.png",
+    "category": "item"
+  },
+  "techreborn:ruby_hoe": {
+    "displayName": "Ruby Hoe",
+    "texture": "/img/items/ruby_hoe.png",
+    "category": "item"
+  },
+  "techreborn:ruby_leggings": {
+    "displayName": "Ruby Leggings",
+    "texture": "/img/items/ruby_leggings.png",
+    "category": "item"
+  },
+  "techreborn:ruby_pickaxe": {
+    "displayName": "Ruby Pickaxe",
+    "texture": "/img/items/ruby_pickaxe.png",
+    "category": "item"
+  },
+  "techreborn:ruby_spade": {
+    "displayName": "Ruby Spade",
+    "texture": "/img/items/ruby_spade.png",
+    "category": "item"
+  },
+  "techreborn:ruby_sword": {
+    "displayName": "Ruby Sword",
+    "texture": "/img/items/ruby_sword.png",
+    "category": "item"
+  },
+  "techreborn:sapphire_axe": {
+    "displayName": "Sapphire Axe",
+    "texture": "/img/items/sapphire_axe.png",
+    "category": "item"
+  },
+  "techreborn:sapphire_boots": {
+    "displayName": "Sapphire Boots",
+    "texture": "/img/items/sapphire_boots.png",
+    "category": "item"
+  },
+  "techreborn:sapphire_chestplate": {
+    "displayName": "Sapphire Chestplate",
+    "texture": "/img/items/sapphire_chestplate.png",
+    "category": "item"
+  },
+  "techreborn:sapphire_gem": {
+    "displayName": "Sapphire Gem",
+    "texture": "/img/items/sapphire_gem.png",
+    "category": "item"
+  },
+  "techreborn:sapphire_helmet": {
+    "displayName": "Sapphire Helmet",
+    "texture": "/img/items/sapphire_helmet.png",
+    "category": "item"
+  },
+  "techreborn:sapphire_hoe": {
+    "displayName": "Sapphire Hoe",
+    "texture": "/img/items/sapphire_hoe.png",
+    "category": "item"
+  },
+  "techreborn:sapphire_leggings": {
+    "displayName": "Sapphire Leggings",
+    "texture": "/img/items/sapphire_leggings.png",
+    "category": "item"
+  },
+  "techreborn:sapphire_pickaxe": {
+    "displayName": "Sapphire Pickaxe",
+    "texture": "/img/items/sapphire_pickaxe.png",
+    "category": "item"
+  },
+  "techreborn:sapphire_spade": {
+    "displayName": "Sapphire Spade",
+    "texture": "/img/items/sapphire_spade.png",
+    "category": "item"
+  },
+  "techreborn:sapphire_sword": {
+    "displayName": "Sapphire Sword",
+    "texture": "/img/items/sapphire_sword.png",
+    "category": "item"
+  },
+  "techreborn:scrapbox": {
+    "displayName": "Scrapbox",
+    "texture": "/img/items/scrapbox.png",
+    "category": "item"
+  },
+  "techreborn:silver_boots": {
+    "displayName": "Silver Boots",
+    "texture": "/img/items/silver_boots.png",
+    "category": "item"
+  },
+  "techreborn:silver_chestplate": {
+    "displayName": "Silver Chestplate",
+    "texture": "/img/items/silver_chestplate.png",
+    "category": "item"
+  },
+  "techreborn:silver_dust": {
+    "displayName": "Silver Dust",
+    "texture": "/img/items/silver_dust.png",
+    "category": "item"
+  },
+  "techreborn:silver_helmet": {
+    "displayName": "Silver Helmet",
+    "texture": "/img/items/silver_helmet.png",
+    "category": "item"
+  },
+  "techreborn:silver_leggings": {
+    "displayName": "Silver Leggings",
+    "texture": "/img/items/silver_leggings.png",
+    "category": "item"
+  },
+  "techreborn:silver_small_dust": {
+    "displayName": "Silver Small Dust",
+    "texture": "/img/items/silver_small_dust.png",
+    "category": "item"
+  },
+  "techreborn:steel_boots": {
+    "displayName": "Steel Boots",
+    "texture": "/img/items/steel_boots.png",
+    "category": "item"
+  },
+  "techreborn:steel_chestplate": {
+    "displayName": "Steel Chestplate",
+    "texture": "/img/items/steel_chestplate.png",
+    "category": "item"
+  },
+  "techreborn:steel_helmet": {
+    "displayName": "Steel Helmet",
+    "texture": "/img/items/steel_helmet.png",
+    "category": "item"
+  },
+  "techreborn:steel_leggings": {
+    "displayName": "Steel Leggings",
+    "texture": "/img/items/steel_leggings.png",
+    "category": "item"
+  },
+  "techreborn:thorium_cell": {
+    "displayName": "Thorium Cell",
+    "texture": "/img/items/thorium_cell.png",
+    "category": "item"
+  },
+  "techreborn:tin": {
+    "displayName": "Tin",
+    "texture": "/img/items/tin.png",
+    "category": "item"
+  },
+  "techreborn:tin_dust": {
+    "displayName": "Tin Dust",
+    "texture": "/img/items/tin_dust.png",
+    "category": "item"
+  },
+  "techreborn:tin_small_dust": {
+    "displayName": "Tin Small Dust",
+    "texture": "/img/items/tin_small_dust.png",
+    "category": "item"
+  },
+  "techreborn:tool_bronze_boots": {
+    "displayName": "Tool Bronze Boots",
+    "texture": "/img/items/tool_bronze_boots.png",
+    "category": "item"
+  },
+  "techreborn:treetap": {
+    "displayName": "Treetap",
+    "texture": "/img/items/treetap.png",
+    "category": "item"
+  },
+  "techreborn:tungsten_dust": {
+    "displayName": "Tungsten Dust",
+    "texture": "/img/items/tungsten_dust.png",
+    "category": "item"
+  },
+  "techreborn:upgradebackingtemplate": {
+    "displayName": "Upgradebackingtemplate",
+    "texture": "/img/items/upgradebackingtemplate.png",
+    "category": "item"
+  },
+  "techreborn:uranium_cell": {
+    "displayName": "Uranium Cell",
+    "texture": "/img/items/uranium_cell.png",
+    "category": "item"
+  },
+  "techreborn:wrench": {
+    "displayName": "Wrench",
+    "texture": "/img/items/wrench.png",
+    "category": "item"
+  },
+  "techreborn:yellow_garnet_gem": {
+    "displayName": "Yellow Garnet Gem",
+    "texture": "/img/items/yellow_garnet_gem.png",
+    "category": "item"
+  },
+  "techreborn:advanced_machine_casing": {
+    "displayName": "Advanced Machine Casing",
+    "texture": "/img/blocks/advanced_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:advanced_tank_unit": {
+    "displayName": "Advanced Tank Unit",
+    "texture": "/img/blocks/advanced_tank_unit_top.png",
+    "category": "block"
+  },
+  "techreborn:auto_crafting_table": {
+    "displayName": "Auto Crafting Table",
+    "texture": "/img/blocks/auto_crafting_table_top.png",
+    "category": "block"
+  },
+  "techreborn:basic_machine_casing": {
+    "displayName": "Basic Machine Casing",
+    "texture": "/img/blocks/basic_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:basic_tank_unit": {
+    "displayName": "Basic Tank Unit",
+    "texture": "/img/blocks/basic_tank_unit_top.png",
+    "category": "block"
+  },
+  "techreborn:chunk_loader": {
+    "displayName": "Chunk Loader",
+    "texture": "/img/blocks/chunk_loader_top.png",
+    "category": "block"
+  },
+  "techreborn:copper_ore": {
+    "displayName": "Copper Ore",
+    "texture": "/img/blocks/copper_ore.png",
+    "category": "block"
+  },
+  "techreborn:copper_storage_block": {
+    "displayName": "Copper Storage Block",
+    "texture": "/img/blocks/copper_storage_block.png",
+    "category": "block"
+  },
+  "techreborn:creative_tank_unit": {
+    "displayName": "Creative Tank Unit",
+    "texture": "/img/blocks/creative_tank_unit_top.png",
+    "category": "block"
+  },
+  "techreborn:dragon_egg_syphon": {
+    "displayName": "Dragon Egg Syphon",
+    "texture": "/img/blocks/dragon_egg_syphon_top.png",
+    "category": "block"
+  },
+  "techreborn:fishing_station": {
+    "displayName": "Fishing Station",
+    "texture": "/img/blocks/fishing_station.png",
+    "category": "block"
+  },
+  "techreborn:fluid_drain": {
+    "displayName": "Fluid Drain",
+    "texture": "/img/blocks/fluid_drain_top.png",
+    "category": "block"
+  },
+  "techreborn:generator": {
+    "displayName": "Generator",
+    "texture": "/img/blocks/generator_top.png",
+    "category": "block"
+  },
+  "techreborn:industrial_machine_casing": {
+    "displayName": "Industrial Machine Casing",
+    "texture": "/img/blocks/industrial_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:industrial_tank_unit": {
+    "displayName": "Industrial Tank Unit",
+    "texture": "/img/blocks/industrial_tank_unit_top.png",
+    "category": "block"
+  },
+  "techreborn:lamp": {
+    "displayName": "Lamp",
+    "texture": "/img/blocks/lamp.png",
+    "category": "block"
+  },
+  "techreborn:launchpad": {
+    "displayName": "Launchpad",
+    "texture": "/img/blocks/launchpad_top.png",
+    "category": "block"
+  },
+  "techreborn:lightning_rod": {
+    "displayName": "Lightning Rod",
+    "texture": "/img/blocks/lightning_rod_top.png",
+    "category": "block"
+  },
+  "techreborn:nuke": {
+    "displayName": "Nuke",
+    "texture": "/img/blocks/nuke_top.png",
+    "category": "block"
+  },
+  "techreborn:peridot_ore_stone": {
+    "displayName": "Peridot Ore Stone",
+    "texture": "/img/blocks/peridot_ore_stone.png",
+    "category": "block"
+  },
+  "techreborn:player_detector_all": {
+    "displayName": "Player Detector All",
+    "texture": "/img/blocks/player_detector_all.png",
+    "category": "block"
+  },
+  "techreborn:player_detector_others": {
+    "displayName": "Player Detector Others",
+    "texture": "/img/blocks/player_detector_others.png",
+    "category": "block"
+  },
+  "techreborn:player_detector_you": {
+    "displayName": "Player Detector You",
+    "texture": "/img/blocks/player_detector_you.png",
+    "category": "block"
+  },
+  "techreborn:pump": {
+    "displayName": "Pump",
+    "texture": "/img/blocks/pump_top.png",
+    "category": "block"
+  },
+  "techreborn:quantum_tank_unit": {
+    "displayName": "Quantum Tank Unit",
+    "texture": "/img/blocks/quantum_tank_unit_top.png",
+    "category": "block"
+  },
+  "techreborn:quantum": {
+    "displayName": "Quantum",
+    "texture": "/img/blocks/quantum_top.png",
+    "category": "block"
+  },
+  "techreborn:reinforced_glass": {
+    "displayName": "Reinforced Glass",
+    "texture": "/img/blocks/reinforced_glass.png",
+    "category": "block"
+  },
+  "techreborn:resin_bucket_base": {
+    "displayName": "Resin Bucket Base",
+    "texture": "/img/blocks/resin_bucket_base.png",
+    "category": "block"
+  },
+  "techreborn:resin_bucket_inner": {
+    "displayName": "Resin Bucket Inner",
+    "texture": "/img/blocks/resin_bucket_inner.png",
+    "category": "block"
+  },
+  "techreborn:resin_bucket": {
+    "displayName": "Resin Bucket",
+    "texture": "/img/blocks/resin_bucket_top.png",
+    "category": "block"
+  },
+  "techreborn:rubber_leaves": {
+    "displayName": "Rubber Leaves",
+    "texture": "/img/blocks/rubber_leaves.png",
+    "category": "block"
+  },
+  "techreborn:rubber_log_sap": {
+    "displayName": "Rubber Log Sap",
+    "texture": "/img/blocks/rubber_log_sap.png",
+    "category": "block"
+  },
+  "techreborn:rubber_log": {
+    "displayName": "Rubber Log",
+    "texture": "/img/blocks/rubber_log_top.png",
+    "category": "block"
+  },
+  "techreborn:rubber_planks": {
+    "displayName": "Rubber Planks",
+    "texture": "/img/blocks/rubber_planks.png",
+    "category": "block"
+  },
+  "techreborn:rubber_trapdoor": {
+    "displayName": "Rubber Trapdoor",
+    "texture": "/img/blocks/rubber_trapdoor.png",
+    "category": "block"
+  },
+  "techreborn:sheldonite_ore_stone": {
+    "displayName": "Sheldonite Ore Stone",
+    "texture": "/img/blocks/sheldonite_ore_stone.png",
+    "category": "block"
+  },
+  "techreborn:sodalite_ore_stone": {
+    "displayName": "Sodalite Ore Stone",
+    "texture": "/img/blocks/sodalite_ore_stone.png",
+    "category": "block"
+  },
+  "techreborn:solar_panel": {
+    "displayName": "Solar Panel",
+    "texture": "/img/blocks/solar_panel_top.png",
+    "category": "block"
+  },
+  "techreborn:storage_buffer": {
+    "displayName": "Storage Buffer",
+    "texture": "/img/blocks/storage_buffer_top.png",
+    "category": "block"
+  },
+  "techreborn:stripped_rubber_log": {
+    "displayName": "Stripped Rubber Log",
+    "texture": "/img/blocks/stripped_rubber_log_top.png",
+    "category": "block"
+  },
+  "techreborn:tier0_machines_machine": {
+    "displayName": "Tier0 Machines Machine",
+    "texture": "/img/blocks/tier0_machines_machine_top.png",
+    "category": "block"
+  },
+  "techreborn:tier1_machines_machine": {
+    "displayName": "Tier1 Machines Machine",
+    "texture": "/img/blocks/tier1_machines_machine_top.png",
+    "category": "block"
+  },
+  "techreborn:tier1_machine_block": {
+    "displayName": "Tier1 Machine Block",
+    "texture": "/img/blocks/tier1_machine_block.png",
+    "category": "block"
+  },
+  "techreborn:tier2_machines_machine_back": {
+    "displayName": "Tier2 Machines Machine Back",
+    "texture": "/img/blocks/tier2_machines_machine_back.png",
+    "category": "block"
+  },
+  "techreborn:tier2_machines_machine": {
+    "displayName": "Tier2 Machines Machine",
+    "texture": "/img/blocks/tier2_machines_machine_top.png",
+    "category": "block"
+  },
+  "techreborn:tier2_machine_block": {
+    "displayName": "Tier2 Machine Block",
+    "texture": "/img/blocks/tier2_machine_block.png",
+    "category": "block"
+  },
+  "techreborn:tier3_machines_machine_back": {
+    "displayName": "Tier3 Machines Machine Back",
+    "texture": "/img/blocks/tier3_machines_machine_back.png",
+    "category": "block"
+  },
+  "techreborn:tier3_machines_machine": {
+    "displayName": "Tier3 Machines Machine",
+    "texture": "/img/blocks/tier3_machines_machine_top.png",
+    "category": "block"
+  },
+  "techreborn:tier3_machine_block": {
+    "displayName": "Tier3 Machine Block",
+    "texture": "/img/blocks/tier3_machine_block.png",
+    "category": "block"
+  },
+  "techreborn:tungsten_ore_stone": {
+    "displayName": "Tungsten Ore Stone",
+    "texture": "/img/blocks/tungsten_ore_stone.png",
+    "category": "block"
+  },
+  "techreborn:wind_mill_left": {
+    "displayName": "Wind Mill Left",
+    "texture": "/img/blocks/wind_mill_left.png",
+    "category": "block"
+  },
+  "techreborn:wind_mill_right": {
+    "displayName": "Wind Mill Right",
+    "texture": "/img/blocks/wind_mill_right.png",
+    "category": "block"
+  },
+  "techreborn:wind_mill": {
+    "displayName": "Wind Mill",
+    "texture": "/img/blocks/wind_mill_top.png",
+    "category": "block"
+  },
+  "techreborn:wind_mill_turbine": {
+    "displayName": "Wind Mill Turbine",
+    "texture": "/img/blocks/wind_mill_turbine.png",
+    "category": "block"
+  },
+  "techreborn:solid_fuel_generator": {
+    "displayName": "Solid Fuel Generator",
+    "texture": "/img/blocks/generator_top.png",
+    "category": "block"
+  },
+  "techreborn:water_mill": {
+    "displayName": "Water Mill",
+    "texture": "/img/blocks/generator_top.png",
+    "category": "block"
+  },
+  "techreborn:thermal_generator": {
+    "displayName": "Thermal Generator",
+    "texture": "/img/blocks/thermal_generator_top_off.png",
+    "category": "block"
+  },
+  "techreborn:diesel_generator": {
+    "displayName": "Diesel Generator",
+    "texture": "/img/blocks/diesel_generator_top_off.png",
+    "category": "block"
+  },
+  "techreborn:semi_fluid_generator": {
+    "displayName": "Semi-Fluid Generator",
+    "texture": "/img/blocks/semi_fluid_generator_top_off.png",
+    "category": "block"
+  },
+  "techreborn:plasma_generator": {
+    "displayName": "Plasma Generator",
+    "texture": "/img/blocks/plasma_generator_top_off.png",
+    "category": "block"
+  },
+  "techreborn:gas_turbine": {
+    "displayName": "Gas Turbine",
+    "texture": "/img/blocks/generator_top.png",
+    "category": "block"
+  },
+  "techreborn:basic_machine_frame": {
+    "displayName": "Basic Machine Frame",
+    "texture": "/img/blocks/basic_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:advanced_machine_frame": {
+    "displayName": "Advanced Machine Frame",
+    "texture": "/img/blocks/advanced_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:industrial_machine_frame": {
+    "displayName": "Industrial Machine Frame",
+    "texture": "/img/blocks/industrial_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:electric_furnace": {
+    "displayName": "Electric Furnace",
+    "texture": "/img/blocks/basic_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:grinder": {
+    "displayName": "Grinder",
+    "texture": "/img/blocks/basic_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:compressor": {
+    "displayName": "Compressor",
+    "texture": "/img/blocks/basic_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:extractor": {
+    "displayName": "Extractor",
+    "texture": "/img/blocks/basic_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:alloy_smelter": {
+    "displayName": "Alloy Smelter",
+    "texture": "/img/blocks/basic_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:chemical_reactor": {
+    "displayName": "Chemical Reactor",
+    "texture": "/img/blocks/advanced_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:assembly_machine": {
+    "displayName": "Assembly Machine",
+    "texture": "/img/blocks/advanced_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:distillation_tower": {
+    "displayName": "Distillation Tower",
+    "texture": "/img/blocks/industrial_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:implosion_compressor": {
+    "displayName": "Implosion Compressor",
+    "texture": "/img/blocks/industrial_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:industrial_blast_furnace": {
+    "displayName": "Industrial Blast Furnace",
+    "texture": "/img/blocks/industrial_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:industrial_centrifuge": {
+    "displayName": "Industrial Centrifuge",
+    "texture": "/img/blocks/industrial_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:industrial_electrolyzer": {
+    "displayName": "Industrial Electrolyzer",
+    "texture": "/img/blocks/industrial_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:industrial_grinder": {
+    "displayName": "Industrial Grinder",
+    "texture": "/img/blocks/industrial_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:industrial_sawmill": {
+    "displayName": "Industrial Sawmill",
+    "texture": "/img/blocks/industrial_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:vacuum_freezer": {
+    "displayName": "Vacuum Freezer",
+    "texture": "/img/blocks/industrial_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:wire_mill": {
+    "displayName": "Wire Mill",
+    "texture": "/img/blocks/basic_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:recycler": {
+    "displayName": "Recycler",
+    "texture": "/img/blocks/basic_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:rolling_machine": {
+    "displayName": "Rolling Machine",
+    "texture": "/img/blocks/basic_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:iron_alloy_furnace": {
+    "displayName": "Iron Alloy Furnace",
+    "texture": "/img/blocks/basic_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:iron_furnace": {
+    "displayName": "Iron Furnace",
+    "texture": "/img/blocks/basic_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:solid_canning_machine": {
+    "displayName": "Solid Canning Machine",
+    "texture": "/img/blocks/basic_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:scrapboxinator": {
+    "displayName": "Scrapboxinator",
+    "texture": "/img/blocks/basic_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:matter_fabricator": {
+    "displayName": "Matter Fabricator",
+    "texture": "/img/blocks/matter_fabricator_bottom.png",
+    "category": "block"
+  },
+  "techreborn:low_voltage_su": {
+    "displayName": "LV Storage Unit",
+    "texture": "/img/blocks/low_voltage_su_front.png",
+    "category": "block"
+  },
+  "techreborn:medium_voltage_su": {
+    "displayName": "MV Storage Unit",
+    "texture": "/img/blocks/medium_voltage_su_front.png",
+    "category": "block"
+  },
+  "techreborn:high_voltage_su": {
+    "displayName": "HV Storage Unit",
+    "texture": "/img/blocks/high_voltage_su_front.png",
+    "category": "block"
+  },
+  "techreborn:lapotronic_su": {
+    "displayName": "Lapotronic SU",
+    "texture": "/img/blocks/lapotronic_su_front.png",
+    "category": "block"
+  },
+  "techreborn:adjustable_su": {
+    "displayName": "Adjustable SU",
+    "texture": "/img/blocks/adjustable_su_front.png",
+    "category": "block"
+  },
+  "techreborn:interdimensional_su": {
+    "displayName": "Interdimensional SU",
+    "texture": "/img/blocks/interdimensional_su_front.png",
+    "category": "block"
+  },
+  "techreborn:lv_transformer": {
+    "displayName": "LV Transformer",
+    "texture": "/img/blocks/lv_transformer_front.png",
+    "category": "block"
+  },
+  "techreborn:mv_transformer": {
+    "displayName": "MV Transformer",
+    "texture": "/img/blocks/mv_transformer_front.png",
+    "category": "block"
+  },
+  "techreborn:hv_transformer": {
+    "displayName": "HV Transformer",
+    "texture": "/img/blocks/hv_transformer_front.png",
+    "category": "block"
+  },
+  "techreborn:fusion_control_computer": {
+    "displayName": "Fusion Control Computer",
+    "texture": "/img/blocks/fusion_control_computer_bottom.png",
+    "category": "block"
+  },
+  "techreborn:fusion_coil": {
+    "displayName": "Fusion Coil",
+    "texture": "/img/blocks/fusion_coil_heart.png",
+    "category": "block"
+  },
+  "techreborn:lsu_storage": {
+    "displayName": "LSU Storage",
+    "texture": "/img/blocks/basic_storage_unit_top.png",
+    "category": "block"
+  },
+  "techreborn:player_detector": {
+    "displayName": "Player Detector",
+    "texture": "/img/blocks/player_detector_all.png",
+    "category": "block"
+  },
+  "techreborn:block_breaker": {
+    "displayName": "Block Breaker",
+    "texture": "/img/blocks/basic_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:block_placer": {
+    "displayName": "Block Placer",
+    "texture": "/img/blocks/basic_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:drain": {
+    "displayName": "Drain",
+    "texture": "/img/blocks/fluid_drain_top.png",
+    "category": "block"
+  },
+  "techreborn:alarm": {
+    "displayName": "Alarm",
+    "texture": "/img/blocks/lamp.png",
+    "category": "block"
+  },
+  "techreborn:lamp_incandescent": {
+    "displayName": "Incandescent Lamp",
+    "texture": "/img/blocks/lamp.png",
+    "category": "block"
+  },
+  "techreborn:lamp_led": {
+    "displayName": "LED Lamp",
+    "texture": "/img/blocks/lamp.png",
+    "category": "block"
+  },
+  "techreborn:charge_o_mat": {
+    "displayName": "Charge-O-Mat",
+    "texture": "/img/blocks/basic_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:elevator": {
+    "displayName": "Elevator",
+    "texture": "/img/blocks/basic_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:fluid_replicator": {
+    "displayName": "Fluid Replicator",
+    "texture": "/img/blocks/advanced_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:greenhouse_controller": {
+    "displayName": "Greenhouse Controller",
+    "texture": "/img/blocks/basic_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:resin_basin": {
+    "displayName": "Resin Basin",
+    "texture": "/img/blocks/basic_machine_casing.png",
+    "category": "block"
+  },
+  "techreborn:scrap_box": {
+    "displayName": "Scrap Box",
+    "texture": "/img/items/scrapbox.png",
+    "category": "item"
+  },
+  "techreborn:computer_cube": {
+    "displayName": "Computer Cube",
+    "texture": "/img/blocks/basic_machine_casing.png",
+    "category": "block"
+  },
+  "minecraft:furnace": {
+    "displayName": "Furnace",
+    "texture": "/img/blocks/basic_machine_casing.png",
+    "category": "block"
   }
 }

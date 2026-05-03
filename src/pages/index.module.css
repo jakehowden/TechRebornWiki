@@ -21,3 +21,31 @@
   align-items: center;
   justify-content: center;
 }
+
+.featureCard {
+  display: block;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  margin: 0.5rem;
+}
+
+.featureCard:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  color: inherit;
+}
+
+.featureCard h3 {
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.featureCard p {
+  margin-bottom: 0;
+  color: var(--ifm-color-emphasis-700);
+}

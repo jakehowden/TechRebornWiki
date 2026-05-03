@@ -1,6 +1,7 @@
 .container {
   display: flex;
   align-items: center;
+  gap: 12px;
   margin-bottom: 1rem;
 }
 
@@ -9,39 +10,37 @@
   padding: 8px;
   border-radius: 4px;
   border: 2px solid #555;
+  display: inline-block;
 }
 
-.table {
-  border-collapse: separate;
-  border-spacing: 2px;
-  margin: 0;
-  background: transparent;
-}
-.table td {
-  padding: 0;
-  border: none;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 40px);
+  grid-template-rows: repeat(3, 40px);
+  gap: 2px;
 }
 
 .slot {
-  width: 36px;
-  height: 36px;
-  padding: 2px;
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
 }
 
 .outputSlot {
   width: 54px;
   height: 54px;
-  padding: 2px;
   position: relative;
+  box-sizing: border-box;
 }
 
 .countBadge {
   position: absolute;
-  bottom: 0px;
-  right: 2px;
+  bottom: 2px;
+  right: 4px;
   color: white;
   text-shadow: 1px 1px 0 #000;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 0.85rem;
   font-family: monospace;
+  pointer-events: none;
 }

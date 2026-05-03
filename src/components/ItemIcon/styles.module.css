@@ -31,7 +31,10 @@
   justify-content: center;
   font-family: monospace;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 0.75rem;
+  overflow: hidden;
+  text-overflow: clip;
+  letter-spacing: -0.5px;
   box-sizing: border-box;
   border: 1px solid #555;
 }

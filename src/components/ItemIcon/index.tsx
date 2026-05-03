@@ -56,7 +56,9 @@ export default function ItemIcon({ id, size = 32, className = '' }: ItemIconProp
           }}
         />
       ) : (
-        <div className={styles.missingTexture}>?</div>
+        <div className={styles.missingTexture} title={displayName}>
+          {displayName.substring(0, 2).toUpperCase()}
+        </div>
       )}
     </div>
   );
