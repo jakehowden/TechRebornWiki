@@ -20,33 +20,21 @@ export interface ItemIconProps {
   className?: string;
 }
 
+const BLOCK_3D_THRESHOLD = 64;
+
+type BlockFaces = Record<string, { top: string; front: string; side: string }>;
+
 export default function ItemIcon({ id, size = 32, className = '' }: ItemIconProps) {
   const [imgError, setImgError] = useState(false);
 
   // 1. Resolve tags (e.g. "c:diamond_dusts" → "techreborn:diamond_dust")
   const resolvedId = (id in tagsData) ? tagsData[id as keyof typeof tagsData] : id;
 
-  // 2. For large icons (hero displays), render 3D block if face data exists
-  const blockFaces = (blocksData as any)[resolvedId];
-  if (blockFaces && size >= 64) {
-    const itemMeta = itemsData[resolvedId as keyof typeof itemsData];
-    return (
-      <BlockRenderer
-        top={blockFaces.top}
-        front={blockFaces.front}
-        side={blockFaces.side}
-        displayName={itemMeta?.displayName || resolvedId}
-        size={size}
-      />
-    );
-  }
-
-  // 3. Flat 2D icon rendering
+  // 2. Compute flat-icon data unconditionally — hooks must not follow early returns
   const itemInfo = itemsData[resolvedId as keyof typeof itemsData];
   let texturePath = itemInfo?.texture;
   let displayName = itemInfo?.displayName || resolvedId;
 
-  // Vanilla item fallback: construct path from item name
   if (resolvedId.startsWith('minecraft:') && !texturePath) {
     texturePath = `/img/vanilla/${resolvedId.replace('minecraft:', '')}.png`;
     displayName = resolvedId.replace('minecraft:', '').split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
@@ -55,6 +43,21 @@ export default function ItemIcon({ id, size = 32, className = '' }: ItemIconProp
   const src = useBaseUrl(texturePath || '/img/unknown.png');
   const hasPage = itemsWithPages.includes(resolvedId);
 
+  // 3. For large icons (hero displays), render 3D block if face data exists
+  const blockFaces = (blocksData as BlockFaces)[resolvedId];
+  if (blockFaces && size >= BLOCK_3D_THRESHOLD) {
+    return (
+      <BlockRenderer
+        top={blockFaces.top}
+        front={blockFaces.front}
+        side={blockFaces.side}
+        displayName={displayName}
+        size={size}
+      />
+    );
+  }
+
+  // 4. Flat 2D icon rendering
   const imgStyle = { width: size, height: size };
 
   const content = (

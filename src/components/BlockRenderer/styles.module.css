@@ -14,25 +14,19 @@
   position: absolute;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  image-rendering: pixelated;
+  /* crisp-edges first as fallback; pixelated last as the preferred value */
   image-rendering: crisp-edges;
+  image-rendering: pixelated;
   backface-visibility: hidden;
 }
 
-/* Top face: fully lit */
 .faceTop {
   transform: rotateX(90deg);
   transform-origin: bottom center;
 }
 
-/* Front face: medium shadow */
-.faceFront {
-  filter: brightness(0.8);
-}
-
-/* Right (side) face: deepest shadow */
+/* Front and right brightness is controlled by inline styles in the component */
 .faceRight {
   transform: rotateY(-90deg);
   transform-origin: right center;
-  filter: brightness(0.6);
 }
