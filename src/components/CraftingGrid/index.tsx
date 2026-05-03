@@ -12,9 +12,10 @@ export interface CraftingGridProps {
   pattern: string[];
   legend: Record<string, IngredientType>;
   output: { id: string; count?: number };
+  shapeless?: boolean;
 }
 
-export default function CraftingGrid({ pattern, legend, output }: CraftingGridProps) {
+export default function CraftingGrid({ pattern, legend, output, shapeless = false }: CraftingGridProps) {
   const grid = Array(9).fill(null);
   const rows = pattern.length;
   const cols = rows > 0 ? pattern[0].length : 0;
@@ -30,7 +31,7 @@ export default function CraftingGrid({ pattern, legend, output }: CraftingGridPr
 
   return (
     <div className={styles.container}>
-      <div className={styles.gridBox}>
+      <div className={styles.gridBox} aria-label={shapeless ? 'Shapeless recipe' : 'Crafting recipe'}>
         <div className={styles.grid}>
           {grid.map((item, i) => {
             let itemId: string | undefined;
@@ -45,6 +46,7 @@ export default function CraftingGrid({ pattern, legend, output }: CraftingGridPr
             );
           })}
         </div>
+        {shapeless && <div className={styles.shapelessHint}>Shapeless</div>}
       </div>
 
       <div className="mc-arrow"></div>

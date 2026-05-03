@@ -19,11 +19,13 @@ This is a developer-only page to verify that all MDX components render correctly
   output={{ id: "techreborn:insulated_copper_cable", count: 6 }}
 />
 
-## 3. ShapelessRecipe
+## 3. CraftingGrid (Shapeless)
 
-<ShapelessRecipe
-  inputs={["techreborn:carbon_fiber", "techreborn:carbon_fiber"]}
+<CraftingGrid
+  pattern={["AB ", "   ", "   "]}
+  legend={{ A: "techreborn:carbon_fiber", B: "techreborn:carbon_fiber" }}
   output={{ id: "techreborn:carbon_mesh", count: 1 }}
+  shapeless
 />
 
 ## 4. MachineRecipe

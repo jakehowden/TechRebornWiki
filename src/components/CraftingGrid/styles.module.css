@@ -33,6 +33,14 @@
   box-sizing: border-box;
 }
 
+.shapelessHint {
+  font-size: 0.65rem;
+  color: #777;
+  text-align: center;
+  margin-top: 3px;
+  font-style: italic;
+}
+
 .countBadge {
   position: absolute;
   bottom: 2px;

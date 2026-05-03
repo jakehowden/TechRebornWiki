@@ -1,9 +1,7 @@
 import React from 'react';
 import recipesData from '@site/src/data/recipes.json';
 import CraftingGrid from '../CraftingGrid';
-import ShapelessRecipe from '../ShapelessRecipe';
 import MachineRecipe from '../MachineRecipe';
-import itemsData from '@site/src/data/items.json';
 import styles from './styles.module.css';
 
 export interface RecipeFromDataProps {
@@ -33,10 +31,18 @@ export default function RecipeFromData({ id }: RecipeFromDataProps) {
   }
 
   if (recipe.type === 'minecraft:crafting_shapeless') {
+    const ings: any[] = recipe.ingredients;
+    const chars = ['A','B','C','D','E','F','G','H','I'];
+    const legend: Record<string, any> = {};
+    ings.slice(0, 9).forEach((ing, i) => { legend[chars[i]] = ing; });
+    const flat = chars.slice(0, ings.length).join('').padEnd(9, ' ');
+    const pattern = [flat.slice(0, 3), flat.slice(3, 6), flat.slice(6, 9)];
     return (
-      <ShapelessRecipe 
-        inputs={recipe.ingredients} 
-        output={recipe.output} 
+      <CraftingGrid
+        pattern={pattern}
+        legend={legend}
+        output={recipe.output}
+        shapeless
       />
     );
   }

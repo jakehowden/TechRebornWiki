@@ -18,7 +18,7 @@ export default function BlockRenderer({ top, front, side, displayName = '', size
   // Each cube face is sized so the full isometric projection fits within `size x size`.
   // For a cube with face size F, the isometric bounding box is ≈ F*√2 wide × F*√(2/3)*2 tall.
   // Using F = size * 0.6 keeps the rendered cube comfortably within the container.
-  const faceSize = Math.round(size * 0.6);
+  const faceSize = Math.round(size * 0.75);
   const half = faceSize / 2;
 
   // Perspective large enough to appear near-orthographic (isometric-like)
