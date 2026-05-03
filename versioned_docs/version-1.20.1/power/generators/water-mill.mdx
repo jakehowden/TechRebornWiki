@@ -1,0 +1,24 @@
+---
+title: Water Mill
+description: Passively generates energy from adjacent flowing or source water blocks.
+sidebar_position: 2
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+
+<MachineStats power={32} buffer={1000} tier="Low" />
+
+<ItemIcon id="techreborn:water_mill" size={64} />
+
+## Overview
+The Water Mill generates energy passively when placed adjacent to Water blocks. It is a slow but infinite source of early-game Low Voltage (LV) energy.
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/water_mill" />
+
+## Behavior
+- Input: None (passive).
+- Output: Energy based on surrounding water blocks.
+- Configurable values: `waterMillMaxOutput`, `waterMillMaxEnergy`, `waterMillEnergyMultiplier`

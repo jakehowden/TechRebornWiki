@@ -1,0 +1,34 @@
+---
+title: Compressor
+description: Compresses items into denser forms like Plates and Blocks.
+sidebar_position: 1
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+import MachineRecipeList from '@site/src/components/MachineRecipeList';
+
+<MachineStats power={32} buffer={1000} tier="Low" inputSlots={1} outputSlots={1} />
+
+<ItemIcon id="techreborn:compressor" size={64} />
+
+## Overview
+The Compressor is an essential early-game LV machine. It compresses Ingots into Plates, which are used in many machine and tool recipes.
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/compressor" />
+
+## Behavior
+- **Input:** 1 Item Slot
+- **Output:** 1 Item Slot
+- **Power:** 32 E/t (from Low Voltage)
+- **Special:** Can be sped up using Overclocker Upgrades.
+
+## Recipes accepted
+
+<MachineRecipeList machine="compressor" />
+
+## See also
+- [Extractor](./extractor)
+- [Grinder](./grinder)

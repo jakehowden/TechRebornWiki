@@ -1,0 +1,34 @@
+---
+title: Industrial Centrifuge
+description: Spins materials at high speeds to separate them into byproducts.
+sidebar_position: 4
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+import MachineRecipeList from '@site/src/components/MachineRecipeList';
+import MultiblockShape from '@site/src/components/MultiblockShape';
+import multiblocksJson from '@site/src/data/multiblocks.json';
+
+<MachineStats power={32} buffer={10000} tier="Low" inputSlots={2} outputSlots={4} />
+
+<ItemIcon id="techreborn:industrial_centrifuge" size={64} />
+
+## Overview
+The Industrial Centrifuge separates complex items or dusts into multiple elements. It is heavily used in advanced material processing lines, such as extracting glowstone or rare earth materials.
+
+## Multiblock Structure
+<MultiblockShape data={multiblocksJson["industrial_centrifuge"]} />
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/industrial_centrifuge" />
+
+## Behavior
+- **Input:** Up to 2 Item Slots (includes fluid cells).
+- **Output:** Up to 4 Item Slots for byproducts.
+- **Power:** 32 E/t (Default Low Voltage in 1.20.1)
+
+## Recipes accepted
+
+<MachineRecipeList machine="centrifuge" />

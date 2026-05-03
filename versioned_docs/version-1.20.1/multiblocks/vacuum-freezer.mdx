@@ -1,0 +1,34 @@
+---
+title: Vacuum Freezer
+description: Cools extremely hot ingots into usable forms.
+sidebar_position: 4
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+import MachineRecipeList from '@site/src/components/MachineRecipeList';
+import MultiblockShape from '@site/src/components/MultiblockShape';
+import multiblocksJson from '@site/src/data/multiblocks.json';
+
+<MachineStats power={64} buffer={64000} tier="Medium" inputSlots={1} outputSlots={1} />
+
+<ItemIcon id="techreborn:vacuum_freezer" size={64} />
+
+## Overview
+The Vacuum Freezer rapidly cools down Hot Tungstensteel Ingots (and other superheated materials) produced by the Industrial Blast Furnace so they can be handled safely.
+
+## Multiblock Structure
+<MultiblockShape data={multiblocksJson["vacuum_freezer"]} />
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/vacuum_freezer" />
+
+## Behavior
+- **Input:** 1 Item Slot (Hot Ingots)
+- **Output:** 1 Item Slot (Cooled Ingots)
+- **Power:** 64 E/t 
+
+## Recipes accepted
+
+<MachineRecipeList machine="vacuum_freezer" />

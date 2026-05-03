@@ -1,0 +1,24 @@
+---
+title: Basic Solar Panel
+description: Generates a small amount of energy passively during the day.
+sidebar_position: 4
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+
+<MachineStats power={8} buffer={1000} tier="Micro" />
+
+<ItemIcon id="techreborn:basic_solar_panel" size={64} />
+
+## Overview
+The Basic Solar Panel is the first tier of solar generation. It produces a small amount of Micro voltage power during the daytime.
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/basic_solar_panel" />
+
+## Behavior
+- Input: Daylight (must have clear view of the sky).
+- Output: Energy (E).
+- Configurable values: `basicGenerationRateD`, `basicGenerationRateN`

@@ -1,0 +1,32 @@
+---
+title: Scrapboxinator
+description: Automatically opens Scrap Boxes and extracts their contents.
+sidebar_position: 9
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+import MachineRecipeList from '@site/src/components/MachineRecipeList';
+
+<MachineStats power={32} buffer={1000} tier="Low" inputSlots={1} outputSlots={1} />
+
+<ItemIcon id="techreborn:scrapboxinator" size={64} />
+
+## Overview
+The Scrapboxinator is designed specifically to automate the opening of Scrap Boxes. It quickly processes them and stores the randomly generated items in its output.
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/scrapboxinator" />
+
+## Behavior
+- **Input:** 1 Item Slot (Scrap Boxes)
+- **Output:** 1 Item Slot
+- **Power:** 32 E/t (from Low Voltage)
+
+## Recipes accepted
+
+<MachineRecipeList machine="scrapbox" />
+
+## See also
+- [Recycler](./recycler)

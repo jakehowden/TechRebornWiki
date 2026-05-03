@@ -1,0 +1,25 @@
+---
+title: Semi-Fluid Generator
+description: Burns semi-fluid materials like Creosote Oil, Biomass, or Seed Oil.
+sidebar_position: 13
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+
+<MachineStats power={128} buffer={1000000} tier="Medium" />
+
+<ItemIcon id="techreborn:semi_fluid_generator" size={64} />
+
+## Overview
+The Semi-Fluid Generator is a versatile Medium Voltage (MV) generator. It accepts various thick fluids such as Creosote Oil, Seed Oil, or Biomass.
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/semi_fluid_generator" />
+<RecipeFromData id="techreborn:crafting/semi_fluid_generator_alt" />
+
+## Behavior
+- Input: Semi-fluid fuels.
+- Output: Energy (E).
+- Configurable values: `semiFluidGeneratorMaxOutput`, `semiFluidGeneratorMaxEnergy`, `semiFluidGeneratorEnergyPerTick`

@@ -1,0 +1,25 @@
+---
+title: Gas Turbine
+description: Burns gaseous fuels like Hydrogen or Methane to generate energy.
+sidebar_position: 12
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+
+<MachineStats power={128} buffer={1000000} tier="Medium" />
+
+<ItemIcon id="techreborn:gas_turbine" size={64} />
+
+## Overview
+The Gas Turbine is a Medium Voltage (MV) generator that processes combustible gases. It is commonly used alongside an Industrial Electrolyzer processing water into Hydrogen.
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/gas_turbine" />
+<RecipeFromData id="techreborn:crafting/gas_turbine_alt" />
+
+## Behavior
+- Input: Gaseous fuels (Hydrogen, Methane, etc.).
+- Output: Energy (E).
+- Configurable values: `gasTurbineMaxOutput`, `gasTurbineMaxEnergy`, `gasTurbineEnergyPerTick`

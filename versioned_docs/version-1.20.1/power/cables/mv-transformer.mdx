@@ -1,0 +1,20 @@
+---
+title: MV Transformer
+description: Steps down High Voltage (HV) to Medium Voltage (MV).
+sidebar_position: 2
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import ItemIcon from '@site/src/components/ItemIcon';
+
+<ItemIcon id="techreborn:mv_transformer" size={64} />
+
+## Overview
+The MV Transformer is used to safely transfer energy between a High Voltage (HV) network and a Medium Voltage (MV) network.
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/mv_transformer" />
+
+## Behavior
+- **Default Mode (Step Down):** Accepts up to 512 E/t (HV) into the dotted face, and outputs up to 128 E/t (MV) from all other faces.
+- **Inverted Mode (Step Up):** When inverted with a Wrench or Redstone signal, it accepts MV into any face and outputs HV out of the dotted face.

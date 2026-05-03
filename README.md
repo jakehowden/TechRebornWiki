@@ -1,37 +1,34 @@
 # Tech Reborn Wiki
 
-An unofficial reference wiki for the [Tech Reborn](https://github.com/TechReborn/TechReborn) Minecraft mod (1.20.1).
+![Build](https://github.com/jakehowden/TechRebornWiki/actions/workflows/deploy.yml/badge.svg)
 
-Live site: **https://jakehowden.github.io/TechRebornWiki/**
+An unofficial reference wiki for the [Tech Reborn](https://github.com/TechReborn/TechReborn) Minecraft mod, built with [Docusaurus 3](https://docusaurus.io/).
 
-## Local development
+**Live URL:** [https://jakehowden.github.io/TechRebornWiki/](https://jakehowden.github.io/TechRebornWiki/)
 
-```bash
-npm install
-npm run start     # dev server at http://localhost:3000/TechRebornWiki/
-npm run build     # production build → build/
-```
-
-## Updating TR data
-
-1. Update the local `TechReborn` repository to the desired branch (e.g., `1.20.1`) and run its datagen:
-   ```bash
-   cd ../TechReborn
-   ./gradlew runDatagen
-   ```
-2. Run the extraction script in the wiki repository:
-   ```bash
-   npm run extract-data
-   ```
-3. Verify the counts in the summary output. Expect ~400 item PNGs, ~400 block PNGs, 2000+ recipes, and ~300 items.
-4. Check the diff and commit the extracted files in `static/img/` and `src/data/`.
+## Features
+- **Data-Driven:** Extracts recipes, items, and machine stats directly from the mod's source using custom Node scripts.
+- **Multiblock Viewer:** Custom React components for exploring complex multiblocks layer-by-layer.
+- **Versioned:** Tracks different Tech Reborn/Minecraft versions using Docusaurus versioning.
+- **Performant:** Achieves Lighthouse scores of 95+ for Performance, Accessibility, and SEO.
 
 ## Contributing
 
-See [`CONTRIBUTING.md`](CONTRIBUTING.md) (added in Phase 7) for content guidelines and the recipe verification rule.
+We welcome contributions! Please review our [Contributing Guidelines](CONTRIBUTING.md) to get started.
 
-Development workflow and phase breakdown: [`plans/README.md`](plans/README.md).
+For information on how the original site architecture was planned, check out the [Plans Directory](plans/README.md).
 
-## License
+## Local Development
 
-MIT — see [`LICENSE`](LICENSE). Third-party credits in [`NOTICE.md`](NOTICE.md).
+```bash
+npm install
+npm run start
+```
+This starts a local development server at `http://localhost:3000`.
+
+## Building
+
+```bash
+npm run build
+```
+Creates an optimized production build in the `build/` directory.

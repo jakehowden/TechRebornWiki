@@ -1,0 +1,25 @@
+---
+title: Interdimensional SU
+description: End-game energy storage that shares power across dimensions.
+sidebar_position: 5
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+
+<MachineStats power={8192} buffer={1000000000} tier="Insane" />
+
+<ItemIcon id="techreborn:interdimensional_su" size={64} />
+
+## Overview
+The Interdimensional SU (IDSU) is an end-game energy storage unit. All IDSUs placed by the same player share the exact same energy buffer, regardless of what dimension they are in.
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/interdimensional_su" />
+
+## Behavior
+- Input: Insane Voltage (IV).
+- Output: Insane Voltage (IV).
+- Special: Power is shared across all your IDSUs globally.
+- Configurable values: `idsuMaxEnergy`

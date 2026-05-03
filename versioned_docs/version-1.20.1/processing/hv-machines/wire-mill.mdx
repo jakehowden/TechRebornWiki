@@ -1,0 +1,29 @@
+---
+title: Wire Mill
+description: Efficiently pulls ingots and plates into wire.
+sidebar_position: 6
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+import MachineRecipeList from '@site/src/components/MachineRecipeList';
+
+<MachineStats power={128} buffer={10000} tier="Medium" inputSlots={1} outputSlots={1} />
+
+<ItemIcon id="techreborn:wire_mill" size={64} />
+
+## Overview
+The Wire Mill is a specialized machine that converts ingots directly into cables or wires at a much more efficient ratio than using a crafting table.
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/wire_mill" />
+
+## Behavior
+- **Input:** 1 Item Slot
+- **Output:** 1 Item Slot
+- **Power:** 128 E/t (Medium Voltage)
+
+## Recipes accepted
+
+<MachineRecipeList machine="wire_mill" />

@@ -1,0 +1,25 @@
+---
+title: Advanced Solar Panel
+description: A higher tier solar panel that generates more energy.
+sidebar_position: 5
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+
+<MachineStats power={32} buffer={40000} tier="Low" />
+
+<ItemIcon id="techreborn:advanced_solar_panel" size={64} />
+
+## Overview
+The Advanced Solar Panel is an upgrade to the basic model, producing significantly more power and serving as the primary solar power source in the early-to-mid game.
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/advanced_solar_panel" />
+<RecipeFromData id="techreborn:crafting/advanced_solar_panel_alt" />
+
+## Behavior
+- Input: Daylight (must have clear view of the sky).
+- Output: Energy (E).
+- Configurable values: `advancedGenerationRateD`, `advancedGenerationRateN`

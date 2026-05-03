@@ -1,0 +1,36 @@
+---
+title: Fusion Reactor
+description: Generates massive power and fabricates end-game elements.
+sidebar_position: 10
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+import MachineRecipeList from '@site/src/components/MachineRecipeList';
+import MultiblockShape from '@site/src/components/MultiblockShape';
+import multiblocksJson from '@site/src/data/multiblocks.json';
+
+<MachineStats power={8192} buffer={100000000} tier="Insane" />
+
+<ItemIcon id="techreborn:fusion_control_computer" size={64} />
+
+## Overview
+The Fusion Reactor is an end-game multiblock used for generating extreme amounts of power or synthesizing rare elements. It requires a massive ring of Fusion Coils to operate, and the size of the ring determines its maximum power and crafting speed.
+
+## Multiblock Structure
+<!-- VERIFY: structure for fusion_reactor (a Torus shape of variable radius) -->
+*The Fusion Reactor is built as a large hollow torus (ring) of Fusion Coils centered around the Control Computer. The ring radius is configurable via the GUI (default size 6). Below is an illustrative placeholder.*
+<MultiblockShape data={multiblocksJson["fusion_reactor"]} />
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/fusion_control_computer" />
+
+## Behavior
+- **Input:** 2 Item Slots (Top and Bottom)
+- **Output:** 1 Item Slot
+- **Power:** Up to 8192 E/t (Insane Voltage)
+
+## Recipes accepted
+
+<MachineRecipeList machine="fusion_reactor" />

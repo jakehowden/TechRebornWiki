@@ -1,0 +1,32 @@
+---
+title: Extractor
+description: Efficiently extracts items like Rubber from Sap.
+sidebar_position: 2
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+import MachineRecipeList from '@site/src/components/MachineRecipeList';
+
+<MachineStats power={32} buffer={1000} tier="Low" inputSlots={1} outputSlots={1} />
+
+<ItemIcon id="techreborn:extractor" size={64} />
+
+## Overview
+The Extractor is a critical LV machine for generating Rubber. Processing Sap in an Extractor yields 3 Rubber, making it significantly more efficient than a furnace.
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/extractor" />
+
+## Behavior
+- **Input:** 1 Item Slot
+- **Output:** 1 Item Slot
+- **Power:** 32 E/t (from Low Voltage)
+
+## Recipes accepted
+
+<MachineRecipeList machine="extractor" />
+
+## See also
+- [Compressor](./compressor)

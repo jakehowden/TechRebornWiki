@@ -1,0 +1,27 @@
+---
+title: Rolling Machine
+description: Crafts advanced components using a 3x3 grid that requires power.
+sidebar_position: 2
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+
+<MachineStats power={32} buffer={10000} tier="Low" />
+
+<ItemIcon id="techreborn:rolling_machine" size={64} />
+
+## Overview
+The Rolling Machine is a crafting table that requires energy to function. While historically an MV machine for crafting plates, in recent versions it behaves as an advanced Auto Crafting Table.
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/rolling_machine" />
+
+## Behavior
+- **Input:** 3x3 Crafting grid for ingredients.
+- **Output:** 1 Item Slot
+- **Power:** 32 E/t (Low Voltage default)
+
+## Recipes accepted
+*In Tech Reborn 1.20.1, the Rolling Machine may not have exclusive machine recipes, often acting as a powered standard crafter or disabled based on the modpack.*

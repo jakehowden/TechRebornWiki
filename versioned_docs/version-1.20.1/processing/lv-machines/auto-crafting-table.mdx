@@ -1,0 +1,28 @@
+---
+title: Auto Crafting Table
+description: Automates standard 3x3 crafting recipes.
+sidebar_position: 8
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+
+<MachineStats power={32} buffer={10000} tier="Low" />
+
+<ItemIcon id="techreborn:auto_crafting_table" size={64} />
+
+## Overview
+The Auto Crafting Table runs on electricity to automatically craft standard 3x3 Minecraft crafting recipes continuously as long as it is supplied with ingredients.
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/auto_crafting_table" />
+
+## Behavior
+- **Input:** Inventory for ingredients.
+- **Output:** Crafted items.
+- **Power:** 32 E/t (from Low Voltage)
+- **Special:** Configure the desired recipe in its UI grid.
+
+## Recipes accepted
+*Accepts standard vanilla and modded 3x3 crafting recipes.*

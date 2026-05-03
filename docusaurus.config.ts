@@ -15,7 +15,7 @@ const config: Config = {
   deploymentBranch: "gh-pages",
   trailingSlash: false,
 
-  onBrokenLinks: "warn",
+  onBrokenLinks: "throw",
 
   markdown: {
     hooks: {
@@ -36,6 +36,11 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           editUrl:
             "https://github.com/jakehowden/TechRebornWiki/tree/main/",
+          lastVersion: "1.20.1",
+          versions: {
+            current: { label: "Next (in development)", path: "next", banner: "unreleased" },
+            "1.20.1": { label: "1.20.1" },
+          },
         },
         blog: false,
         theme: {
@@ -46,7 +51,11 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: "img/docusaurus-social-card.jpg",
+    image: "img/og.png",
+    metadata: [
+      { name: "keywords", content: "techreborn, minecraft, wiki, mod" },
+      { name: "description", content: "An unofficial reference for the Tech Reborn Minecraft mod" },
+    ],
 
     colorMode: {
       defaultMode: "dark",
@@ -78,15 +87,6 @@ const config: Config = {
       style: "dark",
       links: [
         {
-          title: "Wiki",
-          items: [
-            {
-              label: "Home",
-              to: "/docs/intro",
-            },
-          ],
-        },
-        {
           title: "Links",
           items: [
             {
@@ -108,6 +108,17 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+  themes: [
+    [
+      require.resolve("@cmfcmf/docusaurus-search-local"),
+      {
+        indexDocs: true,
+        indexBlog: false,
+        indexPages: false,
+        language: "en",
+      },
+    ],
+  ],
 };
 
 export default config;

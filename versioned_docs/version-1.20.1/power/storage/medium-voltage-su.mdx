@@ -1,0 +1,24 @@
+---
+title: Medium Voltage SU
+description: Medium Voltage (MV) energy storage.
+sidebar_position: 2
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+
+<MachineStats power={128} buffer={4000000} tier="Medium" />
+
+<ItemIcon id="techreborn:medium_voltage_su" size={64} />
+
+## Overview
+The Medium Voltage SU (Storage Unit), formerly known as the MFE, is the second tier of energy storage. It holds 4,000,000 E and handles a transfer rate of 128 E/t.
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/medium_voltage_su" />
+
+## Behavior
+- Input: Receives energy up to 128 E/t.
+- Output: Emits energy up to 128 E/t.
+- Special: Can charge MV and LV batteries placed in its item slots.

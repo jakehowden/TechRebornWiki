@@ -1,0 +1,29 @@
+---
+title: Assembling Machine
+description: Automates the assembly of complex components.
+sidebar_position: 3
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+import MachineRecipeList from '@site/src/components/MachineRecipeList';
+
+<MachineStats power={128} buffer={10000} tier="Medium" inputSlots={2} outputSlots={1} />
+
+<ItemIcon id="techreborn:assembling_machine" size={64} />
+
+## Overview
+The Assembling Machine is a core Medium Voltage (MV) machine used to craft advanced components, such as Data Storage Cores and machine casings, often bypassing complex crafting table recipes.
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/assembling_machine" />
+
+## Behavior
+- **Input:** Up to 2 Item Slots
+- **Output:** 1 Item Slot
+- **Power:** 128 E/t (from Medium Voltage)
+
+## Recipes accepted
+
+<MachineRecipeList machine="assembling_machine" />

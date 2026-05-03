@@ -1,0 +1,24 @@
+---
+title: Plasma Generator
+description: Uses highly volatile Plasma to generate massive amounts of power.
+sidebar_position: 14
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+import ItemIcon from '@site/src/components/ItemIcon';
+
+<MachineStats power={2048} buffer={500000000} tier="Extreme" />
+
+<ItemIcon id="techreborn:plasma_generator" size={64} />
+
+## Overview
+The Plasma Generator is a late-game Extreme Voltage (EV) generator that uses Heliumplasma or other plasmas. It produces an incredibly high amount of energy.
+
+## Recipe
+<RecipeFromData id="techreborn:crafting/plasma_generator" />
+
+## Behavior
+- Input: Plasma fluids.
+- Output: Energy (E).
+- Configurable values: `plasmaGeneratorMaxOutput`, `plasmaGeneratorMaxEnergy`, `plasmaGeneratorEnergyPerTick`
