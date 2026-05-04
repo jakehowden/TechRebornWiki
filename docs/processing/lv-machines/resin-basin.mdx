@@ -1,0 +1,27 @@
+---
+title: Resin Basin
+description: A passive tap placed on rubber trees to collect raw rubber over time.
+sidebar_label: Resin Basin
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+
+<ItemHeader id="techreborn:resin_basin" />
+
+**Resin Basin** is a non-electric passive block in Tech Reborn. When attached to a rubber log, it slowly collects Raw Rubber sap without requiring any player interaction.
+
+## Recipe
+
+<RecipeFromData id="techreborn:crafting/resin_basin" />
+
+## Behavior
+
+- Must be placed on the side of a Rubber Tree log (the log must have a resin hole texture on that face).
+- Produces Raw Rubber passively at a configurable rate (default: configurable via `techreborn.json` under `resin_basin.saptime`).
+- Right-clicking an attached basin collects the raw rubber if any has accumulated.
+- No energy consumption — purely time-based.
+
+## See also
+
+- [Rubber Tree](../../world/rubber-tree.mdx)
+- [Extractor](./extractor.mdx)

@@ -35,6 +35,12 @@ const sidebars: SidebarsConfig = {
       cat("LV Machines", "processing/lv-machines"),
       cat("MV Machines", "processing/mv-machines"),
       cat("HV+ Machines", "processing/hv-machines"),
+      cat("Machine Upgrades", "processing/upgrades"),
+    ]),
+    cat("Building Blocks", "blocks", [
+      cat("Frames", "blocks/frames"),
+      cat("Casings", "blocks/casings"),
+      cat("Miscellaneous", "blocks/miscellaneous"),
     ]),
     cat("Tools & Armor", "tools-armor"),
     cat("Materials", "materials"),

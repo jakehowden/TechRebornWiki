@@ -1,0 +1,26 @@
+---
+title: Industrial Chunk Loader
+description: Keeps a configurable radius of chunks loaded when placed.
+sidebar_label: Industrial Chunk Loader
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+
+<ItemHeader id="techreborn:chunk_loader" />
+
+**Industrial Chunk Loader** is a utility block in Tech Reborn. Once placed, it forces the surrounding chunks to remain loaded, keeping machines and processes running even when no player is nearby.
+
+## Recipe
+
+<RecipeFromData id="techreborn:crafting/chunk_loader" />
+
+## Behavior
+
+- Keeps chunks in a configurable radius loaded (default radius: 5, configurable in `techreborn.json`).
+- No energy consumption — always active while placed.
+- Right-clicking opens a GUI showing the loaded chunk map.
+- The loaded area is tied to the block's position; breaking the block releases the chunks.
+
+## See also
+
+- [Energy Storage](../../power/storage/index.mdx)

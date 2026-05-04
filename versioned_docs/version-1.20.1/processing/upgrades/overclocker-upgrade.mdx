@@ -1,0 +1,37 @@
+---
+title: Overclocker Upgrade
+description: Increases machine processing speed at the cost of higher energy consumption.
+sidebar_label: Overclocker Upgrade
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+
+<ItemHeader id="techreborn:overclocker_upgrade" />
+
+**Overclocker Upgrade** is a machine upgrade in Tech Reborn. Each installed copy speeds up processing and increases power draw.
+
+## Recipe
+
+<RecipeFromData id="techreborn:crafting/overclocker_upgrade" />
+
+## Effect
+
+Per upgrade installed (default values, configurable in `techreborn.json`):
+
+| Stat | Multiplier |
+|---|---|
+| Speed | +25% faster (× 0.75 ticks per operation) |
+| Power draw | +75% more per tick (× 1.75) |
+
+Effects from multiple Overclocker Upgrades stack multiplicatively.
+
+## Notes
+
+- Accepted by most powered machines (electric furnaces, grinders, etc.).
+- Installing too many without sufficient power infrastructure can stall the machine.
+- Pairs well with [Transformer Upgrade](./transformer-upgrade.mdx) to accept higher-voltage input after overclocking.
+
+## See also
+
+- [Transformer Upgrade](./transformer-upgrade.mdx)
+- [Energy Storage Upgrade](./energy-storage-upgrade.mdx)

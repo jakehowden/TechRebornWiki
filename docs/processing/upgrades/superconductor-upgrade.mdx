@@ -1,0 +1,32 @@
+---
+title: Superconductor Upgrade
+description: Increases the Adjustable SU's per-tick output rate.
+sidebar_label: Superconductor Upgrade
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+
+<ItemHeader id="techreborn:superconductor_upgrade" />
+
+**Superconductor Upgrade** is a specialized upgrade in Tech Reborn. It only affects the [Adjustable SU](../../power/storage/adjustable-su.mdx) — each installed copy increases the number of superconductor channels available, raising the maximum output rate.
+
+## Recipe
+
+<RecipeFromData id="techreborn:crafting/superconductor_upgrade" />
+
+## Effect
+
+Per upgrade installed (default `superConductorCount = 1`, configurable in `techreborn.json`):
+
+- Adds 1 superconductor channel to the Adjustable SU.
+- Each channel allows a higher per-tick energy output.
+
+## Notes
+
+- Has no effect in any machine other than the Adjustable SU.
+- Install in the Adjustable SU's upgrade slots.
+
+## See also
+
+- [Adjustable SU](../../power/storage/adjustable-su.mdx)
+- [Energy Storage Upgrade](./energy-storage-upgrade.mdx)

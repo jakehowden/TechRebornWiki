@@ -1,0 +1,30 @@
+---
+title: Fishing Station
+description: Automatically fishes, delivering loot to its output inventory.
+sidebar_label: Fishing Station
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+
+<ItemHeader id="techreborn:fishing_station" />
+
+**Fishing Station** is a Medium-Voltage utility machine in Tech Reborn. It automatically performs fishing operations and deposits the results into its output inventory.
+
+<MachineStats power={128} buffer={10000} tier="Medium" />
+
+## Recipe
+
+<RecipeFromData id="techreborn:crafting/fishing_station" />
+
+## Behavior
+
+- Catches a fish (or other fishing loot) every 400 ticks (20 seconds) by default (configurable).
+- Consumes 500 E per catch (configurable).
+- Must have water adjacent to function.
+- Output goes into the machine's output slots.
+- Loot table is the same as vanilla fishing — includes fish, junk, and treasure.
+
+## See also
+
+- [Pump](./pump.mdx)

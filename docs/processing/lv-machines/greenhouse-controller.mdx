@@ -1,0 +1,32 @@
+---
+title: Greenhouse Controller
+description: Automatically harvests and bonemeal-grows crops in a configurable area.
+sidebar_label: Greenhouse Controller
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+
+<ItemHeader id="techreborn:greenhouse_controller" />
+
+**Greenhouse Controller** is a Low-Voltage utility machine in Tech Reborn. It scans crop blocks in its operating range, applies bonemeal to accelerate growth, and harvests mature crops automatically.
+
+<MachineStats power={32} buffer={1000} tier="Low" />
+
+## Recipe
+
+<RecipeFromData id="techreborn:crafting/greenhouse_controller" />
+
+## Behavior
+
+- Idle consumption: 2 E/t (configurable).
+- Energy per harvest: 100 E (configurable).
+- Energy per bonemeal application: 50 E (configurable).
+- Operates on the chunk the controller is in and adjacent loaded chunks within range.
+- Requires bonemeal in its inventory to use the bonemeal-growth feature.
+- Harvested items are deposited into the machine's output inventory or dropped nearby.
+
+## See also
+
+- [Rubber Tree](../../world/rubber-tree.mdx)
+- [Resin Basin](./resin-basin.mdx)

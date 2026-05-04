@@ -1,0 +1,30 @@
+---
+title: Elevator
+description: Teleports players vertically between stacked Elevator blocks.
+sidebar_label: Elevator
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+
+<ItemHeader id="techreborn:elevator" />
+
+**Elevator** is a Low-Voltage utility machine in Tech Reborn. When multiple Elevator blocks are stacked vertically, players can teleport between them by pressing the jump or sneak keys.
+
+<MachineStats power={32} buffer={1000} tier="Low" />
+
+## Recipe
+
+<RecipeFromData id="techreborn:crafting/elevator" />
+
+## Behavior
+
+- Press **Jump** while standing on an Elevator to teleport up to the next Elevator in the column.
+- Press **Sneak** while standing on an Elevator to teleport down to the next Elevator below.
+- Costs 2 E per block of vertical travel (configurable in `techreborn.json`).
+- Can optionally travel through solid blocks if `AllowElevatingThroughBlocks` is enabled in config.
+- Elevator blocks must be in the same X/Z column to link.
+
+## See also
+
+- [Launchpad](../mv-machines/launchpad.mdx)

@@ -1,0 +1,29 @@
+---
+title: Muffler Upgrade
+description: Silences machine operation sounds.
+sidebar_label: Muffler Upgrade
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+
+<ItemHeader id="techreborn:muffler_upgrade" />
+
+**Muffler Upgrade** is a machine upgrade in Tech Reborn. Installing one in a machine suppresses its operating sound effects.
+
+## Recipe
+
+<RecipeFromData id="techreborn:crafting/muffler_upgrade" />
+
+## Effect
+
+- Calls `blockEntity.muffle()` on the machine, silencing its tick/processing sounds.
+- One Muffler Upgrade is sufficient — installing multiple has no additional effect.
+
+## Notes
+
+- Useful in builds where machine noise is disruptive.
+- Does not affect performance (speed, power, or buffer).
+
+## See also
+
+- [Overclocker Upgrade](./overclocker-upgrade.mdx)

@@ -1,0 +1,35 @@
+---
+title: Charge-O-Mat
+description: Charges and discharges energy-storing items at High Voltage rates.
+sidebar_label: Charge-O-Mat
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+
+<ItemHeader id="techreborn:charge_o_mat" />
+
+**Charge-O-Mat** is a High-Voltage utility machine in Tech Reborn. It charges or discharges energy-storing items (batteries, tools, armor) placed in its inventory slots.
+
+<MachineStats power={512} buffer={100000000} tier="High" />
+
+## Recipe
+
+<RecipeFromData id="techreborn:crafting/charge_o_mat" />
+
+## Behavior
+
+- Input and output rate: 512 E/t (High Voltage).
+- Internal buffer: 100,000,000 E (configurable).
+- Charges any Tech Reborn energy item placed in its inventory slots.
+- Can also discharge items (drain them back into the machine's buffer).
+- Multiple item slots allow charging several items simultaneously.
+
+## Notes
+
+The 100 million E buffer is intentionally very large — it can act as a secondary energy storage while serving as a charging station.
+
+## See also
+
+- [Energy Storage Upgrade](../upgrades/energy-storage-upgrade.mdx)
+- [Transformer Upgrade](../upgrades/transformer-upgrade.mdx)

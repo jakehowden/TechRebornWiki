@@ -1,0 +1,25 @@
+---
+title: Nuke
+description: A high-yield TNT-equivalent explosive with a configurable blast radius.
+sidebar_label: Nuke
+---
+
+<ItemHeader id="techreborn:nuke" />
+
+**Nuke** is a Tech Reborn explosive block. It functions similarly to vanilla TNT but with a far larger default blast radius.
+
+## Obtaining
+
+<!-- VERIFY: No crafting recipe found in datagen. May be creative-only or require a future recipe PR. -->
+The Nuke has no crafting recipe in the default data pack. It is available in Creative mode from the Tech Reborn item group.
+
+## Behavior
+
+- Fuse time: 400 ticks (20 seconds) after being ignited (configurable).
+- Blast radius: 40 blocks (configurable in `techreborn.json` under `nuke.radius`).
+- Can be disabled entirely via `techreborn.json` (`nuke.enabled = false`), which prevents block damage while still allowing the explosion event.
+- Ignited by fire, flint-and-steel, or a redstone signal — same as vanilla TNT.
+
+:::warning
+The default blast radius of 40 is significantly larger than vanilla TNT (5). Using a Nuke near a base without the explosion disabled in config will cause severe terrain destruction.
+:::

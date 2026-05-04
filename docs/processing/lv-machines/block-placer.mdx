@@ -1,0 +1,29 @@
+---
+title: Block Placer
+description: Automatically places the block item from its inventory in front of it.
+sidebar_label: Block Placer
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+
+<ItemHeader id="techreborn:block_placer" />
+
+**Block Placer** is a Low-Voltage utility machine in Tech Reborn. It takes a block item from its inventory and places it in the position directly in front of its output face.
+
+<MachineStats power={32} buffer={1000} tier="Low" />
+
+## Recipe
+
+<RecipeFromData id="techreborn:crafting/block_placer" />
+
+## Behavior
+
+- Places a block in the position the machine faces when that position is empty.
+- Consumes 5 E/t (configurable) while actively placing.
+- Placement interval scales similarly to break time: hardness-1 equivalent takes ~100 ticks.
+- Pull block items from an adjacent inventory into the machine's input slot automatically.
+
+## See also
+
+- [Block Breaker](./block-breaker.mdx)

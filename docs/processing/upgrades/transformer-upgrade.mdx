@@ -1,0 +1,31 @@
+---
+title: Transformer Upgrade
+description: Raises a machine's accepted voltage tier by one level per upgrade.
+sidebar_label: Transformer Upgrade
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+
+<ItemHeader id="techreborn:transformer_upgrade" />
+
+**Transformer Upgrade** is a machine upgrade in Tech Reborn. Each installed copy raises the machine's accepted voltage tier by one, preventing voltage explosions when supplying higher-tier power.
+
+## Recipe
+
+<RecipeFromData id="techreborn:crafting/transformer_upgrade" />
+
+## Effect
+
+- Each Transformer Upgrade installed raises the machine's `extraTier` by 1.
+- A standard LV machine (tier 0) with one Transformer Upgrade accepts MV power. With two, it accepts HV, and so on.
+- Stacks with multiple copies.
+
+## Notes
+
+- Required when running an Overclocker Upgrade build that pushes power consumption above the machine's base input rate.
+- Does not change energy consumption — only the voltage tier accepted on the input side.
+
+## See also
+
+- [Overclocker Upgrade](./overclocker-upgrade.mdx)
+- [Power Tiers](../../mechanics/power-tiers.mdx)

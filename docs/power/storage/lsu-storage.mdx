@@ -1,0 +1,27 @@
+---
+title: LSU Storage
+description: Storage block used to extend the Lapotronic SU's capacity.
+sidebar_label: LSU Storage
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+
+<ItemHeader id="techreborn:lsu_storage" />
+
+**LSU Storage** is an energy storage expansion block in Tech Reborn. It is placed adjacent to a [Lapotronic SU](./lapotronic-su.mdx) to increase its total energy capacity.
+
+## Recipe
+
+<RecipeFromData id="techreborn:crafting/lsu_storage" />
+
+## Behavior
+
+- Does not function as a standalone storage block.
+- Each LSU Storage block placed adjacent to (touching) a Lapotronic SU increases the Lapotronic SU's capacity.
+- The Lapotronic SU scans for adjacent LSU Storage blocks and accumulates their capacity contribution.
+- <!-- VERIFY: exact capacity increase per block from LapotronicSUBlockEntity.java -->
+
+## See also
+
+- [Lapotronic SU](./lapotronic-su.mdx)
+- [Adjustable SU](./adjustable-su.mdx)

@@ -1,0 +1,30 @@
+---
+title: Block Breaker
+description: Automatically breaks the block directly in front of it.
+sidebar_label: Block Breaker
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+
+<ItemHeader id="techreborn:block_breaker" />
+
+**Block Breaker** is a Low-Voltage utility machine in Tech Reborn. It breaks the block in front of its output face and drops it as an item, automating block harvesting.
+
+<MachineStats power={32} buffer={1000} tier="Low" />
+
+## Recipe
+
+<RecipeFromData id="techreborn:crafting/block_breaker" />
+
+## Behavior
+
+- Faces a single block position determined by the direction the machine is placed.
+- Consumes 5 E/t (configurable) while actively breaking.
+- Break time scales with block hardness: hardness-1 blocks take 100 ticks (5 s) by default.
+- Drops the broken block's item into the world or into an adjacent inventory.
+- Does not break unbreakable blocks (bedrock, barriers, etc.).
+
+## See also
+
+- [Block Placer](./block-placer.mdx)

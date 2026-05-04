@@ -1,0 +1,26 @@
+---
+title: Machine Upgrades
+description: Upgrade items that modify Tech Reborn machine performance.
+sidebar_position: 4
+sidebar_class_name: category-index-hidden
+---
+
+import ItemIcon from '@site/src/components/ItemIcon';
+
+<ItemIcon id="techreborn:overclocker_upgrade" size={150} />
+
+# Machine Upgrades
+
+Upgrade items slot into the upgrade panel of most Tech Reborn machines. Multiple upgrades can be installed at once and their effects stack.
+
+- <ItemIcon id="techreborn:overclocker_upgrade" size={24}/> [Overclocker Upgrade](./overclocker-upgrade.mdx) — faster speed, higher power draw
+- <ItemIcon id="techreborn:transformer_upgrade" size={24}/> [Transformer Upgrade](./transformer-upgrade.mdx) — raises the machine's accepted voltage tier
+- <ItemIcon id="techreborn:energy_storage_upgrade" size={24}/> [Energy Storage Upgrade](./energy-storage-upgrade.mdx) — increases internal energy buffer
+- <ItemIcon id="techreborn:superconductor_upgrade" size={24}/> [Superconductor Upgrade](./superconductor-upgrade.mdx) — increases Adjustable SU output per tick
+- <ItemIcon id="techreborn:muffler_upgrade" size={24}/> [Muffler Upgrade](./muffler-upgrade.mdx) — silences machine sounds
+
+## How upgrades work
+
+Open the machine GUI and place upgrade items in the dedicated upgrade slots (usually on the right side of the interface). The upgrade effect applies immediately and persists until the item is removed.
+
+Most machines accept up to 4 upgrade slots. Upgrade effects from multiple items of the same type stack additively.

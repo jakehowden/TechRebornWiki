@@ -1,0 +1,31 @@
+---
+title: Pump
+description: Collects fluid source blocks and stores the fluid in its internal tank.
+sidebar_label: Pump
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+
+<ItemHeader id="techreborn:pump" />
+
+**Pump** is a Medium-Voltage utility machine in Tech Reborn. It scans for and collects fluid source blocks, storing the resulting fluid in its internal tank.
+
+<MachineStats power={128} buffer={40000} tier="Medium" />
+
+## Recipe
+
+<RecipeFromData id="techreborn:crafting/pump" />
+
+## Behavior
+
+- Collects one fluid source block per operation, consuming 1,000 E per block by default (configurable).
+- Each operation takes 100 ticks (5 s) by default (configurable via `PumpTicksToComplete`).
+- Scan direction: inward-to-outward by default (configurable via `PumpIterateOutwards = false`).
+- Fluid is stored in the machine's internal tank; output via fluid pipes or by connecting buckets.
+- Can pump lava, water, and other fluid sources.
+
+## See also
+
+- [Drain](../lv-machines/drain.mdx)
+- [Fishing Station](./fishing-station.mdx)

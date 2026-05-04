@@ -1,0 +1,37 @@
+---
+title: Launchpad
+description: Launches players and entities upward with configurable force.
+sidebar_label: Launchpad
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import MachineStats from '@site/src/components/MachineStats';
+
+<ItemHeader id="techreborn:launchpad" />
+
+**Launchpad** is a Medium-Voltage utility machine in Tech Reborn. Entities standing on it are launched upward with a configurable speed when the machine has sufficient energy.
+
+<MachineStats power={128} buffer={40000} tier="Medium" />
+
+## Recipe
+
+<RecipeFromData id="techreborn:crafting/launchpad" />
+
+## Behavior
+
+- Four speed levels selectable via the GUI (configurable in `techreborn.json`):
+
+| Level | Default Speed | Energy Cost |
+|---|---|---|
+| Low | 1.0 | 1,000 E |
+| Medium | 3.0 | 6,000 E |
+| High | 5.0 | 10,000 E |
+| Extreme | 10.0 | 20,000 E |
+
+- Default selection at placement: Low (index 0).
+- Launch interval: 100 ticks (5 s) between successive launches (configurable).
+- Works on players and mobs alike.
+
+## See also
+
+- [Elevator](../lv-machines/elevator.mdx)

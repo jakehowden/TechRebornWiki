@@ -1,0 +1,26 @@
+---
+title: Drain
+description: Passively removes fluid source blocks from the ground below it.
+sidebar_label: Drain
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+
+<ItemHeader id="techreborn:drain" />
+
+**Drain** is a passive utility block in Tech Reborn. Placed above fluid source blocks, it removes them over time without consuming energy.
+
+## Recipe
+
+<RecipeFromData id="techreborn:crafting/drain" />
+
+## Behavior
+
+- No energy consumption — operates passively once placed.
+- Checks for a fluid source block directly below the drain at a configurable interval (default: `TicksUntilNextDrainAttempt` in `techreborn.json`; set to 0 or negative to disable).
+- When a source block is found, it removes it.
+- Useful for draining flooded areas or preventing fluid spread in automated builds.
+
+## See also
+
+- [Pump](../mv-machines/pump.mdx)
