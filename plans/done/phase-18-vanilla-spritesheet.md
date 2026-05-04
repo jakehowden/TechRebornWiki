@@ -1,5 +1,7 @@
 # Phase 18 — Vanilla sprite sheet (optional optimization)
 
+> Skipped on 2026-05-04 — current per-PNG approach (~990 files) has no operational issues; build and CI are working fine. Spritesheet optimization deferred until file count causes measurable friction.
+
 > **Read [`CONTEXT.md`](./CONTEXT.md) first.**
 
 ## Goal

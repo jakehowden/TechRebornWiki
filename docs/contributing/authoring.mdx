@@ -88,6 +88,30 @@ For a full list of a machine's recipes, use `<MachineRecipeList>` at the bottom 
 
 Prefer `/docs/<path>` absolute links for internal pages so they survive sidebar re-ordering.
 
+## Footnotes
+
+Use GFM footnote syntax (`[^1]`) for asides and disclaimers that are true but genuinely skippable — things the reader doesn't need on the first pass. Group all footnote definitions at the bottom of the page.
+
+```mdx
+The Fishing Station catches loot every 400 ticks by default.[^1]
+
+[^1]: Timing and energy values are configurable in `techreborn.json`.
+```
+
+**When to use footnotes:**
+- "Server-configurable" disclaimers on numeric defaults.
+- Tier-edge cases (e.g., creative-only items with no recipe).
+- Historical names or trivia that add color but aren't essential.
+- Source citations if a value is non-obvious.
+
+**When NOT to use footnotes:**
+- Information the reader needs to act on — keep that in prose.
+- Warnings about dangerous behavior — use `:::warning`.
+- Tips — use `:::tip`.
+- Trivia that adds nothing — skip it entirely.
+
+**Numbering:** Per-page, starting at 1. Docusaurus auto-generates the back-link arrow; don't add manual back-links.
+
 ---
 
 ## Walkthrough: adding a new machine page
