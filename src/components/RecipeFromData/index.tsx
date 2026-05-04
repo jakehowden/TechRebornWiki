@@ -9,7 +9,7 @@ export interface RecipeFromDataProps {
 
 type Ingredient =
   | string
-  | { id?: string; tag?: string; count?: number };
+  | { id?: string; tag?: string; count?: number; nbt?: { fluid?: string } };
 
 function ingredientToSlot(ing: Ingredient | undefined): MachineSlot {
   if (!ing) return { id: 'minecraft:air', qty: 1 };
@@ -21,7 +21,9 @@ function ingredientToSlot(ing: Ingredient | undefined): MachineSlot {
 function outputToSlot(out: Ingredient | undefined): MachineSlot {
   if (!out) return { id: 'minecraft:air', qty: 1 };
   if (typeof out === 'string') return { id: out, qty: 1 };
-  return { id: out.id ?? out.tag ?? 'minecraft:air', qty: out.count ?? 1 };
+  const slot: MachineSlot = { id: out.id ?? out.tag ?? 'minecraft:air', qty: out.count ?? 1 };
+  if (out.nbt?.fluid) slot.fluid = out.nbt.fluid;
+  return slot;
 }
 
 function shapedToInput(

@@ -5,6 +5,7 @@ import { shortId, titleCase } from '@site/src/utils/itemFormatters';
 export interface MachineSlot {
   id: string;
   qty?: number;
+  fluid?: string;
 }
 
 export interface MachineConfig {
@@ -53,7 +54,7 @@ const TOOL_LAYOUTS: Record<string, typeof CRAFTING_LIKE> = {
   'techreborn:fusion_reactor': TWOWIDE_ONETALL,
   'techreborn:industrial_grinder': TWOWIDE_ONETALL,
   'techreborn:assembling_machine': TWOIN_ONEOUT,
-  'techreborn:industrial_sawmill': TWOWIDE_ONETALL,
+  'techreborn:industrial_sawmill': { input: { '--cols': '1', '--rows': '1' }, output: { '--cols': '2', '--rows': '1' } },
   'techreborn:alloy_smelter': TWOIN_ONEOUT,
   'techreborn:centrifuge': TWOIN_FOUROUT,
   'techreborn:industrial_centrifuge': TWOIN_FOUROUT,
@@ -110,14 +111,21 @@ export default function Machine({ config }: MachineProps) {
         <div className="crafting-board" style={styles.output as React.CSSProperties}>
           {config.output.map((item, idx) => (
             <div className="slot" key={idx} data-quantity={item.qty ?? 1}>
-              {item.id && <ItemIcon id={item.id} size={32} />}
+              {item.id && item.id !== 'minecraft:air' && <ItemIcon id={item.id} size={32} />}
+              {item.fluid && <span className="slot-label">{titleCase(shortId(item.fluid))}</span>}
             </div>
           ))}
         </div>
       </div>
 
-      {config.meta && (config.meta.time != null || config.meta.power != null || config.meta.heat != null || config.meta.fluid != null) && (
+      {config.meta && (config.meta.time != null || config.meta.power != null || (config.meta.heat != null && config.meta.heat > 0) || config.meta.fluid != null) && (
         <div className="crafting-info">
+          {config.meta.heat != null && config.meta.heat > 0 && (
+            <div className="info-item">
+              <span aria-label="Heat" role="img">🔥</span>
+              <span>Requires {config.meta.heat} K heat</span>
+            </div>
+          )}
           {config.meta.time != null && (
             <div className="info-item">
               <span aria-label="Time" role="img">⏱</span>
@@ -128,12 +136,6 @@ export default function Machine({ config }: MachineProps) {
             <div className="info-item">
               <span aria-label="Power" role="img">⚡</span>
               <span>{config.meta.power} E/t{config.meta.time != null && ` (${config.meta.power * config.meta.time}E)`}</span>
-            </div>
-          )}
-          {config.meta.heat != null && (
-            <div className="info-item">
-              <span aria-label="Heat" role="img">🔥</span>
-              <span>{config.meta.heat}</span>
             </div>
           )}
           {config.meta.fluid != null && (

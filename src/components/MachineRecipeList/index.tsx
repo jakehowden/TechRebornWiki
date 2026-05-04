@@ -47,7 +47,27 @@ export default function MachineRecipeList({ machine }: MachineRecipeListProps) {
   });
 
   if (matchingKeys.length === 0) {
-    return <p>No recipes found for <code>{targetType}</code>.</p>;
+    return (
+      <div className={styles.emptyList}>
+        <p>No recipes were extracted for <code>{targetType}</code>. This may indicate:</p>
+        <ul>
+          <li>The machine has no datagen-emitted recipes (configured in-world, not in source).</li>
+          <li>The extraction script needs an update for this recipe type.</li>
+        </ul>
+      </div>
+    );
+  }
+
+  if (targetType === 'techreborn:scrapbox') {
+    const possibilities = Array.from(new Set(matchingKeys.map(k => getPrimaryOutputId((recipesData as any)[k]))));
+    return (
+      <details className={styles.details}>
+        <summary className={styles.summary}>Random output ({possibilities.length} possibilities)</summary>
+        <div className={styles.scrapboxGrid}>
+          {possibilities.map(id => <ItemIcon key={id} id={id} size={32} noLink />)}
+        </div>
+      </details>
+    );
   }
 
   // Group by primary output id

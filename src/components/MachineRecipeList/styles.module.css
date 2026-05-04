@@ -59,3 +59,16 @@
   flex-direction: column;
   gap: 6px;
 }
+
+.scrapboxGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 12px;
+}
+
+.emptyList {
+  padding: 0.5rem 0;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.9rem;
+}
