@@ -387,6 +387,62 @@ function deriveGenericDescription(itemId, name) {
   return `**${name}** is an item in Tech Reborn. <!-- VERIFY: write description for ${itemId} -->`;
 }
 
+// ─── Ore dimension map (verified from docs/world/ores.mdx) ────────────────────
+
+const ORE_DIMENSION_MAP = {
+  'techreborn:bauxite_ore': 'Overworld',
+  'techreborn:galena_ore': 'Overworld',
+  'techreborn:iridium_ore': 'Overworld',
+  'techreborn:lead_ore': 'Overworld',
+  'techreborn:ruby_ore': 'Overworld',
+  'techreborn:sapphire_ore': 'Overworld',
+  'techreborn:silver_ore': 'Overworld',
+  'techreborn:tin_ore': 'Overworld',
+  'techreborn:deepslate_bauxite_ore': 'Overworld deepslate',
+  'techreborn:deepslate_galena_ore': 'Overworld deepslate',
+  'techreborn:deepslate_iridium_ore': 'Overworld deepslate',
+  'techreborn:deepslate_lead_ore': 'Overworld deepslate',
+  'techreborn:deepslate_ruby_ore': 'Overworld deepslate',
+  'techreborn:deepslate_sapphire_ore': 'Overworld deepslate',
+  'techreborn:deepslate_silver_ore': 'Overworld deepslate',
+  'techreborn:deepslate_tin_ore': 'Overworld deepslate',
+  'techreborn:pyrite_ore': 'Nether',
+  'techreborn:cinnabar_ore': 'Nether',
+  'techreborn:sphalerite_ore': 'Nether',
+  'techreborn:peridot_ore': 'End',
+  'techreborn:sodalite_ore': 'End',
+  'techreborn:sheldonite_ore': 'End',
+  'techreborn:tungsten_ore': 'End',
+};
+
+function deriveOreDescription(itemId, name) {
+  const dim = ORE_DIMENSION_MAP[itemId];
+  if (!dim) {
+    return `**${name}** is a Tech Reborn ore block. Mine and process via the Industrial Grinder (boosted yield) or Furnace. <!-- VERIFY: dimension for ${itemId} -->`;
+  }
+  return `**${name}** is a Tech Reborn ore block found in the ${dim}. Mine and process via the Industrial Grinder (boosted yield) or Furnace.`;
+}
+
+function getHowToObtainOre(itemId, _name) {
+  const dim = ORE_DIMENSION_MAP[itemId];
+  if (!dim) {
+    return `Found in world generation. Mine with a pickaxe to obtain the ore drop. Use Silk Touch to collect the block itself.\n\n<!-- VERIFY: dimension and Y-level distribution for ${itemId} -->`;
+  }
+  if (dim === 'Overworld') {
+    return `Found in Overworld stone layers during world generation. Mine with a pickaxe to obtain the ore drop, or use Silk Touch to collect the block itself.\n\n<!-- VERIFY: exact Y-level distribution for ${itemId} -->`;
+  }
+  if (dim === 'Overworld deepslate') {
+    return `Found in deep Overworld layers (deepslate zone, typically below Y 0) during world generation. Mine with a pickaxe to obtain the ore drop, or use Silk Touch to collect the block itself.\n\n<!-- VERIFY: exact Y-level distribution for ${itemId} -->`;
+  }
+  if (dim === 'Nether') {
+    return `Found in the Nether during world generation. Mine with a pickaxe to obtain the ore drop, or use Silk Touch to collect the block itself.\n\n<!-- VERIFY: Y-level distribution in the Nether for ${itemId} -->`;
+  }
+  if (dim === 'End') {
+    return `Found in The End during world generation. Mine with a pickaxe to obtain the ore drop, or use Silk Touch to collect the block itself.\n\n<!-- VERIFY: spawn conditions and Y-level for ${itemId} -->`;
+  }
+  return `Found in world generation. Mine with a pickaxe to obtain the ore drop. Use Silk Touch to collect the block itself.\n\n<!-- VERIFY: dimension and Y-level distribution for ${itemId} -->`;
+}
+
 // ─── Tool / armor id patterns (excluded from catch-all generation) ─────────────
 
 const TOOL_ARMOR_PATTERNS = [
@@ -507,6 +563,16 @@ const FAMILIES = [
     filter: (itemId) => !itemsWithPages[itemId],
   },
   {
+    category: 'ore',
+    relDir: 'world/ores-individual',
+    singular: 'ore',
+    label: 'Ores',
+    deriveDesc: deriveOreDescription,
+    getHowToObtain: getHowToObtainOre,
+    seeAlsoLink: '[Ores](../ores)',
+    filter: (itemId) => !itemsWithPages[itemId],
+  },
+  {
     category: 'item',
     relDir: 'items',
     singular: 'item',
@@ -559,7 +625,9 @@ function renderUsedInSection(itemId) {
 function generateMdx(itemId, family) {
   const name = displayName(itemId);
   const description = family.deriveDesc(itemId, name);
-  const recipesSection = renderRecipesSection(itemId);
+  const mainSection = family.getHowToObtain
+    ? `## How to obtain\n\n${family.getHowToObtain(itemId, name)}`
+    : `## Recipes\n\n${renderRecipesSection(itemId)}`;
   const usedInSection = renderUsedInSection(itemId);
   const seeAlso = family.seeAlsoLink
     ? `\n## See also\n\n- ${family.seeAlsoLink}\n`
@@ -577,9 +645,7 @@ sidebar_label: ${name}
 
 ${description}
 
-## Recipes
-
-${recipesSection}
+${mainSection}
 
 ## Used in
 
