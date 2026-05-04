@@ -1,0 +1,24 @@
+.ref {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+  vertical-align: baseline;
+}
+
+.ref img,
+.ref > div {
+  vertical-align: text-bottom;
+}
+
+.refLink {
+  text-decoration: none;
+}
+
+.refLink:hover strong,
+.refLink:hover span {
+  text-decoration: underline;
+}
+
+.refLink strong {
+  color: var(--ifm-link-color);
+}

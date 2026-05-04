@@ -5,6 +5,7 @@ sidebar_position: 1
 ---
 
 import ItemIcon from '@site/src/components/ItemIcon';
+import ItemRef from '@site/src/components/ItemRef';
 import Machine from '@site/src/components/Machine';
 import RecipeFromData from '@site/src/components/RecipeFromData';
 import MachineRecipeList from '@site/src/components/MachineRecipeList';
@@ -43,7 +44,40 @@ Renders a 32×32 pixel item icon. If the item has a wiki page, the icon is wrapp
 
 - Inline icons in prose or tables — one icon, no label.
 - Inside crafting grid slots (the `Machine` component calls it internally).
-- Use `<ItemRef>` (phase 10) when you want an icon **plus** a clickable name in running text.
+- Use `<ItemRef>` when you want an icon **plus** a clickable name in running text.
+
+---
+
+## ItemRef
+
+Renders an inline icon + bold display name. If the item has a wiki page the whole element links there; vanilla `minecraft:` items link to the Minecraft Wiki. Use this in prose wherever you'd otherwise write `<ItemIcon>` followed by a manual name or link.
+
+**Props**
+
+| Prop | Type | Default | Description |
+|---|---|---|---|
+| `id` | `string` | — | Namespaced item ID. Accepts tag IDs from `src/data/tags.json`. |
+| `size` | `number` | `20` | Icon size in pixels. |
+| `name` | `string` | — | Override the display name from `items.json`. |
+| `showName` | `boolean` | `true` | Set `false` to render icon only (same as `<ItemIcon>` but with `ItemRef` link logic). |
+| `bold` | `boolean` | `true` | Set `false` to render the name in normal weight. |
+
+**Example**
+
+```mdx
+Place the <ItemRef id="techreborn:industrial_blast_furnace" /> in the center of the bottom layer.
+<ItemRef id="techreborn:grinder" name="Pulveriser" />
+<ItemRef id="minecraft:redstone" />
+```
+
+<ItemRef id="techreborn:grinder" />
+<ItemRef id="minecraft:redstone" />
+<ItemRef id="techreborn:grinder" name="Pulveriser" />
+
+**When to use**
+
+- Inline item mentions in prose — replaces the `<ItemIcon> **[Name](./link)**` pattern.
+- Use `<ItemIcon>` when you only need the icon (no name), e.g. in crafting grids or navigation lists.
 
 ---
 
@@ -231,6 +265,12 @@ Conditionally renders children only when `version` matches the active Docusaurus
 
 {/* Icon at custom size */}
 <ItemIcon id="techreborn:advanced_circuit" size={48} />
+
+{/* Inline icon + name (links to wiki page if one exists) */}
+<ItemRef id="techreborn:grinder" />
+
+{/* Inline icon + name override */}
+<ItemRef id="techreborn:grinder" name="Pulveriser" />
 
 {/* Recipe from data */}
 <RecipeFromData id="techreborn:grinder/coal" />

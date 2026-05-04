@@ -66,3 +66,25 @@ This is a developer-only page to verify that all MDX components render correctly
 <VersionContent version="1.20.1">
   This block only renders when MC version 1.20.1 is selected.
 </VersionContent>
+
+## 10. ItemRef
+
+**Internal link (techreborn:grinder — should link to its wiki page):**
+
+<ItemRef id="techreborn:grinder" />
+
+**External link (minecraft:redstone — should open minecraft.wiki in new tab):**
+
+<ItemRef id="minecraft:redstone" />
+
+**No link (minecraft:air — icon + bold name, no link):**
+
+<ItemRef id="minecraft:air" />
+
+**Custom name override:**
+
+<ItemRef id="techreborn:grinder" name="Pulveriser" />
+
+**Inline prose example:**
+
+Place the <ItemRef id="techreborn:industrial_blast_furnace" /> in the center of the bottom layer and connect it to a <ItemRef id="techreborn:solid_fuel_generator" /> to begin smelting.

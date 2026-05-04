@@ -6,7 +6,7 @@ import { useActiveVersion } from '@docusaurus/plugin-content-docs/client';
 import styles from './styles.module.css';
 import itemsData from '@site/src/data/items.json';
 import tagsData from '@site/src/data/tags.json';
-import { shortId, titleCase, wikiPageName } from '@site/src/utils/itemFormatters';
+import { shortId, titleCase, resolveItemLink } from '@site/src/utils/itemFormatters';
 
 type ItemsWithPages = Record<string, Record<string, string>>;
 let itemsWithPages: ItemsWithPages = {};
@@ -20,9 +20,10 @@ export interface ItemIconProps {
   id: string;
   size?: number;
   className?: string;
+  noLink?: boolean;
 }
 
-export default function ItemIcon({ id, size = 32, className = '' }: ItemIconProps) {
+export default function ItemIcon({ id, size = 32, className = '', noLink = false }: ItemIconProps) {
   const [imgError, setImgError] = useState(false);
   const location = useLocation();
   const activeVersion = useActiveVersion('default') as { name: string; path: string } | undefined;
@@ -39,14 +40,7 @@ export default function ItemIcon({ id, size = 32, className = '' }: ItemIconProp
   const displayName = itemInfo?.displayName ?? titleCase(short);
   const src = useBaseUrl(texturePath || '/img/unknown.png');
 
-  const versionMap = itemsWithPages[resolvedId];
-  const route = versionMap && (versionMap[activeVersion?.name ?? 'current'] ?? versionMap['1.20.1'] ?? versionMap['current']);
-  let pageUrl = route ? `${activeVersion?.path ?? ''}${route}` : undefined;
-  if (pageUrl === location.pathname) pageUrl = undefined;
-
-  const externalUrl = !pageUrl && resolvedId.startsWith('minecraft:') && resolvedId !== 'minecraft:air'
-    ? `https://minecraft.wiki/w/${wikiPageName(short)}`
-    : undefined;
+  const link = noLink ? undefined : resolveItemLink(resolvedId, activeVersion, location.pathname, itemsWithPages);
 
   const content = (
     <div
@@ -72,8 +66,7 @@ export default function ItemIcon({ id, size = 32, className = '' }: ItemIconProp
     </div>
   );
 
-  const linkTo = pageUrl ?? externalUrl;
-  if (!linkTo) return content;
-  const externalProps = externalUrl ? { target: '_blank', rel: 'noopener noreferrer' } : {};
-  return <Link to={linkTo} className={styles.iconLink} {...externalProps}>{content}</Link>;
+  if (!link) return content;
+  const externalProps = link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {};
+  return <Link to={link.to} className={styles.iconLink} {...externalProps}>{content}</Link>;
 }
