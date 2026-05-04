@@ -28,7 +28,7 @@ export function resolveItemLink(
     (versionMap[activeVersion?.name ?? 'current'] ??
       versionMap['1.20.1'] ??
       versionMap['current']);
-  let pageUrl = route ? `${activeVersion?.path ?? ''}${route}` : undefined;
+  let pageUrl = route ? `${activeVersion?.path ?? '/docs'}${route}` : undefined;
   if (pageUrl === locationPathname) pageUrl = undefined;
 
   if (pageUrl) return { to: pageUrl, external: false };

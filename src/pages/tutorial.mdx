@@ -1,0 +1,91 @@
+---
+title: Getting Started
+description: First steps with the Tech Reborn mod for Minecraft 1.20.1.
+---
+
+# Getting Started with Tech Reborn
+
+Tech Reborn adds industrial machinery, energy networks, and advanced tools to Minecraft. This page covers your first session: collecting raw materials, generating your first power, and building a basic processing setup.
+
+---
+
+## Acquiring Rubber
+
+Rubber is essential for insulating cables. Your first task is to find a rubber source.
+
+Find a **Rubber Tree** in the world — they spawn in temperate biomes and are recognisable by their dark bark and the orange sap spots on the trunk. Craft a <ItemRef id="techreborn:treetap" /> and right-click the sap spots to harvest Sap.
+
+<!-- VERIFY: add rubber tree screenshot at /img/rubbertree.png -->
+
+Once you have Sap, you have two options:
+
+| Method | Equipment | Yield |
+|---|---|---|
+| Smelt Sap | Vanilla furnace | 1 <ItemRef id="techreborn:rubber" /> per Sap |
+| Extract Sap | <ItemRef id="techreborn:extractor" /> | 3 <ItemRef id="techreborn:rubber" /> per Sap |
+
+The Extractor gives 3× the rubber — set it up as soon as you have power.
+
+See the [Rubber Tree](/docs/world/rubber-tree) page for spawn conditions and farming tips.
+
+---
+
+## Refining Iron
+
+Most early machines require **Refined Iron**. Smelt a standard Iron Ingot in any vanilla furnace to get a <ItemRef id="techreborn:refined_iron_ingot" />. No special equipment needed.
+
+Refined Iron is the gateway material for almost every LV machine frame recipe.
+
+---
+
+## First Generator
+
+You need a power source before any electric machine will operate. The <ItemRef id="techreborn:solid_fuel_generator" /> is the entry-level generator — it burns solid fuels (Coal, Charcoal, Wood) and requires no special setup.
+
+**Stats (default, server-configurable):**
+- Output: 32 E/t
+- Buffer: 10,000 E
+
+Place it adjacent to a machine or connect via cable. See the [Solid Fuel Generator](/docs/power/generators/solid-fuel-generator) page for fuel efficiency details.
+
+---
+
+## First Machines
+
+With power flowing, build these three LV machines to cover basic processing.
+
+### Electric Furnace
+
+The <ItemRef id="techreborn:electric_furnace" /> smelts items faster than a vanilla furnace and runs on electricity. It draws up to 32 E/t — your Solid Fuel Generator can power it directly.
+
+<!-- VERIFY: exact speed/efficiency multiplier vs vanilla furnace — check ElectricFurnaceBlockEntity.java -->
+
+### Grinder
+
+The <ItemRef id="techreborn:grinder" /> turns ores and ingots into Dusts, enabling **ore doubling**: one raw ore → two Dusts → two ingots, versus the one ingot you get from direct smelting. This is one of the most impactful early upgrades. Draws up to 32 E/t.
+
+### Extractor
+
+The <ItemRef id="techreborn:extractor" /> is your most important early machine. Beyond the 3× rubber yield from Sap, it handles a range of other processing recipes. Draws up to 32 E/t.
+
+---
+
+## Cables and Power Distribution
+
+Use <ItemRef id="techreborn:tin_cable" /> to connect your generator to machines. Tin Cable transfers up to 32 E/t, matching LV machine input rates.
+
+For longer cable runs, energy dissipates — keep runs short or use a storage unit as a mid-point buffer. See [Cables & Transformers](/docs/mechanics/cables-and-transformers) for transfer limits and loss details by cable type.
+
+---
+
+## Where to Next
+
+With a basic LV setup running, your next milestones:
+
+- **Ore doubling pipeline** — Grinder loop for all ore types feeds your furnace with doubled output
+- **Automated rubber farm** — Extractor + Sap supply for ongoing cable insulation
+- **Alloy Smelter** — required for Bronze and other alloys needed in MV machine recipes
+- **Industrial Blast Furnace** — your first multiblock structure, unlocks Steel and Aluminum. See [Multiblocks](/docs/mechanics/multiblocks)
+- **Upgrade power generation** — supplement or replace the Solid Fuel Generator as machine demand grows
+
+For a more detailed walkthrough with crafting recipes, see the [Getting Started guide](/docs/guides/getting-started).
