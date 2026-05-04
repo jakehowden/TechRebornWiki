@@ -32,6 +32,14 @@
   display: none !important;
 }
 
+/* Hide the duplicate sidebar leaf for category index docs.
+   The parent category links to the same doc via sidebars.ts `link`,
+   so showing the index doc as a child item is redundant.
+   `sidebar_class_name` applies the class directly to the <li>. */
+.menu__list-item.category-index-hidden {
+  display: none;
+}
+
 /* —————————————————————————————
    Machine recipe rendering (ported from upstream wiki)
    ————————————————————————————— */

@@ -1,5 +1,6 @@
 import React from 'react';
 import ItemIcon from '../ItemIcon';
+import { shortId, titleCase } from '@site/src/utils/itemFormatters';
 
 export interface MachineSlot {
   id: string;
@@ -77,13 +78,6 @@ function mapToolToStyles(tool: string, inputCount: number, outputCount: number) 
   return CRAFTING_LIKE;
 }
 
-function titleCase(s: string): string {
-  const cleaned = s.replace(/^(minecraft|techreborn|c):/, '');
-  return cleaned
-    .replace(/^[-_]*(.)/, (_, c) => c.toUpperCase())
-    .replace(/[-_]+(.)/g, (_, c) => ' ' + c.toUpperCase());
-}
-
 function formatBuckets(amnt: number): string {
   // 81000 droplets = 1 bucket in 1.20+ (matching upstream convention)
   const buckets = amnt / 81000;
@@ -93,7 +87,7 @@ function formatBuckets(amnt: number): string {
 export default function Machine({ config }: MachineProps) {
   if (!config) return null;
   const styles = mapToolToStyles(config.tool, config.input.length, config.output.length);
-  const headerName = titleCase(config.id || config.output[0]?.id || config.tool);
+  const headerName = titleCase(shortId(config.id || config.output[0]?.id || config.tool));
 
   return (
     <div className="machine-span">
@@ -145,7 +139,7 @@ export default function Machine({ config }: MachineProps) {
           {config.meta.fluid != null && (
             <div className="info-item">
               <span aria-label="Fluid" role="img">💧</span>
-              <span>{formatBuckets(config.meta.fluid.amnt)}× 🪣 {titleCase(config.meta.fluid.name)}</span>
+              <span>{formatBuckets(config.meta.fluid.amnt)}× 🪣 {titleCase(shortId(config.meta.fluid.name))}</span>
             </div>
           )}
         </div>

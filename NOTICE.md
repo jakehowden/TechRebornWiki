@@ -15,3 +15,10 @@ This project incorporates content from the following open-source projects:
 - **Used for:** Content reference for structure and phrasing. No MDX is copied directly; pages are re-authored using our components.
 
 Both projects are MIT-licensed. Full license text is in `LICENSE`.
+
+## Vanilla Minecraft textures
+
+- **Source:** https://github.com/PrismarineJS/minecraft-assets (data/1.20.2)
+- **Underlying assets:** © Mojang Studios / Microsoft. Used in good faith for educational reference, consistent with established Minecraft fan-wiki practice.
+- **Used for:** PNG icons under `static/img/vanilla/` rendered alongside Tech Reborn items in recipe grids.
+- **Regeneration:** `npm run vanilla-textures` re-downloads the set from the upstream mirror.
