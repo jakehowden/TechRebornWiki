@@ -18,7 +18,32 @@
   list-style-type: disclosure-closed;
 }
 
-.details[open] .summary {
+.summaryGroup {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: 600;
+  list-style-type: disclosure-closed;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.familyName {
+  flex: 1;
+}
+
+.variantBadge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--ifm-color-secondary-darkest);
+  background-color: var(--ifm-color-emphasis-200);
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.details[open] > .summary,
+.details[open] > .summaryGroup {
   border-bottom: 1px solid #ccc;
 }
 
@@ -26,4 +51,11 @@
   padding: 16px;
   display: flex;
   justify-content: flex-start;
+}
+
+.nestedList {
+  padding: 8px 8px 8px 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
