@@ -28,15 +28,34 @@ sidebar_position: 1
 
 ## Hero image convention
 
-<!-- VERIFY phase 11: update once ItemHeader lands — phase 11 adds <ItemHeader> which replaces the ad-hoc icon+title patterns currently used on machine pages. -->
-
-Until `<ItemHeader>` ships (phase 11), place a large `<ItemIcon>` near the top of the page if you want an item graphic alongside the opening description:
+Every reference page begins with `<ItemHeader id="…"/>` immediately after the import block, before any other rendered content. The image floats right on desktop and collapses to full-width on mobile.
 
 ```mdx
-<ItemIcon id="techreborn:grinder" size={64} />
+---
+title: Grinder
+description: Macerates items into Dusts.
+sidebar_position: 3
+---
 
-The **Grinder** crushes ores and materials into dusts.
+import MachineStats from '@site/src/components/MachineStats';
+
+<ItemHeader id="techreborn:grinder"/>
+
+<MachineStats power={32} buffer={1000} tier="Low" inputSlots={1} outputSlots={1} />
+
+## Overview
+The Grinder …
 ```
+
+| Prop | Default | Description |
+|---|---|---|
+| `id` | — | Preferred: `techreborn:` or `minecraft:` item ID |
+| `file` | — | Escape hatch: filename without extension under `/img/techreborn/` |
+| `alt` | derived | Override alt text |
+| `size` | `200` | Width in px |
+| `float` | `"right"` | `"left"`, `"right"`, or `"none"` |
+
+For multi-item pages (e.g. armor set comparisons) or pages that lead directly into a wide table, use `float="none"` to avoid layout conflicts.
 
 ## Recipe section pattern
 
@@ -132,7 +151,7 @@ Prefer `/docs/<path>` absolute links for internal pages so they survive sidebar 
    sidebar_position: 1
    ---
 
-   <ItemIcon id="techreborn:copper_ingot" size={64} />
+   <ItemHeader id="techreborn:copper_ingot"/>
 
    **Copper Ingot** is smelted from Copper Ore and used widely in early-game recipes.
 

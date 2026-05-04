@@ -136,6 +136,9 @@
   }
 }
 
+/* Clear floated hero images before section headings (matches Wikipedia/upstream pattern) */
+.markdown h2 { clear: both; }
+
 /* Mobile responsive styles */
 @media screen and (max-width: 480px) {
   .crafting-container {

@@ -11,6 +11,26 @@ This is a developer-only page to verify that all MDX components render correctly
 <ItemIcon id="techreborn:copper_ingot" size={32} />
 <ItemIcon id="minecraft:redstone" size={32} />
 
+## 11. ItemHeader
+
+**Right-floated hero (default) — by item id:**
+
+<ItemHeader id="techreborn:grinder"/>
+
+This text wraps alongside the floated image on desktop.
+
+<div style={{clear:"both"}}/>
+
+**Centered, no float — for multi-item pages:**
+
+<ItemHeader id="techreborn:nano_chestplate" float="none" size={128}/>
+
+**File fallback (explicit path):**
+
+<ItemHeader file="basic_solar_panel" size={96} float="none"/>
+
+---
+
 ## 2. Machine (3x3 crafting)
 
 <Machine config={{

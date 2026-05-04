@@ -1,0 +1,14 @@
+.header {
+  image-rendering: pixelated;
+  margin: 0 0 1rem 1rem;
+  max-width: 40%;
+}
+
+@media (max-width: 768px) {
+  .header {
+    float: none !important;
+    display: block;
+    margin: 0 auto 1rem;
+    max-width: 100%;
+  }
+}
