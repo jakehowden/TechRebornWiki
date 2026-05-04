@@ -21,6 +21,7 @@ const DRY_RUN = process.argv.includes('--dry-run');
 const items = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/items.json'), 'utf8'));
 const recipes = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/recipes.json'), 'utf8'));
 const tags = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/tags.json'), 'utf8'));
+const itemsWithPages = JSON.parse(fs.readFileSync(path.join(ROOT, 'docs/items-with-pages.json'), 'utf8'));
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 function shortId(id) {
@@ -255,43 +256,278 @@ function derivePlateDescription(itemId, name) {
   return `**${name}** is a plate in Tech Reborn.`;
 }
 
+// ─── Description derivation — new families ────────────────────────────────────
+
+function derivePartDescription(itemId, name) {
+  const prods = recipesThatProduce(itemId);
+  if (prods.length === 0) {
+    return `**${name}** is a crafted component in Tech Reborn. <!-- VERIFY: write description for ${itemId} -->`;
+  }
+  const priority = ['techreborn:assembling_machine', 'minecraft:crafting_shaped', 'minecraft:crafting_shapeless', 'techreborn:compressor'];
+  const best = prods.find(([, r]) => r.type === priority[0])
+    ?? prods.find(([, r]) => r.type === priority[1])
+    ?? prods.find(([, r]) => r.type === priority[2])
+    ?? prods.find(([, r]) => r.type === priority[3])
+    ?? prods[0];
+  const [, recipe] = best;
+  const machine = machineName(recipe.type);
+  return `**${name}** is a crafted component used in various Tech Reborn recipes. It is produced in the ${machine}.`;
+}
+
+function deriveGemDescription(itemId, name) {
+  const prods = recipesThatProduce(itemId);
+  if (prods.length === 0) {
+    return `**${name}** is a gem found in the world as an ore drop in Tech Reborn.`;
+  }
+  const best = prods.find(([, r]) => r.type === 'techreborn:industrial_grinder')
+    ?? prods.find(([, r]) => r.type === 'techreborn:grinder')
+    ?? prods[0];
+  const [, recipe] = best;
+  const machine = machineName(recipe.type);
+  const ings = recipe.ingredients ?? [];
+  const mainIng = ings[0];
+  if (mainIng) {
+    const ingName = mainIng.id ? displayName(mainIng.id)
+      : mainIng.tag ? titleCase(shortId(mainIng.tag)) : null;
+    if (ingName) {
+      return `**${name}** is a gem obtained by processing **${ingName}** in the ${machine}.`;
+    }
+  }
+  return `**${name}** is a gem material produced in the ${machine}.`;
+}
+
+function deriveRawMetalDescription(itemId, name) {
+  const usedIn = Object.entries(recipes).filter(([, r]) => recipeUsesItem(r, itemId));
+  if (usedIn.length === 0) {
+    return `**${name}** is a raw ore drop in Tech Reborn. <!-- VERIFY: write description for ${itemId} -->`;
+  }
+  const priority = ['techreborn:blast_furnace', 'minecraft:smelting', 'minecraft:blasting'];
+  const best = usedIn.find(([, r]) => r.type === priority[0])
+    ?? usedIn.find(([, r]) => r.type === priority[1])
+    ?? usedIn.find(([, r]) => r.type === priority[2])
+    ?? usedIn[0];
+  const [, recipe] = best;
+  const outputs = recipeOutputs(recipe);
+  if (outputs.length > 0) {
+    const outName = displayName(outputs[0]);
+    const machine = machineName(recipe.type);
+    return `**${name}** is dropped by mining ore. Smelt it in the ${machine} to produce **${outName}**.`;
+  }
+  return `**${name}** is a raw ore drop in Tech Reborn.`;
+}
+
+function deriveStorageBlockDescription(itemId, name) {
+  const prods = recipesThatProduce(itemId);
+  if (prods.length === 0) {
+    return `**${name}** is a compact storage block in Tech Reborn. <!-- VERIFY: write description for ${itemId} -->`;
+  }
+  const shaped = prods.find(([, r]) => r.type === 'minecraft:crafting_shaped') ?? prods[0];
+  const [, recipe] = shaped;
+  if (recipe.key) {
+    const firstVal = Object.values(recipe.key)[0];
+    if (firstVal) {
+      const ingName = typeof firstVal === 'string' ? displayName(firstVal)
+        : firstVal.id ? displayName(firstVal.id)
+        : firstVal.tag ? titleCase(shortId(firstVal.tag)) : null;
+      if (ingName) {
+        return `**${name}** is a compact storage block. Craft 9× **${ingName}** in a crafting grid to create one, or reverse the recipe to retrieve them.`;
+      }
+    }
+  }
+  if (recipe.ingredients?.length > 0) {
+    const ing = recipe.ingredients[0];
+    const ingName = ing.id ? displayName(ing.id) : ing.tag ? titleCase(shortId(ing.tag)) : null;
+    if (ingName) {
+      return `**${name}** is a compact storage block crafted from 9× **${ingName}**.`;
+    }
+  }
+  return `**${name}** is a compact storage block in Tech Reborn.`;
+}
+
+function deriveCableDescription(itemId, name) {
+  const prods = recipesThatProduce(itemId);
+  if (prods.length === 0) {
+    return `**${name}** is a power cable in Tech Reborn. <!-- VERIFY: write description for ${itemId} -->`;
+  }
+  const best = prods.find(([, r]) => r.type === 'techreborn:wire_mill')
+    ?? prods.find(([, r]) => r.type === 'minecraft:crafting_shaped')
+    ?? prods[0];
+  const [, recipe] = best;
+  const machine = machineName(recipe.type);
+  return `**${name}** is a power cable in Tech Reborn, produced in the ${machine}.`;
+}
+
+function deriveStorageUnitDescription(itemId, name) {
+  const prods = recipesThatProduce(itemId);
+  if (prods.length === 0) {
+    return `**${name}** is an item storage unit in Tech Reborn.`;
+  }
+  const best = prods.find(([, r]) => r.type === 'techreborn:assembling_machine')
+    ?? prods.find(([, r]) => r.type === 'minecraft:crafting_shaped')
+    ?? prods[0];
+  const [, recipe] = best;
+  const machine = machineName(recipe.type);
+  return `**${name}** is an item storage unit in Tech Reborn, produced in the ${machine}.`;
+}
+
+function deriveTankUnitDescription(itemId, name) {
+  const prods = recipesThatProduce(itemId);
+  if (prods.length === 0) {
+    return `**${name}** is a portable fluid storage tank in Tech Reborn.`;
+  }
+  const best = prods.find(([, r]) => r.type === 'techreborn:assembling_machine')
+    ?? prods.find(([, r]) => r.type === 'minecraft:crafting_shaped')
+    ?? prods[0];
+  const [, recipe] = best;
+  const machine = machineName(recipe.type);
+  return `**${name}** is a fluid storage tank in Tech Reborn, produced in the ${machine}.`;
+}
+
+function deriveGenericDescription(itemId, name) {
+  return `**${name}** is an item in Tech Reborn. <!-- VERIFY: write description for ${itemId} -->`;
+}
+
+// ─── Tool / armor id patterns (excluded from catch-all generation) ─────────────
+
+const TOOL_ARMOR_PATTERNS = [
+  'axe', 'sword', 'pickaxe', 'spade', 'shovel', 'hoe',
+  'helmet', 'chestplate', 'leggings', 'boots',
+  'chainsaw', 'drill', 'mining_tool', 'jackhammer',
+  'scanner', 'wrench', 'omni_tool', 'nanosaber', 'rock_cutter',
+];
+
 // ─── Family configuration ─────────────────────────────────────────────────────
+//
+// relDir   — path relative to docs/ (and to versioned_docs/version-1.20.1/)
+// seeAlsoLink — MDX link text for the "See also" section (null = omit the section)
+// filter   — optional (itemId) => bool; if provided, only matching items are generated
 
 const FAMILIES = [
   {
     category: 'dust',
-    folder: 'dusts',
+    relDir: 'materials/dusts',
     singular: 'dust',
     label: 'Dusts',
     deriveDesc: deriveDustDescription,
+    seeAlsoLink: '[Dusts](../dusts)',
   },
   {
     category: 'small_dust',
-    folder: 'small-piles',
+    relDir: 'materials/small-piles',
     singular: 'small pile of dust',
     label: 'Small Piles',
     deriveDesc: deriveSmallPileDescription,
+    seeAlsoLink: '[Small Piles](../small-piles)',
   },
   {
     category: 'ingot',
-    folder: 'ingots',
+    relDir: 'materials/ingots',
     singular: 'ingot',
     label: 'Ingots',
     deriveDesc: deriveIngotDescription,
+    seeAlsoLink: '[Ingots](../ingots)',
   },
   {
     category: 'nugget',
-    folder: 'nuggets',
+    relDir: 'materials/nuggets',
     singular: 'nugget',
     label: 'Nuggets',
     deriveDesc: deriveNuggetDescription,
+    seeAlsoLink: '[Nuggets](../nuggets)',
   },
   {
     category: 'plate',
-    folder: 'plates',
+    relDir: 'materials/plates',
     singular: 'plate',
     label: 'Plates',
     deriveDesc: derivePlateDescription,
+    seeAlsoLink: '[Plates](../plates)',
+  },
+  {
+    category: 'part',
+    relDir: 'materials/parts',
+    singular: 'part',
+    label: 'Parts',
+    deriveDesc: derivePartDescription,
+    seeAlsoLink: '[Materials](../)',
+    filter: (itemId) => !itemsWithPages[itemId],
+  },
+  {
+    category: 'gem',
+    relDir: 'materials/gems-individual',
+    singular: 'gem',
+    label: 'Gems',
+    deriveDesc: deriveGemDescription,
+    seeAlsoLink: '[Gems](../gems)',
+    filter: (itemId) => !itemsWithPages[itemId],
+  },
+  {
+    category: 'raw_metal',
+    relDir: 'materials/raw-metals-individual',
+    singular: 'raw metal',
+    label: 'Raw Metals',
+    deriveDesc: deriveRawMetalDescription,
+    seeAlsoLink: '[Raw Metals](../raw-metals)',
+    filter: (itemId) => !itemsWithPages[itemId],
+  },
+  {
+    category: 'storage_block',
+    relDir: 'materials/storage-blocks-individual',
+    singular: 'storage block',
+    label: 'Storage Blocks',
+    deriveDesc: deriveStorageBlockDescription,
+    seeAlsoLink: '[Storage Blocks](../storage-blocks)',
+    filter: (itemId) => !itemsWithPages[itemId],
+  },
+  {
+    category: 'cable',
+    relDir: 'power/cables/per-cable',
+    singular: 'cable',
+    label: 'Cables',
+    deriveDesc: deriveCableDescription,
+    seeAlsoLink: '[Cables](../)',
+    filter: (itemId) => !itemsWithPages[itemId],
+  },
+  {
+    category: 'storage_unit',
+    relDir: 'storage/units',
+    singular: 'storage unit',
+    label: 'Storage Units',
+    deriveDesc: deriveStorageUnitDescription,
+    seeAlsoLink: '[Storage](../)',
+    filter: (itemId) => !itemsWithPages[itemId],
+  },
+  {
+    category: 'tank_unit',
+    relDir: 'storage/tank-units',
+    singular: 'tank unit',
+    label: 'Tank Units',
+    deriveDesc: deriveTankUnitDescription,
+    seeAlsoLink: '[Storage](../)',
+    filter: (itemId) => !itemsWithPages[itemId],
+  },
+  {
+    category: 'item',
+    relDir: 'items',
+    singular: 'item',
+    label: 'Items',
+    deriveDesc: deriveGenericDescription,
+    seeAlsoLink: null,
+    filter: (itemId) => {
+      if (!itemId.startsWith('techreborn:')) return false;
+      if (itemsWithPages[itemId]) return false;
+      const short = itemId.split(':')[1];
+      return !TOOL_ARMOR_PATTERNS.some(p => short.includes(p));
+    },
+  },
+  {
+    category: 'block',
+    relDir: 'blocks/misc-generated',
+    singular: 'block',
+    label: 'Misc Blocks',
+    deriveDesc: deriveGenericDescription,
+    seeAlsoLink: null,
+    filter: (itemId) => itemId.startsWith('techreborn:') && !itemsWithPages[itemId],
   },
 ];
 
@@ -322,11 +558,12 @@ function renderUsedInSection(itemId) {
 
 function generateMdx(itemId, family) {
   const name = displayName(itemId);
-  const short = shortId(itemId);
   const description = family.deriveDesc(itemId, name);
   const recipesSection = renderRecipesSection(itemId);
   const usedInSection = renderUsedInSection(itemId);
-  const groupLink = `[${family.label}](../${family.folder})`;
+  const seeAlso = family.seeAlsoLink
+    ? `\n## See also\n\n- ${family.seeAlsoLink}\n`
+    : '';
 
   return `---
 title: ${name}
@@ -347,11 +584,7 @@ ${recipesSection}
 ## Used in
 
 ${usedInSection}
-
-## See also
-
-- ${groupLink}
-`;
+${seeAlso}`;
 }
 
 // ─── _category_.json ──────────────────────────────────────────────────────────
@@ -371,9 +604,9 @@ let totalNoTexture = 0;
 let totalVerify = 0;
 
 for (const family of FAMILIES) {
-  const docsDirs = [path.join(ROOT, 'docs/materials', family.folder)];
+  const docsDirs = [path.join(ROOT, 'docs', family.relDir)];
   if (hasVersionedDocs) {
-    docsDirs.push(path.join(VERSIONED_DIR, 'materials', family.folder));
+    docsDirs.push(path.join(VERSIONED_DIR, family.relDir));
   }
 
   let familyCreated = 0;
@@ -381,7 +614,11 @@ for (const family of FAMILIES) {
   let familyNoTexture = 0;
   let familyVerify = 0;
 
-  const familyItems = Object.entries(items).filter(([, v]) => v.category === family.category);
+  const familyItems = Object.entries(items).filter(([id, v]) => {
+    if (v.category !== family.category) return false;
+    if (family.filter && !family.filter(id)) return false;
+    return true;
+  });
 
   for (const docsDir of docsDirs) {
     const categoryJsonPath = path.join(docsDir, '_category_.json');
