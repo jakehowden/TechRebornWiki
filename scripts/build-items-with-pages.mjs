@@ -7,6 +7,8 @@ const ROOT = path.resolve(__dirname, '..');
 const OUT = path.join(ROOT, 'docs', 'items-with-pages.json');
 
 const HERO_RE = /<ItemIcon\s+(?:[^>]*?\s+)?id=["']([^"']+)["'][^>]*?size=\{(\d+)\}|<ItemIcon\s+(?:[^>]*?\s+)?size=\{(\d+)\}[^>]*?id=["']([^"']+)["']/g;
+// Also match <ItemHeader id="..." /> as a hero (no size attribute required)
+const ITEM_HEADER_RE = /<ItemHeader\s+(?:[^>]*?\s+)?id=["']([^"']+)["']/g;
 
 async function walkMdx(dir) {
   const files = [];
@@ -32,25 +34,34 @@ async function scanDir(baseDir, versionLabel, map) {
   let count = 0;
   for (const file of files) {
     const text = await fs.readFile(file, 'utf8');
+    const rel = path.relative(baseDir, file).replace(/\\/g, '/').replace(/\.mdx$/, '');
+    const route = rel.endsWith('/index') ? rel.slice(0, -6) : rel;
+
+    // Try large ItemIcon first (explicit hero)
     HERO_RE.lastIndex = 0;
+    let heroId = null;
     let match;
     while ((match = HERO_RE.exec(text)) !== null) {
       const id = match[1] ?? match[4];
       const sizeStr = match[2] ?? match[3];
       if (!id || !sizeStr) continue;
       if (Number(sizeStr) < 64) continue;
+      heroId = id;
+      break;
+    }
 
-      const rel = path.relative(baseDir, file).replace(/\\/g, '/').replace(/\.mdx$/, '');
-      const route = rel.endsWith('/index') ? rel.slice(0, -6) : rel;
+    // Fall back to ItemHeader (generated pages use this)
+    if (!heroId) {
+      ITEM_HEADER_RE.lastIndex = 0;
+      const headerMatch = ITEM_HEADER_RE.exec(text);
+      if (headerMatch) heroId = headerMatch[1];
+    }
 
-      if (!map[id]) {
-        map[id] = {};
-      }
-      if (!map[id][versionLabel]) {
-        map[id][versionLabel] = '/' + route;
-        count++;
-      }
-      break; // only first hero per file
+    if (!heroId) continue;
+    if (!map[heroId]) map[heroId] = {};
+    if (!map[heroId][versionLabel]) {
+      map[heroId][versionLabel] = '/' + route;
+      count++;
     }
   }
   return count;
