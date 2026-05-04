@@ -71,6 +71,11 @@ const config: Config = {
           position: "left",
         },
         {
+          to: "/energy",
+          label: "Energy",
+          position: "left",
+        },
+        {
           type: "docsVersionDropdown",
           position: "left",
         },
