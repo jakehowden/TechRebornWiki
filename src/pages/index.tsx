@@ -46,6 +46,11 @@ export default function Home(): ReactNode {
       title={siteConfig.title}
       description="An unofficial reference for the Tech Reborn Minecraft mod.">
       <HomepageHeader />
+      <div className={styles.coverageNotice}>
+        Unofficial Tech Reborn 1.20.1 wiki — coverage in progress.{' '}
+        <Link to="/docs/next/contributing">Contribute</Link>{' · '}
+        <a href="https://wiki.techreborn.ovh/">Official wiki</a>
+      </div>
       <main>
         <div className="container padding-vert--xl">
           <div className="row">

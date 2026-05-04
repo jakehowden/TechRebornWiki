@@ -2,6 +2,8 @@
 
 ![Build](https://github.com/jakehowden/TechRebornWiki/actions/workflows/deploy.yml/badge.svg)
 
+Unofficial community wiki for Tech Reborn 1.20.1. The official upstream is at [wiki.techreborn.ovh](https://wiki.techreborn.ovh/).
+
 An unofficial reference wiki for the [Tech Reborn](https://github.com/TechReborn/TechReborn) Minecraft mod, built with [Docusaurus 3](https://docusaurus.io/).
 
 **Live URL:** [https://jakehowden.github.io/TechRebornWiki/](https://jakehowden.github.io/TechRebornWiki/)

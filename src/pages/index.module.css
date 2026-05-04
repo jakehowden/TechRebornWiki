@@ -49,3 +49,11 @@
   margin-bottom: 0;
   color: var(--ifm-color-emphasis-700);
 }
+
+.coverageNotice {
+  text-align: center;
+  font-size: 0.85em;
+  padding: 0.5rem 1rem;
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-emphasis-700);
+}
