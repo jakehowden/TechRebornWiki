@@ -18,7 +18,8 @@
     "extract-data": "node scripts/extract-tr-data.mjs",
     "extract-data:dry": "node scripts/extract-tr-data.mjs --dry-run",
     "vanilla-textures": "node scripts/extract-vanilla-textures.mjs",
-    "generate-item-pages": "node scripts/generate-item-pages.mjs"
+    "generate-item-pages": "node scripts/generate-item-pages.mjs",
+    "build-vanilla-sprite-map": "node scripts/build-vanilla-sprite-map.mjs"
   },
   "dependencies": {
     "@cmfcmf/docusaurus-search-local": "^2.0.1",

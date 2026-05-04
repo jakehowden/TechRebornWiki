@@ -6,6 +6,7 @@ import { useActiveVersion } from '@docusaurus/plugin-content-docs/client';
 import styles from './styles.module.css';
 import itemsData from '@site/src/data/items.json';
 import tagsData from '@site/src/data/tags.json';
+import vanillaSpriteMap from '@site/src/data/vanilla-sprite-map.json';
 import { shortId, titleCase, resolveItemLink } from '@site/src/utils/itemFormatters';
 
 type ItemsWithPages = Record<string, Record<string, string>>;
@@ -40,31 +41,45 @@ export default function ItemIcon({ id, size = 32, className = '', noLink = false
   const displayName = itemInfo?.displayName ?? titleCase(short);
   const src = useBaseUrl(texturePath || '/img/unknown.png');
 
+  const spriteSlug = resolvedId.startsWith('minecraft:') ? short.replace(/_/g, '-') : null;
+  const useSprite = spriteSlug !== null && (vanillaSpriteMap as Record<string, boolean>)[spriteSlug] === true;
+
   const link = noLink ? undefined : resolveItemLink(resolvedId, activeVersion, location.pathname, itemsWithPages);
 
-  const content = (
-    <div
-      className={`${styles.iconWrapper} ${className}`}
-      style={{ width: size, height: size }}
-      title={displayName}
-    >
-      {!imgError && texturePath ? (
-        <img
-          src={src}
-          alt={displayName}
-          className={`mc-pixelated ${styles.iconImg}`}
-          onError={() => {
-            console.warn(`Missing texture for ${resolvedId} at ${src}`);
-            setImgError(true);
-          }}
-        />
-      ) : (
-        <div className={styles.missingTexture} title={displayName}>
-          {(displayName || '??').substring(0, 2).toUpperCase()}
-        </div>
-      )}
-    </div>
-  );
+  let content: React.ReactElement;
+  if (useSprite) {
+    content = (
+      <div
+        className={`icon-32 ${spriteSlug} ${className}`}
+        style={{ '--n': 32 / size, width: size, height: size } as React.CSSProperties}
+        title={displayName}
+      />
+    );
+  } else {
+    content = (
+      <div
+        className={`${styles.iconWrapper} ${className}`}
+        style={{ width: size, height: size }}
+        title={displayName}
+      >
+        {!imgError && texturePath ? (
+          <img
+            src={src}
+            alt={displayName}
+            className={`mc-pixelated ${styles.iconImg}`}
+            onError={() => {
+              console.warn(`Missing texture for ${resolvedId} at ${src}`);
+              setImgError(true);
+            }}
+          />
+        ) : (
+          <div className={styles.missingTexture} title={displayName}>
+            {(displayName || '??').substring(0, 2).toUpperCase()}
+          </div>
+        )}
+      </div>
+    );
+  }
 
   if (!link) return content;
   const externalProps = link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {};

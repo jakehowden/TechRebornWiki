@@ -11,6 +11,48 @@ This is a developer-only page to verify that all MDX components render correctly
 <ItemIcon id="techreborn:copper_ingot" size={32} />
 <ItemIcon id="minecraft:redstone" size={32} />
 
+**Vanilla 3D sprites at multiple sizes (furnace, iron-ingot, diamond, lava-bucket, oak-log):**
+
+<div style={{display:'flex',alignItems:'flex-end',gap:'8px',flexWrap:'wrap',marginBottom:'0.5rem'}}>
+  <ItemIcon id="minecraft:furnace" size={16} noLink />
+  <ItemIcon id="minecraft:furnace" size={32} noLink />
+  <ItemIcon id="minecraft:furnace" size={48} noLink />
+  <ItemIcon id="minecraft:furnace" size={64} noLink />
+</div>
+<div style={{display:'flex',alignItems:'flex-end',gap:'8px',flexWrap:'wrap',marginBottom:'0.5rem'}}>
+  <ItemIcon id="minecraft:iron_ingot" size={16} noLink />
+  <ItemIcon id="minecraft:iron_ingot" size={32} noLink />
+  <ItemIcon id="minecraft:iron_ingot" size={48} noLink />
+  <ItemIcon id="minecraft:iron_ingot" size={64} noLink />
+</div>
+<div style={{display:'flex',alignItems:'flex-end',gap:'8px',flexWrap:'wrap',marginBottom:'0.5rem'}}>
+  <ItemIcon id="minecraft:diamond" size={16} noLink />
+  <ItemIcon id="minecraft:diamond" size={32} noLink />
+  <ItemIcon id="minecraft:diamond" size={48} noLink />
+  <ItemIcon id="minecraft:diamond" size={64} noLink />
+</div>
+<div style={{display:'flex',alignItems:'flex-end',gap:'8px',flexWrap:'wrap',marginBottom:'0.5rem'}}>
+  <ItemIcon id="minecraft:lava_bucket" size={16} noLink />
+  <ItemIcon id="minecraft:lava_bucket" size={32} noLink />
+  <ItemIcon id="minecraft:lava_bucket" size={48} noLink />
+  <ItemIcon id="minecraft:lava_bucket" size={64} noLink />
+</div>
+<div style={{display:'flex',alignItems:'flex-end',gap:'8px',flexWrap:'wrap',marginBottom:'1rem'}}>
+  <ItemIcon id="minecraft:oak_log" size={16} noLink />
+  <ItemIcon id="minecraft:oak_log" size={32} noLink />
+  <ItemIcon id="minecraft:oak_log" size={48} noLink />
+  <ItemIcon id="minecraft:oak_log" size={64} noLink />
+</div>
+
+**Sprite alongside flat-PNG TR item (should align on baseline):**
+
+<div style={{display:'flex',alignItems:'center',gap:'8px'}}>
+  <ItemIcon id="minecraft:furnace" size={32} noLink />
+  <ItemIcon id="techreborn:copper_ingot" size={32} noLink />
+  <ItemIcon id="minecraft:iron_ingot" size={32} noLink />
+  <ItemIcon id="techreborn:grinder" size={32} noLink />
+</div>
+
 ## 11. ItemHeader
 
 **Right-floated hero (default) — by item id:**

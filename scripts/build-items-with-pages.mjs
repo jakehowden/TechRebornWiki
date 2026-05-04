@@ -20,9 +20,9 @@ async function walkMdx(dir) {
   }
   for (const entry of entries) {
     const full = path.join(dir, entry.name);
-    if (entry.isDirectory()) {
+    if (entry.isDirectory() && !entry.name.startsWith('_')) {
       files.push(...await walkMdx(full));
-    } else if (entry.name.endsWith('.mdx') && entry.name !== 'index.mdx') {
+    } else if (entry.name.endsWith('.mdx') && entry.name !== 'index.mdx' && !entry.name.startsWith('_')) {
       files.push(full);
     }
   }

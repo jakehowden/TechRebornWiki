@@ -118,6 +118,10 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+  stylesheets: [
+    '/TechRebornWiki/css/minecraft-sprites.css',
+  ],
+
   themes: [
     [
       require.resolve("@cmfcmf/docusaurus-search-local"),

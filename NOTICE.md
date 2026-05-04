@@ -20,5 +20,12 @@ Both projects are MIT-licensed. Full license text is in `LICENSE`.
 
 - **Source:** https://github.com/PrismarineJS/minecraft-assets (data/1.20.2)
 - **Underlying assets:** © Mojang Studios / Microsoft. Used in good faith for educational reference, consistent with established Minecraft fan-wiki practice.
-- **Used for:** PNG icons under `static/img/vanilla/` rendered alongside Tech Reborn items in recipe grids.
+- **Used for:** PNG icons under `static/img/vanilla/` rendered alongside Tech Reborn items in recipe grids. These remain as a fallback for any item not in the 3D sprite sheet.
 - **Regeneration:** `npm run vanilla-textures` re-downloads the set from the upstream mirror.
+
+## Vanilla 3D sprite sheet
+
+- **Source:** `TechReborn/Wiki` (MIT) — `static/img/minecraft.png` and its accompanying CSS
+- **Underlying assets:** © Mojang Studios / Microsoft. Composited isometric pre-renders used in good faith for educational reference, consistent with established Minecraft fan-wiki practice.
+- **Used for:** `static/img/minecraft.png` (sprite sheet) and `static/css/minecraft-sprites.css` (per-item CSS classes), which together render vanilla items as isometric 3D sprites via the `icon-32` system.
+- **Regeneration:** Copy `static/img/minecraft.png` and `src/css/minecraft.css` from the upstream `TechReborn/Wiki` repo into `static/img/` and `static/css/` respectively, then run `npm run build-vanilla-sprite-map` to regenerate `src/data/vanilla-sprite-map.json`.
