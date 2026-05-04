@@ -39,3 +39,7 @@ To update data (e.g. for a new MC version):
 4. Push to your fork and submit a Pull Request.
 
 Happy documenting!
+
+## See also
+
+[`/docs/contributing`](https://jakehowden.github.io/TechRebornWiki/docs/contributing) — component reference, authoring guide, and data pipeline docs (rendered on the wiki itself).

@@ -43,6 +43,7 @@ const sidebars: SidebarsConfig = {
     cat("World", "world"),
     cat("Mechanics", "mechanics"),
     cat("Guides", "guides"),
+    cat("Contributing", "contributing"),
   ],
 };
 
