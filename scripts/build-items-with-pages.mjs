@@ -74,5 +74,16 @@ const versionedDir = path.join(ROOT, 'versioned_docs', 'version-1.20.1');
 const currentCount = await scanDir(docsDir, 'current', map);
 const versionedCount = await scanDir(versionedDir, '1.20.1', map);
 
+// Merge manual aliases (scan results take priority; aliases fill the rest)
+const aliasPath = path.join(__dirname, 'item-page-aliases.json');
+const aliases = JSON.parse(await fs.readFile(aliasPath, 'utf8'));
+let aliasCount = 0;
+for (const [id, routes] of Object.entries(aliases)) {
+  if (!map[id]) map[id] = {};
+  for (const [version, route] of Object.entries(routes)) {
+    if (!map[id][version]) { map[id][version] = route; aliasCount++; }
+  }
+}
+
 await fs.writeFile(OUT, JSON.stringify(map, null, 2) + '\n');
-console.log(`items-with-pages.json: ${currentCount} current + ${versionedCount} v1.20.1 entries → ${Object.keys(map).length} items`);
+console.log(`items-with-pages.json: ${currentCount} current + ${versionedCount} v1.20.1 entries + ${aliasCount} aliases → ${Object.keys(map).length} items`);

@@ -1,0 +1,42 @@
+---
+title: Item Coverage
+description: Navigation coverage policy — which items have wiki pages and which link externally.
+sidebar_position: 4
+---
+
+# Item Coverage
+
+Every item in `src/data/items.json` must either have a wiki page (reachable via `<ItemIcon>` click) or be documented here as intentionally external.
+
+**Current coverage (as of Phase 24):** 100% — 611 mapped to wiki pages, 42 external.
+
+## How to check coverage
+
+```sh
+node scripts/audit-coverage.mjs      # item-level coverage report
+node scripts/audit-tag-coverage.mjs  # tag → item → page chain check
+```
+
+Both scripts exit with code 1 if there are gaps.
+
+## How to add a new item
+
+1. **If it has a dedicated page already:** Add the item id to `scripts/item-page-aliases.json` pointing at the existing route, then re-run `node scripts/build-items-with-pages.mjs`.
+2. **If it needs a new page:** Create the MDX file with `<ItemHeader id="techreborn:your_item"/>` as the hero — the build script picks it up automatically. If the page covers a set (armor pieces, tool variants), add the non-hero piece ids to `scripts/item-page-aliases.json`.
+3. **If it is a vanilla Minecraft item:** See "Intentionally external" below — no action needed.
+
+## Intentionally external items
+
+The following 42 items in `items.json` are vanilla `minecraft:` blocks or items used as ingredients in TR recipes. They are not Tech Reborn content and do not have wiki pages here. Clicking their icon navigates to `https://minecraft.wiki/w/<name>` via the existing `resolveItemLink` logic.
+
+### Vanilla blocks (19)
+
+`minecraft:barrel`, `minecraft:basalt`, `minecraft:coal_ore`, `minecraft:cobblestone`, `minecraft:crafting_table`, `minecraft:diamond_ore`, `minecraft:emerald_ore`, `minecraft:furnace`, `minecraft:glass`, `minecraft:glass_pane`, `minecraft:gold_ore`, `minecraft:gravel`, `minecraft:iron_ore`, `minecraft:lapis_ore`, `minecraft:oak_log`, `minecraft:oak_planks`, `minecraft:obsidian`, `minecraft:sand`, `minecraft:sponge`
+
+### Vanilla items (23)
+
+`minecraft:blaze_rod`, `minecraft:clay_ball`, `minecraft:coal`, `minecraft:cooked_beef`, `minecraft:copper_ingot`, `minecraft:diamond`, `minecraft:emerald`, `minecraft:ender_pearl`, `minecraft:flint`, `minecraft:ghast_tear`, `minecraft:gold_ingot`, `minecraft:gold_nugget`, `minecraft:gunpowder`, `minecraft:iron_ingot`, `minecraft:iron_nugget`, `minecraft:lapis_lazuli`, `minecraft:netherite_ingot`, `minecraft:paper`, `minecraft:quartz`, `minecraft:redstone`, `minecraft:slime_ball`, `minecraft:stick`, `minecraft:string`
+
+## Aliases file
+
+`scripts/item-page-aliases.json` maps item ids that are not page heroes (texture variants, armor-set non-heroes) to their canonical page route. The build script merges this file after the scan — scan results take priority, aliases fill gaps. Commit this file alongside any new set pages.

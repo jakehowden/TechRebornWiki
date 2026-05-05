@@ -1,53 +1,36 @@
-import fs from 'fs';
-import path from 'path';
+import { readFileSync } from 'fs';
+import { resolve, dirname } from 'path';
+import { fileURLToPath } from 'url';
 
-// Just basic sanity check since enum extraction is complex
-const docsDir = 'docs';
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const root = resolve(__dirname, '..');
 
-function walk(dir, results = []) {
-  if (!fs.existsSync(dir)) return results;
-  const list = fs.readdirSync(dir);
-  for (let file of list) {
-    file = path.join(dir, file);
-    const stat = fs.statSync(file);
-    if (stat && stat.isDirectory()) {
-      walk(file, results);
-    } else if (file.endsWith('.mdx') || file.endsWith('.md')) {
-      results.push(file);
-    }
-  }
-  return results;
-}
+const items = JSON.parse(readFileSync(resolve(root, 'src/data/items.json'), 'utf8'));
+const pages = JSON.parse(readFileSync(resolve(root, 'docs/items-with-pages.json'), 'utf8'));
 
-const allMdxFiles = walk(docsDir);
-let totalContent = '';
-for (const file of allMdxFiles) {
-  totalContent += fs.readFileSync(file, 'utf8') + '\n';
-}
+const EXTERNAL_PREFIXES = ['minecraft:'];
+const total = Object.keys(items).length;
 
-const importantItems = [
-  'techreborn:industrial_blast_furnace',
-  'techreborn:industrial_grinder',
-  'techreborn:industrial_centrifuge',
-  'techreborn:fusion_control_computer',
-  'techreborn:advanced_alloy_plate',
-  'techreborn:iridium_alloy_plate',
-  'techreborn:nano_helmet',
-  'techreborn:quantum_helmet',
-  'techreborn:basic_drill',
-  'techreborn:bauxite_ore'
-];
+let mapped = 0;
+let external = 0;
+const unmapped = [];
 
-let missing = 0;
-for (const item of importantItems) {
-  if (!totalContent.includes(item)) {
-    console.warn('MISSING reference to: ' + item);
-    missing++;
+for (const id of Object.keys(items)) {
+  if (pages[id]) {
+    mapped++;
+  } else if (EXTERNAL_PREFIXES.some(p => id.startsWith(p))) {
+    external++;
+  } else {
+    unmapped.push(id);
   }
 }
 
-if (missing === 0) {
-  console.log('Audit coverage passed.');
-} else {
-  console.log('Audit coverage failed with ' + missing + ' missing items.');
+const covered = mapped + external;
+const pct = ((covered / total) * 100).toFixed(1);
+
+console.log(`Coverage: ${covered}/${total} (${pct}%) — ${mapped} mapped, ${external} external, ${unmapped.length} gaps`);
+if (unmapped.length > 0) {
+  console.log('\nUnmapped TR items:');
+  for (const id of unmapped.sort()) console.log(`  ${id}`);
+  process.exitCode = 1;
 }
