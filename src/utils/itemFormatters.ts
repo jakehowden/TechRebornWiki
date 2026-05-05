@@ -23,11 +23,8 @@ export function resolveItemLink(
   itemsWithPages: Record<string, Record<string, string>>
 ): { to: string; external: boolean } | undefined {
   const versionMap = itemsWithPages[resolvedId];
-  const route =
-    versionMap &&
-    (versionMap[activeVersion?.name ?? 'current'] ??
-      versionMap['1.20.1'] ??
-      versionMap['current']);
+  const versionName = activeVersion?.name ?? 'current';
+  const route = versionMap?.[versionName];
   let pageUrl = route ? `${activeVersion?.path ?? '/docs'}${route}` : undefined;
   if (pageUrl === locationPathname) pageUrl = undefined;
 
