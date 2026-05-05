@@ -1,6 +1,7 @@
 ---
 title: Energy & Power
 description: How energy generation, storage, transfer, and consumption work in Tech Reborn.
+sidebar_position: 0
 ---
 
 # Energy & Power
@@ -17,7 +18,7 @@ Generators produce energy each game tick and push it into adjacent cables or mac
 
 ### Cables
 
-Cables carry energy between components. Each cable type has a hard transfer cap — send more E/t than its rated limit and the cable vaporizes. Tin Cable handles up to 32 E/t; Copper up to 128 E/t; Gold up to 512 E/t. See [Cables & Transformers](/docs/mechanics/cables-and-transformers) for the full list.
+Cables carry energy between components. Each cable type has a hard transfer cap — send more E/t than its rated limit and the cable vaporizes. Tin Cable handles up to 32 E/t; Copper up to 128 E/t; Gold up to 512 E/t. See [Cables & Transformers](./cables-and-transformers) for the full list.
 
 ### Storage
 
@@ -31,7 +32,7 @@ Machines draw energy at a fixed rate while processing a recipe. If supply drops 
 
 ## Energy Tiers
 
-Quick reference — see [Power Tiers](/docs/mechanics/power-tiers) for the authoritative table.
+Quick reference — see [Power Tiers](./power-tiers) for the authoritative table.
 
 | Tier | Name | Max I/O (E/t) | Min. Cable | Examples |
 |---|---|---|---|---|
@@ -52,7 +53,7 @@ Machines and cables rated for a lower tier **will explode or burn out** if fed m
 - **Long distribution runs**: Gold or HV Cable. Prefer insulated variants (<ItemRef id="techreborn:insulated_gold_cable" />, <ItemRef id="techreborn:insulated_hv_cable" />) to prevent shock damage on contact and rain loss.
 - **Mid-run buffers**: Place a storage unit every 10–15 blocks to act as a buffer node. Energy does not attenuate per block, but a buffer absorbs transient overload spikes and keeps the downstream network stable.
 
-See [Cables](/docs/power/cables) for per-type stats.
+See [Cables](../power/cables) for per-type stats.
 
 ---
 
@@ -88,8 +89,8 @@ Two additional tabs appear in most machines:
 
 ## See Also
 
-- [Power Tiers](/docs/mechanics/power-tiers) — full tier table and explosion behavior
-- [Cables & Transformers](/docs/mechanics/cables-and-transformers) — per-cable stats and Transformer usage
-- [Generators](/docs/power/generators) — all generator reference pages
-- [Energy Storage](/docs/power/storage) — all storage unit reference pages
-- [Cables](/docs/power/cables) — all cable reference pages
+- [Power Tiers](./power-tiers) — full tier table and explosion behavior
+- [Cables & Transformers](./cables-and-transformers) — per-cable stats and Transformer usage
+- [Generators](../power/generators) — all generator reference pages
+- [Energy Storage](../power/storage) — all storage unit reference pages
+- [Cables](../power/cables) — all cable reference pages

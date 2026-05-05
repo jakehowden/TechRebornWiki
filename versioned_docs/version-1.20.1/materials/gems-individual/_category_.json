@@ -1,5 +1,6 @@
 {
   "label": "Gems",
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": { "type": "doc", "id": "materials/gems-individual/index" }
 }

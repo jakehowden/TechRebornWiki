@@ -66,16 +66,6 @@ const config: Config = {
       title: "Tech Reborn Wiki",
       items: [
         {
-          to: "/tutorial",
-          label: "Getting Started",
-          position: "left",
-        },
-        {
-          to: "/energy",
-          label: "Energy",
-          position: "left",
-        },
-        {
           type: "docsVersionDropdown",
           position: "left",
         },

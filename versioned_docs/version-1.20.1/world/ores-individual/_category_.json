@@ -1,5 +1,6 @@
 {
   "label": "Ores",
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": { "type": "doc", "id": "world/ores-individual/index" }
 }

@@ -1,5 +1,6 @@
 {
   "label": "Storage Blocks",
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": { "type": "doc", "id": "materials/storage-blocks-individual/index" }
 }

@@ -1,5 +1,6 @@
 {
-  "label": "Small Piles",
+  "label": "Small Piles of Dust",
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": { "type": "doc", "id": "materials/small-piles/index" }
 }

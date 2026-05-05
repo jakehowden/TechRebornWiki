@@ -1,5 +1,6 @@
 {
   "label": "Ingots",
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": { "type": "doc", "id": "materials/ingots/index" }
 }

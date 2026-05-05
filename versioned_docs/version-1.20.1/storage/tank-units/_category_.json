@@ -1,5 +1,6 @@
 {
   "label": "Tank Units",
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": { "type": "doc", "id": "storage/tank-units/index" }
 }

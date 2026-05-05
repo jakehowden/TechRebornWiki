@@ -1,5 +1,6 @@
 {
   "label": "Dusts",
   "collapsed": true,
-  "collapsible": true
+  "collapsible": true,
+  "link": { "type": "doc", "id": "materials/dusts/index" }
 }
