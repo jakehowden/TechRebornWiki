@@ -1,0 +1,89 @@
+---
+title: Data Pipeline
+description: How recipes, items, and textures are extracted from the Tech Reborn mod source and committed to the wiki repo.
+sidebar_position: 3
+---
+
+# Data Pipeline
+
+All recipe, item, and texture data is extracted from the **Tech Reborn mod source** on branch `1.20.1` and committed to this repository. This keeps wiki content in sync with the mod without hand-authoring any game data.
+
+## Scripts
+
+### `scripts/extract-tr-data.mjs`
+
+The main extraction script. It reads the mod's datagen output and item registry to produce:
+
+- `src/data/recipes.json` — all recipe definitions (crafting, machine, smelting, etc.)
+- `src/data/items.json` — item display names, texture paths, and categories
+- `src/data/multiblocks.json` — multiblock structure layer data
+- `static/img/techreborn/` — item and block PNGs copied from the mod's assets
+
+Run via:
+
+```bash
+npm run extract-data
+# or with a custom source path:
+node scripts/extract-tr-data.mjs --tr-source /path/to/TechReborn
+```
+
+Requires the mod's datagen to have been run first (see Re-run instructions below).
+
+### `scripts/extract-vanilla-textures.mjs`
+
+Populates `static/img/vanilla/` with PNG icons for every `minecraft:` item referenced in `src/data/recipes.json`. Source is the `PrismarineJS/minecraft-assets` package (data/1.20.2, the closest tagged version to TR's 1.20.1). Vanilla assets are © Mojang Studios — see `NOTICE.md`.
+
+Run via:
+
+```bash
+npm run vanilla-textures
+```
+
+Idempotent: skips files already present. Delete a file (or the whole directory) to force a refresh.
+
+### `scripts/build-items-with-pages.mjs`
+
+Scans all `.mdx` files under `docs/` for large `<ItemIcon>` uses and builds `docs/items-with-pages.json`, a map from item ID to wiki page route. This powers the click-through behaviour in `<ItemIcon>` — icons for items that have a dedicated wiki page are rendered as links.
+
+Runs automatically as a `prestart` and `prebuild` hook; you don't normally need to call it manually.
+
+## Re-run instructions
+
+To update data after a mod update:
+
+1. Ensure you have a sibling clone of the mod repo at `../TechReborn` on branch `1.20.1`:
+
+   ```bash
+   git clone https://github.com/TechReborn/TechReborn.git ../TechReborn
+   cd ../TechReborn && git checkout 1.20.1
+   ```
+
+2. Run the mod's datagen (requires JDK 17+):
+
+   ```bash
+   cd ../TechReborn
+   ./gradlew runDatagen
+   ```
+
+3. Back in the wiki repo, run extraction:
+
+   ```bash
+   npm run extract-data
+   npm run vanilla-textures   # if new vanilla items appear in recipes
+   ```
+
+## What gets committed
+
+| Path | Committed? |
+|---|---|
+| `src/data/recipes.json` | Yes |
+| `src/data/items.json` | Yes |
+| `src/data/multiblocks.json` | Yes |
+| `static/img/techreborn/` | Yes |
+| `static/img/vanilla/` | Yes |
+| `docs/items-with-pages.json` | Yes (generated at prestart/prebuild) |
+| `../TechReborn/` (mod source) | No — sibling clone, not in this repo |
+
+## Pull request process
+
+See [CONTRIBUTING.md](https://github.com/jakehowden/TechRebornWiki/blob/main/CONTRIBUTING.md) at the repo root for the full PR checklist.

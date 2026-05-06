@@ -1,0 +1,191 @@
+---
+title: Authoring Guide
+description: How to write and structure wiki pages — frontmatter, recipes, cross-linking, and page walkthroughs.
+sidebar_position: 2
+---
+
+# Authoring Guide
+
+## Required frontmatter
+
+Every `.mdx` file under `docs/` needs at minimum:
+
+```yaml
+---
+title: Page Title
+description: One-sentence summary shown in search results and link previews.
+sidebar_position: 1
+---
+```
+
+| Field | Required | Description |
+|---|---|---|
+| `title` | Yes | Displayed in the sidebar and as the `<h1>`. |
+| `description` | Yes | Used by search and SEO meta tags. Keep it under 160 characters. |
+| `sidebar_position` | Yes | Controls sort order within a sidebar category. Lower = higher. |
+| `sidebar_class_name` | Sometimes | Set to `category-index-hidden` on `index.mdx` files to suppress the duplicate link Docusaurus adds when a category links to its own index. |
+| `slug` | Sometimes | Override the URL path. Usually only needed on top-level `index.mdx` files (e.g. `slug: /contributing`). |
+
+## Hero image convention
+
+Every reference page begins with `<ItemHeader id="…"/>` immediately after the import block, before any other rendered content. The image floats right on desktop and collapses to full-width on mobile.
+
+```mdx
+---
+title: Grinder
+description: Macerates items into Dusts.
+sidebar_position: 3
+---
+
+import MachineStats from '@site/src/components/MachineStats';
+
+<ItemHeader id="techreborn:grinder"/>
+
+<MachineStats power={32} buffer={1000} tier="Low" inputSlots={1} outputSlots={1} />
+
+## Overview
+The Grinder …
+```
+
+| Prop | Default | Description |
+|---|---|---|
+| `id` | — | Preferred: `techreborn:` or `minecraft:` item ID |
+| `file` | — | Escape hatch: filename without extension under `/img/techreborn/` |
+| `alt` | derived | Override alt text |
+| `size` | `200` | Width in px |
+| `float` | `"right"` | `"left"`, `"right"`, or `"none"` |
+
+For multi-item pages (e.g. armor set comparisons) or pages that lead directly into a wide table, use `float="none"` to avoid layout conflicts.
+
+## Recipe section pattern
+
+**Always** use `<RecipeFromData id="…" />` for recipes. Never hand-type a recipe grid.
+
+```mdx
+## Recipes
+
+<RecipeFromData id="techreborn:grinder/coal" />
+```
+
+If the recipe ID you need doesn't exist in `src/data/recipes.json`, leave a `<!-- VERIFY: check if techreborn:xyz recipe exists in datagen -->` comment and note it in your PR. Do not approximate or invent a recipe.
+
+For a full list of a machine's recipes, use `<MachineRecipeList>` at the bottom of the page:
+
+```mdx
+## All Recipes
+
+<MachineRecipeList machine="grinder" />
+```
+
+## Cross-linking conventions
+
+| Use case | Syntax |
+|---|---|
+| Internal page link | `[Cables](/docs/power/cables)` |
+| Inline item icon | `<ItemIcon id="techreborn:copper_ingot" />` |
+| Inline icon + name link | `<ItemRef id="techreborn:copper_ingot" />` (phase 10, use once available) |
+| External link | Standard Markdown `[text](https://…)` |
+
+Prefer `/docs/<path>` absolute links for internal pages so they survive sidebar re-ordering.
+
+## Footnotes
+
+Use GFM footnote syntax (`[^1]`) for asides and disclaimers that are true but genuinely skippable — things the reader doesn't need on the first pass. Group all footnote definitions at the bottom of the page.
+
+```mdx
+The Fishing Station catches loot every 400 ticks by default.[^1]
+
+[^1]: Timing and energy values are configurable in `techreborn.json`.
+```
+
+**When to use footnotes:**
+- "Server-configurable" disclaimers on numeric defaults.
+- Tier-edge cases (e.g., creative-only items with no recipe).
+- Historical names or trivia that add color but aren't essential.
+- Source citations if a value is non-obvious.
+
+**When NOT to use footnotes:**
+- Information the reader needs to act on — keep that in prose.
+- Warnings about dangerous behavior — use `:::warning`.
+- Tips — use `:::tip`.
+- Trivia that adds nothing — skip it entirely.
+
+**Numbering:** Per-page, starting at 1. Docusaurus auto-generates the back-link arrow; don't add manual back-links.
+
+---
+
+## Walkthrough: adding a new machine page
+
+1. **Find the correct folder.** Machine pages live under `docs/processing/lv-machines/`, `docs/processing/mv-machines/`, or `docs/processing/hv-machines/` depending on tier.
+
+2. **Create the file.** Name it after the machine, e.g. `docs/processing/lv-machines/grinder.mdx`.
+
+3. **Add frontmatter.**
+
+   ```yaml
+   ---
+   title: Grinder
+   description: Grinds ores and materials into dusts.
+   sidebar_position: 5
+   ---
+   ```
+
+4. **Write the opening.** One or two sentences describing what the machine does and why a player would use it.
+
+5. **Add a stats block.** Pull values from `src/data/` or `../TechReborn/src/main/java/techreborn/config/TechRebornConfig.java`. Always note they are defaults.
+
+   ```mdx
+   <MachineStats power={2} buffer={1000} tier="LV" inputSlots={1} outputSlots={1} />
+   ```
+
+6. **Add the crafting recipe** for the machine itself.
+
+   ```mdx
+   ## Crafting
+
+   <RecipeFromData id="techreborn:crafting/machines/grinder" />
+   ```
+
+7. **Add all machine recipes** at the bottom.
+
+   ```mdx
+   ## Recipes
+
+   <MachineRecipeList machine="grinder" />
+   ```
+
+8. **Check `sidebars.ts`.** The folder uses `{ type: "autogenerated" }`, so no manual entry is needed unless you're adding a new folder.
+
+---
+
+## Walkthrough: adding a new item page
+
+1. **Find the folder.** Material item pages go under `docs/materials/`. Per-item pages are generated by phase 16's script — check `docs/items/` before creating a manual page.
+
+2. **Create the file**, e.g. `docs/materials/copper.mdx`.
+
+3. **Frontmatter** — same as above.
+
+4. **Content structure:**
+
+   ```mdx
+   ---
+   title: Copper Ingot
+   description: A basic metal ingot used in many Tech Reborn recipes.
+   sidebar_position: 1
+   ---
+
+   <ItemHeader id="techreborn:copper_ingot"/>
+
+   **Copper Ingot** is smelted from Copper Ore and used widely in early-game recipes.
+
+   ## Obtaining
+
+   <RecipeFromData id="techreborn:smelting/copper_ingot" />
+
+   ## Uses
+
+   Copper Ingot appears as an input in many LV machine recipes. See the [Grinder](/docs/processing/lv-machines/grinder) page for one common use.
+   ```
+
+5. **Never invent recipes.** If you can't find a recipe ID, leave a `<!-- VERIFY -->` comment.
