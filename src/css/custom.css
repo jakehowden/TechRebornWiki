@@ -36,7 +36,7 @@
    The parent category links to the same doc via sidebars.ts `link`,
    so showing the index doc as a child item is redundant.
    `sidebar_class_name` applies the class directly to the <li>. */
-.menu__list-item:not(.menu__list-item--collapsible).category-index-hidden {
+.theme-doc-sidebar-item-link.category-index-hidden {
   display: none;
 }
 
