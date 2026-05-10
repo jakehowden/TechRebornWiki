@@ -1,6 +1,28 @@
 import React from 'react';
 import ItemIcon from '../ItemIcon';
 import { shortId, titleCase } from '@site/src/utils/itemFormatters';
+import itemsData from '@site/src/data/items.json';
+
+const MACHINE_DISPLAY_NAMES: Record<string, string> = {
+  'techreborn:grinder': 'Grinder',
+  'techreborn:blast_furnace': 'Industrial Blast Furnace',
+  'techreborn:compressor': 'Compressor',
+  'techreborn:centrifuge': 'Industrial Centrifuge',
+  'techreborn:industrial_electrolyzer': 'Industrial Electrolyzer',
+  'techreborn:industrial_grinder': 'Industrial Grinder',
+  'techreborn:chemical_reactor': 'Chemical Reactor',
+  'techreborn:alloy_smelter': 'Alloy Smelter',
+  'techreborn:vacuum_freezer': 'Vacuum Freezer',
+  'techreborn:wire_mill': 'Wire Mill',
+  'techreborn:solid_canning_machine': 'Solid Canning Machine',
+  'techreborn:distillation_tower': 'Distillation Tower',
+  'techreborn:assembling_machine': 'Assembling Machine',
+  'techreborn:implosion_compressor': 'Implosion Compressor',
+  'minecraft:crafting_shaped': 'Crafting Table',
+  'minecraft:crafting_shapeless': 'Crafting Table',
+  'minecraft:smelting': 'Furnace',
+  'minecraft:blasting': 'Blast Furnace',
+};
 
 export interface MachineSlot {
   id: string;
@@ -88,7 +110,11 @@ function formatBuckets(amnt: number): string {
 export default function Machine({ config }: MachineProps) {
   if (!config) return null;
   const styles = mapToolToStyles(config.tool, config.input.length, config.output.length);
-  const headerName = titleCase(shortId(config.id || config.output[0]?.id || config.tool));
+  const outputId = config.output[0]?.id;
+  const headerName =
+    (outputId && (itemsData as Record<string, { displayName: string }>)[outputId]?.displayName) ||
+    MACHINE_DISPLAY_NAMES[config.tool] ||
+    titleCase(shortId(config.tool));
 
   return (
     <div className="machine-span">

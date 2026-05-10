@@ -7,6 +7,7 @@ import styles from './styles.module.css';
 
 export interface MachineRecipeListProps {
   machine: string;
+  output?: string;
 }
 
 function getLocalName(recipeKey: string): string {
@@ -38,12 +39,14 @@ function humanizeVariantLabel(localName: string, outputId: string): string {
   return titleCaseSlug(rest);
 }
 
-export default function MachineRecipeList({ machine }: MachineRecipeListProps) {
+export default function MachineRecipeList({ machine, output }: MachineRecipeListProps) {
   const targetType = machine.includes(':') ? machine : `techreborn:${machine}`;
 
   const matchingKeys = Object.keys(recipesData).filter(key => {
     const recipe = (recipesData as any)[key];
-    return recipe.type === targetType;
+    if (recipe.type !== targetType) return false;
+    if (output && getPrimaryOutputId(recipe) !== output) return false;
+    return true;
   });
 
   if (matchingKeys.length === 0) {

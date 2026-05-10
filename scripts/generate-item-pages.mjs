@@ -188,21 +188,44 @@ function deriveSmallPileDescription(itemId, name) {
 }
 
 function deriveIngotDescription(itemId, name) {
-  // Find the primary production recipe
   const prods = recipesThatProduce(itemId);
   if (prods.length === 0) {
     return `**${name}** is an ingot in Tech Reborn.`;
   }
   const priority = ['techreborn:blast_furnace', 'minecraft:smelting', 'techreborn:alloy_smelter'];
-  const best = prods.find(([, r]) => r.type === priority[0])
-    ?? prods.find(([, r]) => r.type === priority[1])
-    ?? prods.find(([, r]) => r.type === priority[2])
-    ?? prods[0];
+
+  function firstIngId(recipe) {
+    const first = (recipe.ingredients ?? [])[0] ?? recipe.ingredient;
+    if (!first) return null;
+    return first.id ?? first.tag ?? null;
+  }
+
+  // Drop recipes whose primary ingredient is a tool or armor piece
+  const filtered = prods.filter(([, r]) => {
+    const id = firstIngId(r);
+    if (!id) return true;
+    const short = shortId(id);
+    return !TOOL_ARMOR_PATTERNS.some(p => short.includes(p));
+  });
+  const candidates = filtered.length > 0 ? filtered : prods;
+
+  // Within the remaining candidates, prefer dust-based recipes
+  const stem = shortId(itemId).replace(/_ingot$/, '');
+  const dustPool = candidates.filter(([, r]) => {
+    const id = firstIngId(r);
+    if (!id) return false;
+    const short = shortId(id);
+    return short.endsWith('_dust') || short === `${stem}_dust`;
+  });
+  const pool = dustPool.length > 0 ? dustPool : candidates;
+
+  const best = pool.find(([, r]) => r.type === priority[0])
+    ?? pool.find(([, r]) => r.type === priority[1])
+    ?? pool.find(([, r]) => r.type === priority[2])
+    ?? pool[0];
   const [, recipe] = best;
   const machine = machineName(recipe.type);
-  // Try to describe what goes in
-  const ings = recipe.ingredients ?? [];
-  const mainIng = ings[0];
+  const mainIng = (recipe.ingredients ?? [])[0] ?? recipe.ingredient;
   if (mainIng) {
     const ingName = mainIng.id ? displayName(mainIng.id) : (mainIng.tag ? titleCase(shortId(mainIng.tag)) : null);
     if (ingName) {
