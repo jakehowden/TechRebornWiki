@@ -5,8 +5,7 @@ import { useActiveVersion } from '@docusaurus/plugin-content-docs/client';
 import styles from './styles.module.css';
 import ItemIcon from '@site/src/components/ItemIcon';
 import itemsData from '@site/src/data/items.json';
-import tagsData from '@site/src/data/tags.json';
-import { shortId, titleCase, resolveItemLink } from '@site/src/utils/itemFormatters';
+import { shortId, titleCase, resolveItemLink, resolveTagId } from '@site/src/utils/itemFormatters';
 
 type ItemsWithPages = Record<string, Record<string, string>>;
 let itemsWithPages: ItemsWithPages = {};
@@ -28,7 +27,7 @@ export default function ItemRef({ id, size = 20, name, showName = true, bold = t
   const location = useLocation();
   const activeVersion = useActiveVersion('default') as { name: string; path: string } | undefined;
 
-  const resolvedId = (id in tagsData) ? (tagsData as Record<string, string>)[id] : id;
+  const resolvedId = resolveTagId(id);
   const short = shortId(resolvedId);
   const itemInfo = (itemsData as Record<string, { displayName?: string }>)[resolvedId];
   const displayName = name ?? itemInfo?.displayName ?? titleCase(short);

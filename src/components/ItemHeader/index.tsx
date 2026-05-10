@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 import itemsData from '@site/src/data/items.json';
-import vanillaSpriteMap from '@site/src/data/vanilla-sprite-map.json';
-import { shortId, titleCase } from '@site/src/utils/itemFormatters';
+import { shortId, titleCase, resolveTexture } from '@site/src/utils/itemFormatters';
 
 export interface ItemHeaderProps {
   id?: string;
@@ -24,17 +23,7 @@ export default function ItemHeader({ id, file, alt, size = 200, float = 'right' 
     const short = shortId(id);
     const itemInfo = (itemsData as Record<string, { displayName?: string; texture?: string }>)[id];
     displayName = alt ?? itemInfo?.displayName ?? titleCase(short);
-    if (id.startsWith('techreborn:')) {
-      texturePath = `/img/techreborn/${short}.png`;
-    } else if (id.startsWith('minecraft:')) {
-      texturePath = `/img/vanilla/${short}.png`;
-      const slug = short.replace(/_/g, '-');
-      if ((vanillaSpriteMap as Record<string, boolean>)[slug] === true) {
-        spriteSlug = slug;
-      }
-    } else {
-      texturePath = itemInfo?.texture;
-    }
+    ({ texturePath, spriteSlug } = resolveTexture(id, itemInfo));
   } else if (file) {
     texturePath = `/img/techreborn/${file}.png`;
     displayName = alt ?? titleCase(file);

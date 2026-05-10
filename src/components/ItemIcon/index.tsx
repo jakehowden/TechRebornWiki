@@ -5,9 +5,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import { useActiveVersion } from '@docusaurus/plugin-content-docs/client';
 import styles from './styles.module.css';
 import itemsData from '@site/src/data/items.json';
-import tagsData from '@site/src/data/tags.json';
-import vanillaSpriteMap from '@site/src/data/vanilla-sprite-map.json';
-import { shortId, titleCase, resolveItemLink } from '@site/src/utils/itemFormatters';
+import { shortId, titleCase, resolveItemLink, resolveTagId, resolveTexture } from '@site/src/utils/itemFormatters';
 
 type ItemsWithPages = Record<string, Record<string, string>>;
 let itemsWithPages: ItemsWithPages = {};
@@ -29,20 +27,15 @@ export default function ItemIcon({ id, size = 32, className = '', noLink = false
   const location = useLocation();
   const activeVersion = useActiveVersion('default') as { name: string; path: string } | undefined;
 
-  const resolvedId = (id in tagsData) ? (tagsData as Record<string, string>)[id] : id;
+  const resolvedId = resolveTagId(id);
   const short = shortId(resolvedId);
   const itemInfo = (itemsData as Record<string, { displayName?: string; texture?: string; category?: string }>)[resolvedId];
 
-  let texturePath: string | undefined;
-  if (resolvedId.startsWith('techreborn:')) texturePath = `/img/techreborn/${short}.png`;
-  else if (resolvedId.startsWith('minecraft:')) texturePath = `/img/vanilla/${short}.png`;
-  else texturePath = itemInfo?.texture;
+  const { texturePath, spriteSlug } = resolveTexture(resolvedId, itemInfo);
+  const useSprite = spriteSlug !== null;
 
   const displayName = itemInfo?.displayName ?? titleCase(short);
   const src = useBaseUrl(texturePath || '/img/unknown.png');
-
-  const spriteSlug = resolvedId.startsWith('minecraft:') ? short.replace(/_/g, '-') : null;
-  const useSprite = spriteSlug !== null && (vanillaSpriteMap as Record<string, boolean>)[spriteSlug] === true;
 
   const link = noLink ? undefined : resolveItemLink(resolvedId, activeVersion, location.pathname, itemsWithPages);
 
