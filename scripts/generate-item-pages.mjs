@@ -537,7 +537,7 @@ const FAMILIES = [
     singular: 'gem',
     label: 'Gems',
     deriveDesc: deriveGemDescription,
-    seeAlsoLink: '[Gems](../gems)',
+    seeAlsoLink: '[Gems](../gems-individual)',
     filter: (itemId) => !itemsWithPages[itemId],
   },
   {
@@ -546,7 +546,7 @@ const FAMILIES = [
     singular: 'raw metal',
     label: 'Raw Metals',
     deriveDesc: deriveRawMetalDescription,
-    seeAlsoLink: '[Raw Metals](../raw-metals)',
+    seeAlsoLink: '[Raw Metals](../raw-metals-individual)',
     filter: (itemId) => !itemsWithPages[itemId],
   },
   {
@@ -555,7 +555,7 @@ const FAMILIES = [
     singular: 'storage block',
     label: 'Storage Blocks',
     deriveDesc: deriveStorageBlockDescription,
-    seeAlsoLink: '[Storage Blocks](../storage-blocks)',
+    seeAlsoLink: '[Storage Blocks](../storage-blocks-individual)',
     filter: (itemId) => !itemsWithPages[itemId],
   },
   {
@@ -592,7 +592,7 @@ const FAMILIES = [
     label: 'Ores',
     deriveDesc: deriveOreDescription,
     getHowToObtain: getHowToObtainOre,
-    seeAlsoLink: '[Ores](../ores)',
+    seeAlsoLink: '[Ores](../ores-individual)',
     filter: (itemId) => !itemsWithPages[itemId],
   },
   {
