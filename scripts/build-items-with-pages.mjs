@@ -71,8 +71,10 @@ const map = {};
 const docsDir = path.join(ROOT, 'docs');
 const versionedDir = path.join(ROOT, 'versioned_docs', 'version-1.20.1');
 
-const currentCount = await scanDir(docsDir, 'current', map);
-const versionedCount = await scanDir(versionedDir, '1.20.1', map);
+const [currentCount, versionedCount] = await Promise.all([
+  scanDir(docsDir, 'current', map),
+  scanDir(versionedDir, '1.20.1', map),
+]);
 
 // Merge manual aliases (scan results take priority; aliases fill the rest)
 const aliasPath = path.join(__dirname, 'item-page-aliases.json');

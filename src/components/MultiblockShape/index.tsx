@@ -8,7 +8,6 @@ export interface MultiblockShapeProps {
   };
 }
 
-// NOTE: Full 3D isometric rendering deferred — future work.
 export default function MultiblockShape({ data }: MultiblockShapeProps) {
   const [layerIdx, setLayerIdx] = useState(0);
 

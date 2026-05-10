@@ -6,14 +6,7 @@ import styles from './styles.module.css';
 import ItemIcon from '@site/src/components/ItemIcon';
 import itemsData from '@site/src/data/items.json';
 import { shortId, titleCase, resolveItemLink, resolveTagId } from '@site/src/utils/itemFormatters';
-
-type ItemsWithPages = Record<string, Record<string, string>>;
-let itemsWithPages: ItemsWithPages = {};
-try {
-  itemsWithPages = require('@site/docs/items-with-pages.json');
-} catch (e) {
-  // generated at build time
-}
+import itemsWithPages from '@site/src/utils/itemsWithPages';
 
 export interface ItemRefProps {
   id: string;

@@ -22,6 +22,49 @@ const items = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/items.json'),
 const recipes = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/recipes.json'), 'utf8'));
 const tags = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/data/tags.json'), 'utf8'));
 const itemsWithPages = JSON.parse(fs.readFileSync(path.join(ROOT, 'docs/items-with-pages.json'), 'utf8'));
+
+// ─── Inverted indexes ─────────────────────────────────────────────────────────
+
+const outputIndex = new Map();     // itemId → [[key, recipe], ...]
+const ingredientIndex = new Map(); // itemId → [[key, recipe], ...]
+
+{
+  const addToIndex = (map, id, entry) => {
+    if (!id) return;
+    if (!map.has(id)) map.set(id, []);
+    map.get(id).push(entry);
+  };
+  const resolveIng = (ing) => {
+    if (!ing) return null;
+    if (typeof ing === 'string') return ing;
+    if (ing.id) return ing.id;
+    if (ing.tag) return tags[ing.tag] ?? null;
+    return null;
+  };
+  for (const [key, recipe] of Object.entries(recipes)) {
+    const entry = [key, recipe];
+    if (recipe.outputs) {
+      for (const out of recipe.outputs) addToIndex(outputIndex, out.id ?? out, entry);
+    }
+    if (recipe.output) {
+      const o = recipe.output;
+      addToIndex(outputIndex, typeof o === 'string' ? o : o.id, entry);
+    }
+    const allIngs = [
+      ...(recipe.ingredients ?? []),
+      ...(recipe.ingredient ? [recipe.ingredient] : []),
+      ...(recipe.key ? Object.values(recipe.key) : []),
+    ];
+    for (const ing of allIngs) {
+      if (Array.isArray(ing)) {
+        for (const alt of ing) addToIndex(ingredientIndex, resolveIng(alt), entry);
+      } else {
+        addToIndex(ingredientIndex, resolveIng(ing), entry);
+      }
+    }
+  }
+}
+
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 function shortId(id) {
@@ -66,41 +109,6 @@ function displayName(id) {
 
 // ─── Recipe lookups ───────────────────────────────────────────────────────────
 
-/** Returns true if the given itemId is used as an ingredient in the recipe. */
-function recipeUsesItem(recipe, itemId) {
-  const ings = recipe.ingredients ?? [];
-  for (const ing of ings) {
-    if (ing.id === itemId) return true;
-    if (ing.tag && tags[ing.tag] === itemId) return true;
-  }
-  // crafting_shaped key
-  if (recipe.key) {
-    for (const val of Object.values(recipe.key)) {
-      if (typeof val === 'string' && val === itemId) return true;
-      if (val && typeof val === 'object') {
-        if (val.id === itemId) return true;
-        if (val.tag && tags[val.tag] === itemId) return true;
-      }
-    }
-  }
-  // crafting_shapeless ingredients (may be strings)
-  if (recipe.type === 'minecraft:crafting_shapeless') {
-    for (const ing of (recipe.ingredients ?? [])) {
-      if (typeof ing === 'string' && ing === itemId) return true;
-    }
-  }
-  // smelting ingredient
-  if (recipe.ingredient) {
-    const ing = recipe.ingredient;
-    if (typeof ing === 'string' && ing === itemId) return true;
-    if (ing && typeof ing === 'object') {
-      if (ing.id === itemId) return true;
-      if (ing.tag && tags[ing.tag] === itemId) return true;
-    }
-  }
-  return false;
-}
-
 /** Returns the list of output item ids from a recipe. */
 function recipeOutputs(recipe) {
   if (recipe.outputs) return recipe.outputs.map(o => o.id ?? o).filter(Boolean);
@@ -113,17 +121,14 @@ function recipeOutputs(recipe) {
 
 /** Returns all recipe keys that produce the given itemId. */
 function recipesThatProduce(itemId) {
-  return Object.entries(recipes).filter(([, r]) =>
-    recipeOutputs(r).includes(itemId)
-  );
+  return outputIndex.get(itemId) ?? [];
 }
 
 /** Returns all output item ids from recipes that use the given itemId as input. */
 function itemsProducedUsing(itemId) {
   const seen = new Set();
   const result = [];
-  for (const [, recipe] of Object.entries(recipes)) {
-    if (!recipeUsesItem(recipe, itemId)) continue;
+  for (const [, recipe] of ingredientIndex.get(itemId) ?? []) {
     for (const outId of recipeOutputs(recipe)) {
       if (!seen.has(outId)) {
         seen.add(outId);
@@ -137,8 +142,7 @@ function itemsProducedUsing(itemId) {
 // ─── Description derivation ───────────────────────────────────────────────────
 
 function deriveDustDescription(itemId, name) {
-  // What does this dust produce when used as input?
-  const usedIn = Object.entries(recipes).filter(([, r]) => recipeUsesItem(r, itemId));
+  const usedIn = ingredientIndex.get(itemId) ?? [];
   if (usedIn.length === 0) {
     return `**${name}** is a dust material in Tech Reborn.`;
   }
@@ -159,10 +163,8 @@ function deriveDustDescription(itemId, name) {
 }
 
 function deriveSmallPileDescription(itemId, name) {
-  // Look for crafting recipe that produces the full dust from this small pile
-  const crafting = Object.entries(recipes).find(([, r]) =>
-    (r.type === 'minecraft:crafting_shapeless' || r.type === 'minecraft:crafting_shaped') &&
-    recipeUsesItem(r, itemId)
+  const crafting = (ingredientIndex.get(itemId) ?? []).find(([, r]) =>
+    r.type === 'minecraft:crafting_shapeless' || r.type === 'minecraft:crafting_shaped'
   );
   if (crafting) {
     const [, recipe] = crafting;
@@ -172,9 +174,8 @@ function deriveSmallPileDescription(itemId, name) {
       return `**${name}** — combine 4 in a crafting grid to produce one **${outName}**.`;
     }
   }
-  // Fall back to blast furnace use
-  const blastUse = Object.entries(recipes).find(([, r]) =>
-    r.type === 'techreborn:blast_furnace' && recipeUsesItem(r, itemId)
+  const blastUse = (ingredientIndex.get(itemId) ?? []).find(([, r]) =>
+    r.type === 'techreborn:blast_furnace'
   );
   if (blastUse) {
     const [, recipe] = blastUse;
@@ -320,7 +321,7 @@ function deriveGemDescription(itemId, name) {
 }
 
 function deriveRawMetalDescription(itemId, name) {
-  const usedIn = Object.entries(recipes).filter(([, r]) => recipeUsesItem(r, itemId));
+  const usedIn = ingredientIndex.get(itemId) ?? [];
   if (usedIn.length === 0) {
     return `**${name}** is a raw ore drop in Tech Reborn. <!-- VERIFY: write description for ${itemId} -->`;
   }
@@ -709,52 +710,49 @@ for (const family of FAMILIES) {
     return true;
   });
 
-  for (const docsDir of docsDirs) {
-    const categoryJsonPath = path.join(docsDir, '_category_.json');
-
-    if (!DRY_RUN) {
+  if (!DRY_RUN) {
+    for (const docsDir of docsDirs) {
       fs.mkdirSync(docsDir, { recursive: true });
+      const categoryJsonPath = path.join(docsDir, '_category_.json');
       if (!fs.existsSync(categoryJsonPath)) {
         fs.writeFileSync(categoryJsonPath, categoryJson(family.label));
       }
     }
+  }
 
-    for (const [itemId, itemInfo] of familyItems) {
-      const short = shortId(itemId);
+  for (const [itemId, itemInfo] of familyItems) {
+    const short = shortId(itemId);
+    const textureSrc = itemInfo.texture;
+    let content = null;
+
+    for (let i = 0; i < docsDirs.length; i++) {
+      const docsDir = docsDirs[i];
+      const isFirst = i === 0;
       const filePath = path.join(docsDir, `${short}.mdx`);
 
-      // Skip existing hand-authored pages
       if (fs.existsSync(filePath)) {
-        if (docsDir === docsDirs[0]) familySkipped++;
+        if (isFirst) familySkipped++;
         continue;
       }
 
-      // Check texture exists
-      const textureSrc = itemInfo.texture;
       if (!textureSrc) {
-        if (docsDir === docsDirs[0]) {
+        if (isFirst) {
           console.warn(`  SKIP (no texture): ${itemId}`);
           familyNoTexture++;
         }
         continue;
       }
 
-      const content = generateMdx(itemId, family);
+      content ??= generateMdx(itemId, family);
 
-      // Count VERIFY comments (only count once, from first dir)
-      if (docsDir === docsDirs[0]) {
+      if (isFirst) {
         const verifyCount = (content.match(/<!-- VERIFY:/g) || []).length;
         familyVerify += verifyCount;
         familyCreated++;
+        if (DRY_RUN) console.log(`  [dry-run] Would create: ${path.relative(ROOT, filePath)}`);
       }
 
-      if (DRY_RUN) {
-        if (docsDir === docsDirs[0]) {
-          console.log(`  [dry-run] Would create: ${path.relative(ROOT, filePath)}`);
-        }
-      } else {
-        fs.writeFileSync(filePath, content);
-      }
+      if (!DRY_RUN) fs.writeFileSync(filePath, content);
     }
   }
 

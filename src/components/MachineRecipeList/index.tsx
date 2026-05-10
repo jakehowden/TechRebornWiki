@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import recipesData from '@site/src/data/recipes.json';
 import itemsData from '@site/src/data/items.json';
 import RecipeFromData from '../RecipeFromData';
 import ItemIcon from '../ItemIcon';
 import styles from './styles.module.css';
+import { titleCase } from '@site/src/utils/itemFormatters';
 
 export interface MachineRecipeListProps {
   machine: string;
@@ -27,29 +28,55 @@ function getDisplayName(id: string): string {
   return (itemsData as any)[id]?.displayName || id;
 }
 
-function titleCaseSlug(slug: string): string {
-  return slug.replace(/(^|_)(\w)/g, (_, sep, c) => (sep ? ' ' : '') + c.toUpperCase());
-}
-
 function humanizeVariantLabel(localName: string, outputId: string): string {
   const shortOutput = outputId.includes(':') ? outputId.slice(outputId.indexOf(':') + 1) : outputId;
   let rest = localName.startsWith(shortOutput) ? localName.slice(shortOutput.length) : localName;
   rest = rest.replace(/^_/, '').trim();
-  if (!rest) return titleCaseSlug(localName);
-  return titleCaseSlug(rest);
+  if (!rest) return titleCase(localName);
+  return titleCase(rest);
 }
+
+type Computed =
+  | { kind: 'empty' }
+  | { kind: 'scrapbox'; possibilities: string[] }
+  | { kind: 'list'; sortedFamilies: [string, string[]][] };
 
 export default function MachineRecipeList({ machine, output }: MachineRecipeListProps) {
   const targetType = machine.includes(':') ? machine : `techreborn:${machine}`;
 
-  const matchingKeys = Object.keys(recipesData).filter(key => {
-    const recipe = (recipesData as any)[key];
-    if (recipe.type !== targetType) return false;
-    if (output && getPrimaryOutputId(recipe) !== output) return false;
-    return true;
-  });
+  const computed = useMemo((): Computed => {
+    const keys = Object.keys(recipesData).filter(key => {
+      const recipe = (recipesData as any)[key];
+      if (recipe.type !== targetType) return false;
+      if (output && getPrimaryOutputId(recipe) !== output) return false;
+      return true;
+    });
 
-  if (matchingKeys.length === 0) {
+    if (keys.length === 0) return { kind: 'empty' };
+
+    if (targetType === 'techreborn:scrapbox') {
+      return {
+        kind: 'scrapbox',
+        possibilities: Array.from(new Set(keys.map(k => getPrimaryOutputId((recipesData as any)[k])))),
+      };
+    }
+
+    const familyMap = new Map<string, string[]>();
+    for (const key of keys) {
+      const outputId = getPrimaryOutputId((recipesData as any)[key]);
+      if (!familyMap.has(outputId)) familyMap.set(outputId, []);
+      familyMap.get(outputId)!.push(key);
+    }
+
+    return {
+      kind: 'list',
+      sortedFamilies: Array.from(familyMap.entries()).sort(([a], [b]) =>
+        getDisplayName(a).localeCompare(getDisplayName(b))
+      ),
+    };
+  }, [targetType, output]);
+
+  if (computed.kind === 'empty') {
     return (
       <div className={styles.emptyList}>
         <p>No recipes were extracted for <code>{targetType}</code>. This may indicate:</p>
@@ -61,35 +88,20 @@ export default function MachineRecipeList({ machine, output }: MachineRecipeList
     );
   }
 
-  if (targetType === 'techreborn:scrapbox') {
-    const possibilities = Array.from(new Set(matchingKeys.map(k => getPrimaryOutputId((recipesData as any)[k]))));
+  if (computed.kind === 'scrapbox') {
     return (
       <details className={styles.details}>
-        <summary className={styles.summary}>Random output ({possibilities.length} possibilities)</summary>
+        <summary className={styles.summary}>Random output ({computed.possibilities.length} possibilities)</summary>
         <div className={styles.scrapboxGrid}>
-          {possibilities.map(id => <ItemIcon key={id} id={id} size={32} noLink />)}
+          {computed.possibilities.map(id => <ItemIcon key={id} id={id} size={32} noLink />)}
         </div>
       </details>
     );
   }
 
-  // Group by primary output id
-  const familyMap = new Map<string, string[]>();
-
-  for (const key of matchingKeys) {
-    const recipe = (recipesData as any)[key];
-    const outputId = getPrimaryOutputId(recipe);
-    if (!familyMap.has(outputId)) familyMap.set(outputId, []);
-    familyMap.get(outputId)!.push(key);
-  }
-
-  const sortedFamilies = Array.from(familyMap.entries()).sort(([a], [b]) =>
-    getDisplayName(a).localeCompare(getDisplayName(b))
-  );
-
   return (
     <div className={styles.listContainer}>
-      {sortedFamilies.map(([outputId, recipeKeys]) => {
+      {computed.sortedFamilies.map(([outputId, recipeKeys]) => {
         const displayName = getDisplayName(outputId);
         const sortedKeys = [...recipeKeys].sort();
 
