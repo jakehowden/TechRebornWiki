@@ -124,16 +124,16 @@ function recipesThatProduce(itemId) {
   return outputIndex.get(itemId) ?? [];
 }
 
-/** Returns all output item ids from recipes that use the given itemId as input. */
+/** Returns primary output item ids from recipes that use the given itemId as input (excludes byproducts). */
 function itemsProducedUsing(itemId) {
   const seen = new Set();
   const result = [];
   for (const [, recipe] of ingredientIndex.get(itemId) ?? []) {
-    for (const outId of recipeOutputs(recipe)) {
-      if (!seen.has(outId)) {
-        seen.add(outId);
-        result.push(outId);
-      }
+    const outputs = recipeOutputs(recipe);
+    const primary = outputs[0];
+    if (primary && !seen.has(primary)) {
+      seen.add(primary);
+      result.push(primary);
     }
   }
   return result;
@@ -476,6 +476,17 @@ const TOOL_ARMOR_PATTERNS = [
   'scanner', 'wrench', 'omni_tool', 'nanosaber', 'rock_cutter',
 ];
 
+// Internal rendering assets and duplicate/obsolete items that should never get wiki pages.
+const BLOCKED_ITEM_IDS = new Set([
+  'techreborn:bucket_background', 'techreborn:bucket_base',
+  'techreborn:cell_background', 'techreborn:cell_base', 'techreborn:cell_glass',
+  'techreborn:missing_recipe',
+  'techreborn:scrapbox',   // duplicate of techreborn:scrap_box
+  'techreborn:copper',     // obsolete pre-1.18 compatibility stub, no recipe data
+  'techreborn:gold',       // same
+  'techreborn:tin',        // same
+]);
+
 // ─── Family configuration ─────────────────────────────────────────────────────
 //
 // relDir   — path relative to docs/ (and to versioned_docs/version-1.20.1/)
@@ -598,16 +609,86 @@ const FAMILIES = [
   },
   {
     category: 'item',
-    relDir: 'items',
-    singular: 'item',
-    label: 'Items',
+    relDir: 'materials/small-piles',
+    singular: 'small dust pile',
+    label: 'Small Dust Piles',
     deriveDesc: deriveGenericDescription,
     seeAlsoLink: null,
     filter: (itemId) => {
       if (!itemId.startsWith('techreborn:')) return false;
       if (itemsWithPages[itemId]) return false;
-      const short = itemId.split(':')[1];
-      return !TOOL_ARMOR_PATTERNS.some(p => short.includes(p));
+      const short = itemId.split(':')[1] ?? '';
+      return /_small_dust$/.test(short);
+    },
+  },
+  {
+    category: 'item',
+    relDir: 'materials/dusts',
+    singular: 'dust',
+    label: 'Dusts',
+    deriveDesc: deriveGenericDescription,
+    seeAlsoLink: null,
+    filter: (itemId) => {
+      if (!itemId.startsWith('techreborn:')) return false;
+      if (itemsWithPages[itemId]) return false;
+      const short = itemId.split(':')[1] ?? '';
+      return /^[a-z_]+_dust$/.test(short) && !/_small_dust$/.test(short);
+    },
+  },
+  {
+    category: 'item',
+    relDir: 'power/cables/per-cable',
+    singular: 'cable',
+    label: 'Cables',
+    deriveDesc: deriveGenericDescription,
+    seeAlsoLink: null,
+    filter: (itemId) => {
+      if (!itemId.startsWith('techreborn:')) return false;
+      if (itemsWithPages[itemId]) return false;
+      const short = itemId.split(':')[1] ?? '';
+      return /^cables_/.test(short) || /^insulated/.test(short) || /^(hv|lv|mv|ev|glassfiber)$/.test(short);
+    },
+  },
+  {
+    category: 'item',
+    relDir: 'processing/upgrades',
+    singular: 'machine upgrade',
+    label: 'Machine Upgrades',
+    deriveDesc: deriveGenericDescription,
+    seeAlsoLink: null,
+    filter: (itemId) => {
+      if (!itemId.startsWith('techreborn:')) return false;
+      if (itemsWithPages[itemId]) return false;
+      const short = itemId.split(':')[1] ?? '';
+      return /(_upgrade|_unit_upgrader|upgradebackingtemplate)$/.test(short);
+    },
+  },
+  {
+    category: 'item',
+    relDir: 'power/storage',
+    singular: 'energy storage item',
+    label: 'Energy Storage Items',
+    deriveDesc: deriveGenericDescription,
+    seeAlsoLink: null,
+    filter: (itemId) => {
+      if (!itemId.startsWith('techreborn:')) return false;
+      if (itemsWithPages[itemId]) return false;
+      const short = itemId.split(':')[1] ?? '';
+      return /(_crystal|_orb|_battery|_batpack)(_empty)?$/.test(short);
+    },
+  },
+  {
+    category: 'item',
+    relDir: 'power/storage/cells',
+    singular: 'fuel cell',
+    label: 'Fuel Cells',
+    deriveDesc: deriveGenericDescription,
+    seeAlsoLink: null,
+    filter: (itemId) => {
+      if (!itemId.startsWith('techreborn:')) return false;
+      if (itemsWithPages[itemId]) return false;
+      const short = itemId.split(':')[1] ?? '';
+      return /^(double_|quad_)?(depleted|plutonium|thorium|uranium)_cell$/.test(short);
     },
   },
   {
@@ -762,6 +843,17 @@ for (const family of FAMILIES) {
   totalVerify += familyVerify;
 
   console.log(`[${family.label}] created=${familyCreated} skipped=${familySkipped} noTexture=${familyNoTexture} verify=${familyVerify}`);
+}
+
+// Guard: docs/items/ must remain empty — if anything landed there, fail loudly.
+const orphanDir = path.join(ROOT, 'docs', 'items');
+if (fs.existsSync(orphanDir)) {
+  const remaining = fs.readdirSync(orphanDir).filter((f) => f.endsWith('.mdx'));
+  if (remaining.length) {
+    console.error(`\n✗ docs/items/ contains ${remaining.length} orphan file(s): ${remaining.join(', ')}`);
+    console.error('  Add an entry to BLOCKED_ITEM_IDS or a specific family in FAMILIES to route these items.');
+    process.exit(1);
+  }
 }
 
 // Rebuild items-with-pages.json from scan (let build-items-with-pages handle it)
