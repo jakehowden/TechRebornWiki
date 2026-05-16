@@ -1,0 +1,226 @@
+---
+title: Road to the Quarry
+description: A complete progression guide from a fresh world to the Quarry Reborn quarry block.
+sidebar_position: 2
+---
+
+import RecipeFromData from '@site/src/components/RecipeFromData';
+import ItemRef from '@site/src/components/ItemRef';
+
+# Road to the Quarry
+
+This guide walks you from a brand new world to your first automated ore miner: the **Quarry** from the [Quarry Reborn](https://modrinth.com/mod/quarry-reborn) mod. The quarry mines ores in a 7-block radius (configurable) and consumes 6,000 EU per block mined, making it a powerful late-game automation tool.
+
+The quarry is a significant undertaking — it touches nearly every tier of Tech Reborn. The guide is broken into clear milestones you can pause between.
+
+---
+
+## 1. LV Foundation
+
+Before anything else you need a working Low Voltage setup. If you haven't done this yet, complete the [Getting Started guide](./getting-started) first.
+
+When you're done you should have all of the following running:
+
+| Machine | Why you need it |
+|---|---|
+| Solid Fuel Generator | Power source |
+| Grinder | Produces dusts |
+| Compressor | Produces plates |
+| Alloy Smelter | Produces Bronze and other alloys |
+| Electric Furnace | Faster smelting |
+| **Extractor ×2** | **Goes directly into the quarry — build two** |
+
+Build the two Extractors now even if you only need one operationally. They are direct ingredients in the final quarry recipe.
+
+<RecipeFromData id="techreborn:crafting/extractor" />
+
+---
+
+## 2. Circuits
+
+Circuits are used in almost every machine you will build from this point on. Both tiers can be crafted at a plain crafting table.
+
+### Electronic Circuit
+
+<RecipeFromData id="techreborn:crafting/electronic_circuit" />
+
+### Advanced Circuit
+
+You will need **four Advanced Circuits** for the quarry itself, plus extras for machines along the way. Craft a batch now.
+
+<RecipeFromData id="techreborn:crafting/advanced_circuit" />
+
+*(See [Circuits](../mechanics/circuits) for more detail on the circuit progression.)*
+
+---
+
+## 3. Carbon Chain and Advanced Alloy
+
+These two material chains feed into the Advanced Machine Frame, which unlocks the Industrial Blast Furnace.
+
+### Carbon
+
+Coal Dust → Carbon Fiber → Carbon Mesh → Carbon Plate.
+
+First, grind Coal into Coal Dust in your Grinder. Then:
+
+<RecipeFromData id="techreborn:crafting/carbon_fiber" />
+<RecipeFromData id="techreborn:crafting/carbon_mesh" />
+<RecipeFromData id="techreborn:compressor/carbon_plate" />
+
+### Advanced Alloy
+
+Mixed Metal Ingot → (Furnace) → Advanced Alloy Ingot → Advanced Alloy Plate.
+
+<RecipeFromData id="techreborn:crafting/mixed_metal_ingot" />
+
+Smelt the Mixed Metal Ingot in a vanilla Furnace or Blast Furnace to get an **Advanced Alloy Ingot**. Then compress it:
+
+<RecipeFromData id="techreborn:compressor/advanced_alloy_plate" />
+
+---
+
+## 4. Advanced Machine Frame
+
+With Carbon Plate and Advanced Alloy Plate in hand, craft the Advanced Machine Frame. You will need **two of these** — one to build the Industrial Blast Furnace, and one goes into the quarry.
+
+<RecipeFromData id="techreborn:crafting/advanced_machine_frame" />
+
+---
+
+## 5. Rolling Machine and Heating Coils
+
+The Industrial Blast Furnace requires **Cupronickel Heating Coils** in its crafting recipe. These are made in the Rolling Machine, which is a powered crafting table that runs on 32 E/t.
+
+<RecipeFromData id="techreborn:crafting/rolling_machine" />
+
+Once built, use JEI or REI in-game to look up the Cupronickel Heating Coil recipe — it requires Cupronickel plates shaped in the Rolling Machine. You will need four coils to craft the IBF.
+
+*(The heating coil crafting recipes are not yet captured in the wiki's data pipeline.)*
+
+---
+
+## 6. Industrial Blast Furnace
+
+With Advanced Machine Frames, Advanced Circuits, Cupronickel Heating Coils, and Electric Furnaces ready, you can now craft the IBF controller block and assemble the multiblock.
+
+<RecipeFromData id="techreborn:crafting/industrial_blast_furnace" />
+
+The IBF is a multiblock that must be assembled in the world. See the [Industrial Blast Furnace](../multiblocks/industrial-blast-furnace) page for the full layer layout.
+
+**Power:** The IBF requires **128 E/t (Medium Voltage)**. You will need an MV power source or a step-up transformer fed by multiple LV generators. See [Power Tiers](../mechanics/power-tiers) for options.
+
+**Heat tiers** determine which recipes the IBF can run:
+
+| Heat | What it unlocks |
+|---|---|
+| 1,000 | Steel Ingot |
+| 1,500 | Titanium Ingot |
+| 1,700 | Aluminum Ingot |
+| 2,000 | Iridium Ingot |
+
+Heat is increased by upgrading the heating coils in the multiblock structure (Kanthal → Nichrome). You do not need heat 2,000 yet — start at 1,000 and upgrade later.
+
+---
+
+## 7. Steel Plates
+
+The quarry needs two Steel Plates. Run Refined Iron Ingots through the IBF at heat 1,000 to get Steel Ingots, then compress them.
+
+<RecipeFromData id="techreborn:blast_furnace/steel_ingot_from_refined_iron_and_carbon" />
+<RecipeFromData id="techreborn:compressor/steel_plate" />
+
+The IBF run also drops **Cells** as a byproduct — save these, they are needed for the Lithium Ion Battery.
+
+---
+
+## 8. Assembling Machine
+
+The Assembling Machine is an MV machine needed to craft the Lithium Ion Battery (required for the Advanced Drill).
+
+To build it you need Electrum Plates. Electrum is a Gold + Silver alloy:
+
+- Craft Electrum Ingots in your Alloy Smelter (Gold Ingot + Silver Ingot).
+- Compress them: <RecipeFromData id="techreborn:compressor/electrum_plate" />
+
+Then craft the Assembling Machine:
+
+<RecipeFromData id="techreborn:crafting/assembling_machine" />
+
+---
+
+## 9. Aluminum and the Lithium Ion Battery
+
+With the Assembling Machine running, process Aluminum Dust through the IBF at heat 1,700, compress the ingots into plates, then make the battery.
+
+<RecipeFromData id="techreborn:blast_furnace/aluminum_ingot" />
+<RecipeFromData id="techreborn:compressor/aluminum_plate" />
+<RecipeFromData id="techreborn:assembling_machine/lithium_ion_battery" />
+
+The Cells from your earlier Steel runs satisfy the second ingredient slot.
+
+---
+
+## 10. The Drills
+
+### Red Cell Battery
+
+<RecipeFromData id="techreborn:crafting/red_cell_battery" />
+
+### Basic Drill
+
+<RecipeFromData id="techreborn:crafting/basic_drill" />
+
+### Titanium Ingots
+
+Process Titanium Dust in the IBF at heat 1,500:
+
+<RecipeFromData id="techreborn:blast_furnace/titanium_ingot" />
+
+### Advanced Drill
+
+<RecipeFromData id="techreborn:crafting/advanced_drill" />
+
+---
+
+## 11. Iridium: The Final Gate
+
+Iridium Ore is a rare late-game ore that generates deep underground. Mine it, then process the Raw Iridium in the IBF — but this requires **heat 2,000**, which means upgrading your IBF's heating coils to **Nichrome**.
+
+Upgrade your heating coils (use JEI/REI for Nichrome Heating Coil recipes), then:
+
+<RecipeFromData id="techreborn:blast_furnace/iridium_ingot_from_raw" />
+
+---
+
+## 12. Assembling the Quarry
+
+You now have everything needed. The quarry is crafted in a standard 3×3 crafting table — but the recipe comes from the Quarry Reborn mod, so it is not in this wiki's recipe renderer. The pattern is:
+
+| | Left | Center | Right |
+|---|---|---|---|
+| **Top** | <ItemRef id="techreborn:advanced_circuit" /> | <ItemRef id="techreborn:advanced_machine_frame" /> | <ItemRef id="techreborn:advanced_circuit" /> |
+| **Middle** | <ItemRef id="techreborn:extractor" /> | <ItemRef id="techreborn:iridium_ingot" /> | <ItemRef id="techreborn:extractor" /> |
+| **Bottom** | <ItemRef id="techreborn:steel_plate" /> | <ItemRef id="techreborn:advanced_drill" /> | <ItemRef id="techreborn:steel_plate" /> |
+
+The full ingredient list:
+
+| Item | Quantity |
+|---|---|
+| Advanced Circuit | ×4 |
+| Advanced Machine Frame | ×1 |
+| Extractor | ×2 |
+| Iridium Ingot | ×1 |
+| Steel Plate | ×2 |
+| Advanced Drill | ×1 |
+
+---
+
+## 13. Using the Quarry
+
+Place the quarry in the world, connect at least **MV-tier power**, and it will mine a 7×7 column of ores beneath it by default.
+
+- **Power:** 6,000 EU per block mined (128 E/t draw while running).
+- **Tech Reborn Overclocker Upgrades** increase speed at the cost of higher power draw.
+- **Quarry Reborn Range Extender Upgrades** increase the mining radius up to 24 blocks.
+- Enable **Excavation Mode** in the quarry's GUI to mine all blocks, not just ores.
